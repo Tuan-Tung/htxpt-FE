@@ -19,7 +19,7 @@ const AboutLayout = ({ children }: PropsWithChildren): React.ReactElement => {
     <div className="min-h-screen min-w-full">
       <div className="custom-scrollbar mb-[30px] flex w-full space-x-[5px] overflow-y-scroll">
         {ABOUT_BUTTON_CONTENT.map((item: AboutCategories) => (
-          <div className="min-w-[120px] flex-1">
+          <div className="min-w-[186px] flex-1">
             <Button
               size="md"
               variant="image"

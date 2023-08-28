@@ -1,5 +1,6 @@
 'use client';
 
+import IcAvatarDefaultIcon from '@/components/Icon/IcAvatarDefaultIcon';
 import IcBackwardArrow from '@/components/Icon/IcBackwardArrow';
 import IcCardCategoryOutline from '@/components/Icon/IcCardCategoryOutline';
 import IcCheckedBox from '@/components/Icon/IcCheckedBox';
@@ -75,6 +76,7 @@ export const ICONS = {
   ic_radio_fill: IcRadioFill,
   ic_status_outline: IcStatusOutline,
   ic_dollar_sign: IcDollarSign,
+  ic_avatar_icon: IcAvatarDefaultIcon,
 } as const;
 
 const Icon = ({ name, size = 24, color = 'currentColor', ...props }: TIcon) => {

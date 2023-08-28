@@ -10,7 +10,7 @@ import { DemoFruit, FruitInfoBg } from '@/public/images';
 
 const ListFruitsPage: NextPage = (): React.ReactElement => {
   return (
-    <div>
+  <div>
       <ProductInformation
         products="fruits"
         backgroundImage={FruitInfoBg.src}

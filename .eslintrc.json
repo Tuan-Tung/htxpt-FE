@@ -17,7 +17,8 @@
     "tailwindcss/no-custom-classname": "off",
     "react/jsx-key": "off",
     "cd ": "off",
-    "tailwindcss/classnames-order": "error"
+    "tailwindcss/classnames-order": "error",
+    "no-unused-vars": "warn"
   },
   "settings": {
     "tailwindcss": {

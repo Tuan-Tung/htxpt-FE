@@ -17,9 +17,9 @@ import { FooterFacebook, FooterLocation, FooterLogo, FooterMail } from '@/public
 
 const Footer = (): React.ReactElement => {
   return (
-    <footer className="left-[260px]">
-      <div className="flex justify-between bg-white p-14">
-        <div className="flex flex-col space-y-3.5">
+    <footer className="left-[260px] px-4 md:px-0">
+      <div className="flex flex-col justify-between bg-white p-4 md:flex-row md:p-14">
+        <div className="mb-4 flex flex-col items-center space-y-3.5 md:mb-0 md:items-start">
           <Image src={FooterLogo.src} alt="logo" width={158} height={58} />
           <div className="text-dark-grey flex space-x-3">
             <Image src={FooterLocation.src} alt="location" width={20} height={20} />
@@ -34,21 +34,21 @@ const Footer = (): React.ReactElement => {
             <div>{FOOTER_FACEBOOK_TEXT}</div>
           </div>
         </div>
-        <div className="flex flex-col space-y-2.5">
+        <div className="mb-4 flex flex-col space-y-2.5 md:mb-0">
           <div className="font-bold text-primary">{CUSTOMER_SUPPORT_TEXT}</div>
           <div>{ABOUT_US_TEXT}</div>
           <div>{ABOUT_SYSTEM_TEXT}</div>
           <div>{BOOKING_TEXT}</div>
         </div>
-        <div className="flex flex-col space-y-2.5">
+        <div className="mb-4 flex flex-col space-y-2.5 md:mb-0">
           <div className="font-bold text-primary">{POLICY_TEXT}</div>
           <div>{SELL_POLICY_TEXT}</div>
           <div>{REFUND_POLICY_TEXT}</div>
           <div>{DELIVERY_POLICY_TEXT}</div>
         </div>
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d232.746942696591!2d105.6827828!3d21.0346432!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313456a8a9642663%3A0x3cd6a2c38e4261a!2zVUJORCB4w6MgxJDhuq9jIFPhu58!5e0!3m2!1svi!2s!4v1690529863337!5m2!1svi!2s"
-          className="h-48 w-48 rounded-md border-0"
+          src="https://www.google.com/maps/embed?..."
+          className="mb-4 h-48 w-full rounded-md border-0 md:mb-0 md:w-48"
           loading="lazy"
         />
       </div>

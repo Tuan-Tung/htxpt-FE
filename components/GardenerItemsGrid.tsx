@@ -1,12 +1,13 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import React, { useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 
-import GardenerCard, { Gardener } from '@/components/GardenerCard';
+import GardenerCard from '@/components/GardenerCard';
+import { TGardener } from '@/types';
 
 type GardenerGridProps = {
-  items: Gardener[];
+  items: TGardener[];
 };
 
 export default function GardenerItemsGrid({ items }: GardenerGridProps) {
@@ -34,19 +35,20 @@ export default function GardenerItemsGrid({ items }: GardenerGridProps) {
   );
   return (
     <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-      {items.map((gardener: Gardener, index: number) => (
+      {items.map((gardener: TGardener, index: number) => (
         <GardenerCard
-          id={gardener.id}
-          onHeartIconClick={() => handleHeartIconClicked(gardener.id)}
-          key={gardener.gardenerName + index}
-          gardenerName={gardener.gardenerName}
-          ratingStart={gardener.ratingStart}
+          _id={gardener._id}
+          onHeartIconClick={() => handleHeartIconClicked(gardener._id)}
+          key={gardener.first_name + index}
+          first_name={gardener.first_name}
+          last_name={gardener.last_name}
+          rating_avg={gardener.rating_avg}
           image={gardener.image}
           location={gardener.location}
-          phoneNumber={gardener.phoneNumber}
-          products={gardener.products}
-          isLiked={gardenerLikes.includes(gardener.id)}
-          onClick={()=>handleOnItemClick(gardener.id)}
+          phone={gardener.phone}
+          product_category={gardener.product_category}
+          // isLiked={gardenerLikes.includes(gardener.id)}
+          onClick={() => handleOnItemClick(gardener._id)}
         />
       ))}
     </div>

@@ -7,6 +7,7 @@ import { Gardener } from '@/components/GardenerCard';
 import HomePageContent from '@/components/Pages/HomePageContent';
 import { Product } from '@/components/ProductCard';
 import { Nature } from '@/public/images';
+import { useSelector } from '@/stores/store';
 
 export const gardenersList: Gardener[] = [
   {
@@ -50,14 +51,14 @@ export const gardenersList: Gardener[] = [
     isLiked: true,
   },
   {
-    id: 'Alice Johnson-(111) 222-33',
+    id: 'Jane Smith-(098) 765-432',
     image: Nature.src,
-    gardenerName: 'Alice Johnson',
-    ratingStart: 3,
-    location: 'Chicago',
-    phoneNumber: '(111) 222-3333',
-    products: ['Cacti', 'Succulents', 'Bamboo'],
-    isLiked: false,
+    gardenerName: 'Jane Smith',
+    ratingStart: 5,
+    location: 'Los Angeles',
+    phoneNumber: '(098) 765-4321',
+    products: ['Orchids', 'Lilies', 'Sunflowers'],
+    isLiked: true,
   },
 ];
 
@@ -122,9 +123,14 @@ const blogPosts: BlogCardProp[] = [
 ];
 
 const Home: NextPage = () => {
+  const { gardeners } = useSelector((state) => state.gardener);
+  const { fruits } = useSelector((state) => state.product);
+
+  console.log('fruits', fruits);
+
   return (
     <HomePageContent
-      gardenersList={gardenersList}
+      gardenersList={gardeners}
       fruitList={productsList}
       blogPosts={blogPosts}
       treeList={productsList}

@@ -1,16 +1,18 @@
 import Image from 'next/image';
-import React, { useCallback, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import React, { useCallback } from 'react';
 
 import BlogCard, { BlogCardProp } from '@/components/BlogCard';
-import GardenerCard, { Gardener } from '@/components/GardenerCard';
+import GardenerCard from '@/components/GardenerCard';
 import ProductCard, { Product } from '@/components/ProductCard';
 import ScrollSnapBase from '@/components/ScrollSnapBase';
 import Slide from '@/components/Slide';
 import { BLOG_TITLE, FRUIT_TITLE, GARDENER_TITLE, TREE_TITLE } from '@/constants/common';
 import { Nature } from '@/public/images';
+import { TGardener } from '@/types';
 
 type HomeContentProps = {
-  gardenersList: Gardener[];
+  gardenersList: TGardener[];
   fruitList: Product[];
   blogPosts: BlogCardProp[];
   treeList: Product[];
@@ -37,19 +39,12 @@ const HomePageContent = ({
   blogPosts,
   treeList,
 }: HomeContentProps): React.ReactElement => {
-  const [gardenerLikes, setGardenerLikes] = useState<string[]>([]);
-
-  const handleHeartIconClicked = useCallback(
+  const route = useRouter();
+  const handelGardenerCardClick = useCallback(
     (id: string) => {
-      const isAlreadyLiked = gardenerLikes.includes(id);
-
-      if (isAlreadyLiked) {
-        setGardenerLikes(gardenerLikes.filter((gardenerId: string) => gardenerId !== id));
-      } else {
-        setGardenerLikes([...gardenerLikes, id]);
-      }
+      route.push(`/gardeners/${id}/fruits`);
     },
-    [gardenerLikes]
+    [route]
   );
 
   return (
@@ -58,29 +53,36 @@ const HomePageContent = ({
         <div className="w-3/5 shrink-0">
           <div className="w-full">
             <div className="relative h-[256px] w-full overflow-hidden rounded-lg">
-              <Image width={1000} height={1000} src={Nature.src} alt="Home About"/>
+              <Image width={1000} height={1000} src={Nature.src} alt="Home About" />
             </div>
           </div>
         </div>
         <div className="h-64 w-2/5 shrink">
-          <ScrollSnapBase contentSlide={contentSlide} isShowButtonHeader={true} initialSlice={0} hasIndicator/>
+          <ScrollSnapBase
+            contentSlide={contentSlide}
+            isShowButtonHeader={true}
+            initialSlice={0}
+            hasIndicator
+          />
         </div>
       </div>
       <div className="flex flex-col space-y-4">
         <div className="truncate-ellipsis text-[36px] font-bold text-primary">{GARDENER_TITLE}</div>
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-          {gardenersList.map((gardener: Gardener, index: number) => (
+          {gardenersList.map((gardener: TGardener, index: number) => (
             <GardenerCard
-              id={gardener.id}
-              onHeartIconClick={() => handleHeartIconClicked(gardener.id)}
-              key={gardener.gardenerName + index}
-              gardenerName={gardener.gardenerName}
-              ratingStart={gardener.ratingStart}
+              _id={gardener._id}
+              // onHeartIconClick={() => handleHeartIconClicked(gardener.id)}
+              key={gardener.first_name + index}
+              first_name={gardener.first_name}
+              last_name={gardener.last_name}
+              rating_avg={gardener.rating_avg}
               image={gardener.image}
               location={gardener.location}
-              phoneNumber={gardener.phoneNumber}
-              products={gardener.products}
-              isLiked={gardenerLikes.includes(gardener.id)}
+              phone={gardener.phone}
+              product_category={gardener.product_category}
+              onClick={() => handelGardenerCardClick(gardener._id)}
+              // isLiked={gardenerLikes.includes(gardener._id)}
             />
           ))}
         </div>
@@ -88,7 +90,9 @@ const HomePageContent = ({
       <div className="flex space-x-8">
         <div className="flex w-3/5 flex-col space-y-8">
           <div className="flex flex-col space-y-4">
-            <div className="truncate-ellipsis text-[36px] font-bold text-primary">{FRUIT_TITLE}</div>
+            <div className="truncate-ellipsis text-[36px] font-bold text-primary">
+              {FRUIT_TITLE}
+            </div>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3">
               {fruitList.map((fruit: Product, index: number) => (
                 <ProductCard

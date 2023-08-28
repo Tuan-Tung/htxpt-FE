@@ -13,7 +13,7 @@ import {
 import UserAvatar from '@/components/UserAvatar';
 
 interface UserAccountNavProps extends React.HTMLAttributes<HTMLDivElement> {
-  image: string;
+  image?: string;
   name: string;
 }
 
@@ -25,13 +25,16 @@ export function UserAccountNav({ image, name }: UserAccountNavProps) {
           <div className="flex items-center justify-center pl-[5px]">
             <Icon name="ic_menu_outline" color="#656366" size={14} />
           </div>
-          <UserAvatar image={image} name={name} />
+          {image ? <UserAvatar image={image} name={name} /> : <UserAvatar name={name} />}
         </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="bg-white">
         <DropdownMenuSeparator />
         <DropdownMenuItem asChild>
           <div>Login</div>
+        </DropdownMenuItem>
+        <DropdownMenuItem asChild>
+          <div>Sign up</div>
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
           <Link href="/dashboard/billing">Billing</Link>

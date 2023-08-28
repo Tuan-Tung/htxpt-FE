@@ -1,13 +1,15 @@
 import { NextPage } from 'next';
 import React from 'react';
 
-import { gardenersList } from '@/app/page';
 import GardenerItemsGrid from '@/components/GardenerItemsGrid';
+import { useSelector } from '@/stores/store';
 
 const AllGardenerPage: NextPage = (): React.ReactElement => {
+  const { gardeners } = useSelector((state) => state.gardener);
+
   return (
     <div>
-      <GardenerItemsGrid items={gardenersList} />
+      <GardenerItemsGrid items={gardeners} />
     </div>
   );
 };

@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { Inter as FontSans } from 'next/font/google';
 import React, { PropsWithChildren } from 'react';
 
+import ReduxProvider from '@/app/ReduxProvider';
 import ClientOnly from '@/components/ClientOnly';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
@@ -36,12 +37,14 @@ const RootLayout = ({ children }: PropsWithChildren): React.ReactElement => {
         )}
       >
         <ClientOnly>
-          <SideBar items={NAVBAR_ITEMS} />
-          <div className="flex w-full flex-col pl-[260px]">
-            <Header />
-            <div className='mt-[70px] min-h-[calc(100vh-410px)] w-full p-[54px]'>{children}</div>
-            <Footer />
-          </div>
+          <ReduxProvider>
+            <SideBar items={NAVBAR_ITEMS} />
+            <div className="flex w-full flex-col pl-[260px]">
+              <Header />
+              <div className="mt-[70px] min-h-[calc(100vh-410px)] w-full p-[54px]">{children}</div>
+              <Footer />
+            </div>
+          </ReduxProvider>
         </ClientOnly>
       </body>
     </html>
