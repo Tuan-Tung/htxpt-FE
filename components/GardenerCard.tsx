@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 
 import Icon from '@/components/Icon';
-import { Nature } from '@/public/images';
+import { Objects } from '@/public/images';
 import { TGardener } from '@/types';
 
 export type Gardener = {
@@ -40,13 +40,13 @@ const GardenerCard = ({
   return (
     <div
       onClick={onClick}
-      className="flex cursor-pointer flex-col overflow-hidden rounded-lg shadow-md"
+      className="flex cursor-pointer flex-col overflow-hidden rounded-lg bg-white shadow-md"
     >
       <div className="relative h-[45vw] w-full md:h-[30vw] lg:h-[21vw] xl:h-[18vw] 2xl:h-[15vw]">
         {image ? (
           <Image src={image} alt="Gardener Image" layout="fill" objectFit="cover" />
         ) : (
-          <Image src={Nature.src} alt="Gardener Image" layout="fill" objectFit="cover" />
+          <Image src={Objects.src} alt="Gardener Image" layout="fill" objectFit="cover" className='m-auto mt-2 !w-auto'/>
         )}
         {/* <div
           onClick={handleHeartClick}

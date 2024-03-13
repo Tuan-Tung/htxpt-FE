@@ -1,54 +1,14 @@
 'use client';
 
 import { useParams, usePathname, useRouter } from 'next/navigation';
-import React, { PropsWithChildren, useState } from 'react';
+import React, { PropsWithChildren, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Button from '@/components/Button';
-import GardenerDetailCard from '@/components/GardenerDetailCard';
-import { Product } from '@/components/ProductCard';
-import { CEOAvatar, Nature } from '@/public/images';
-
-
-const mockGardenerData = {
-  gardenerId: '12345',
-  avatarImage: CEOAvatar.src,
-  backgroundImage: Nature.src,
-  gardenerName: 'John Doe',
-  products: ['Oranges', 'Apples', 'Grapes'],
-  fruitsQuantity: 120,
-  ratingAverage: 4.5,
-  treesQuantity: 5,
-  responseRate: 98,
-  ratingQuantity: 75,
-  joinedAt: new Date('2020-01-15'),
-};
-
-export const productsList: Product[] = [
-  {
-    image: Nature.src,
-    title: 'Beautiful Roses',
-    gardener: 'John Doe',
-    status: 'AVAILABLE',
-  },
-  {
-    image: Nature.src,
-    title: 'Tulips Bouquet',
-    gardener: 'Jane Smith',
-    status: 'OUT_OF_STOCK',
-  },
-  {
-    image: Nature.src,
-    title: 'Daisies Bundle',
-    gardener: 'Alice Johnson',
-    status: 'COMING_SOON',
-  },
-  {
-    image: Nature.src,
-    title: 'Orchids Collection',
-    gardener: 'Robert Brown',
-    status: 'AVAILABLE',
-  },
-];
+import DetailInfoGarden from '@/components/DetailProduct/DetailInfoGarden';
+import { useGardenerDetail } from '@/components/hooks/gardener';
+import { gardenerActions } from '@/features/gardener/gardenerSlice';
+import { RootState } from '@/stores/store';
 
 const GardenerLayout = ({ children }: PropsWithChildren): React.ReactElement => {
   const router = useRouter();
@@ -56,14 +16,28 @@ const GardenerLayout = ({ children }: PropsWithChildren): React.ReactElement => 
   const params = useParams()
   const [, setActiveTab] = useState('fruits');
 
+  const {data,onGetGardenById} = useGardenerDetail(params.gardenerId)
+  const dispatch = useDispatch()
+
   const handleButtonClick = (code: string) => {
     setActiveTab(code);
     router.push(`/gardeners/${params.gardenerId}/${code}`);
   };
 
+  useEffect(() => {
+    onGetGardenById;
+  },[onGetGardenById])
+  const { gardeners } = useSelector((state: RootState) => state.gardener);
+
+  dispatch(gardenerActions.setGardeners(data));
   return (
     <div>
-      <GardenerDetailCard {...mockGardenerData} />
+      <DetailInfoGarden 
+        name={`${gardeners?.first_name} ${gardeners?.last_name}`}
+        bonsaiQuantity={gardeners?.fruits?.length}
+        fruitQuantity={gardeners?.bonsai?.length}
+        joinedAt={gardeners?.created_at}
+      />
       <div className="mt-[42px]">
         <div className="min-h-screen min-w-full">
           <div className="mb-[30px] inline-flex space-x-[5px]">
@@ -98,7 +72,6 @@ const GardenerLayout = ({ children }: PropsWithChildren): React.ReactElement => 
           </div>
           {children}
         </div>
-        {children}
       </div>
     </div>
   );

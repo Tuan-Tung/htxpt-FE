@@ -23,3 +23,7 @@ export const DELIVERY_POLICY_TEXT = 'Chính sách giao hàng';
 export const FAVORITE_TEXT = 'Yêu thích';
 
 export const MESSAGE_TEXT = 'Nhắn tin';
+
+export const CALL_TEXT = 'Gọi điện';
+
+export const NO_PRODUCT_TEXT = 'Nhà vườn chưa có sản phẩm này vui lòng quay lại sau!'

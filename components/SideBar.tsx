@@ -110,7 +110,7 @@ const SideBar = ({ items }: DashboardNavProps): React.ReactElement => {
           <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/3 flex-col gap-[18px] text-[14px]">
             <div className="font-bold text-black">{HELP_CENTER_TITLE_TEXT}</div>
             <div className="text-dark-grey font-normal">{HELP_CENTER_CONTENT_TEXT}</div>
-            <div className="m-auto w-10/12 cursor-pointer overflow-ellipsis whitespace-nowrap rounded-lg bg-white p-3 font-semibold text-black">
+            <div className="m-auto cursor-pointer overflow-ellipsis whitespace-nowrap rounded-lg bg-white p-3 font-semibold text-black">
               {HELP_CENTER_BUTTON_CONTENT}
             </div>
           </div>

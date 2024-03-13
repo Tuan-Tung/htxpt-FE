@@ -1,3 +1,4 @@
+export { default as NotFoundImg } from './404.png';
 export { default as About } from './about.png';
 export { default as CEOAvatar } from './CEOavatar.png';
 export { default as Commit } from './commit.png';
@@ -7,6 +8,7 @@ export { default as FooterLogo } from './footer_logo.png';
 export { default as FooterFacebook } from './footer-facebook.png';
 export { default as FooterLocation } from './footer-location.png';
 export { default as FooterMail } from './footer-mail.png';
+export { default as FruitAbout } from './fruit-about.jpg';
 export { default as FruitInfoBg } from './fruit-info-bg.png';
 export { default as HelpCenter } from './help-center-bg.png';
 export { default as History } from './history.png';
@@ -14,8 +16,12 @@ export { default as Human_Resources } from './human_resources.png';
 export { default as Integrity } from './integrity.png';
 export { default as Legal } from './legal.png';
 export { default as Logo } from './logo.png';
+export { default as LogoDefault } from './logo-default.png';
 export { default as Morality } from './morality.png';
 export { default as Nature } from './nature.png';
+export { default as Objects } from './OBJECTS.svg';
 export { default as Respect } from './respect.png';
 export { default as Strategy } from './strategy.png';
 export { default as System } from './system.png';
+export { default as DemoTree } from './tree.png';
+

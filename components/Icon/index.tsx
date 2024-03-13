@@ -25,6 +25,8 @@ import IcMessageSquareOutline from '@/components/Icon/IcMessageSquareOutline';
 import IcMoreGridBig from '@/components/Icon/IcMoreGridBig';
 import IcNotificationOutline from '@/components/Icon/IcNotificationOutline';
 import IcPhoneOutline from '@/components/Icon/IcPhoneOutline';
+import IcQuestion from '@/components/Icon/IcQuestion';
+import IcQuestionEat from '@/components/Icon/IcQuestionEat';
 import IcRadioFill from '@/components/Icon/IcRadioFill';
 import IcSearchFilter from '@/components/Icon/IcSearchFilter';
 import IcSearchOutline from '@/components/Icon/IcSearchOutline';
@@ -77,6 +79,8 @@ export const ICONS = {
   ic_status_outline: IcStatusOutline,
   ic_dollar_sign: IcDollarSign,
   ic_avatar_icon: IcAvatarDefaultIcon,
+  ic_question: IcQuestion,
+  ic_question_eat: IcQuestionEat
 } as const;
 
 const Icon = ({ name, size = 24, color = 'currentColor', ...props }: TIcon) => {

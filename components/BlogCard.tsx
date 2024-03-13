@@ -2,15 +2,16 @@ import Image from 'next/image';
 import React from 'react';
 
 export type BlogCardProp = {
+  _id?: string;
   image: string;
   title: string;
-  shortDescription: string;
+  short_description: string;
   onClick?: React.MouseEventHandler<HTMLDivElement>;
 };
 
 const BlogCard = ({
   title,
-  shortDescription,
+  short_description,
   image,
   onClick,
 }: BlogCardProp): React.ReactElement => {
@@ -25,7 +26,7 @@ const BlogCard = ({
       <div className="flex w-1/2 flex-1 flex-col justify-center p-4">
         <div className="truncate-ellipsis mb-2 max-h-[2.4rem] overflow-hidden font-bold">{title}</div>
         <div className="truncate-ellipsis-2-line max-h-[3.6rem] overflow-hidden text-gray-500">
-          {shortDescription}
+          {short_description}
         </div>
       </div>
     </div>

@@ -13,6 +13,7 @@ type GardenerGridProps = {
 export default function GardenerItemsGrid({ items }: GardenerGridProps) {
   const router = useRouter();
   const [gardenerLikes, setGardenerLikes] = useState<string[]>([]);
+console.log(items);
 
   const handleHeartIconClicked = useCallback(
     (id: string) => {

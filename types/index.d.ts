@@ -97,8 +97,8 @@ export type TGardener = {
   product_category?: string[];
   response_rate?: number;
   role?: USER_ROLES;
-  fruits?: Fruit[];
-  bonsai?: Bonsai[];
+  fruits?: any;
+  bonsai?: any;
   location?: string;
   email_verified?: boolean;
   phone_verified?: boolean;

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useCallback } from 'react';
 
@@ -46,6 +47,25 @@ const HomePageContent = ({
     },
     [route]
   );
+  const handelFruitCardClick = useCallback(
+    (id: string | undefined) => {
+      route.push(`/products/fruits-category/${id}`);
+    },
+    [route]
+  );
+  const handelTreeCardClick = useCallback(
+    (id: string | undefined) => {
+      route.push(`/products/trees/${id}`);
+    },
+    [route]
+  );
+  const handelBlogCardClick = useCallback(
+    (id: string | undefined) => {
+      route.push(`/blog/${id}`);
+    },
+    [route]
+  );
+  
 
   return (
     <div className="space-y-8">
@@ -67,7 +87,12 @@ const HomePageContent = ({
         </div>
       </div>
       <div className="flex flex-col space-y-4">
-        <div className="truncate-ellipsis text-[36px] font-bold text-primary">{GARDENER_TITLE}</div>
+        <div className='flex items-center justify-between'>
+          <div className="truncate-ellipsis text-[36px] font-bold text-primary">{GARDENER_TITLE}</div>
+          <div className='text-primary'>
+            <Link href={'/gardeners/all'}>xem thêm</Link>
+          </div>
+        </div>
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
           {gardenersList.map((gardener: TGardener, index: number) => (
             <GardenerCard
@@ -82,7 +107,7 @@ const HomePageContent = ({
               phone={gardener.phone}
               product_category={gardener.product_category}
               onClick={() => handelGardenerCardClick(gardener._id)}
-              // isLiked={gardenerLikes.includes(gardener._id)}
+            // isLiked={gardenerLikes.includes(gardener._id)}
             />
           ))}
         </div>
@@ -96,11 +121,15 @@ const HomePageContent = ({
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3">
               {fruitList.map((fruit: Product, index: number) => (
                 <ProductCard
-                  key={fruit.gardener + index}
-                  gardener={fruit.gardener}
+                  key={fruit.category_name || 0 + index}
+                  isFruit
+                  name={fruit?.category_name}
                   image={fruit.image}
-                  status={fruit.status}
-                  title={fruit.title}
+                  range_price={fruit.range_price}
+                  shape={fruit.shape}
+                  dimeter={fruit.dimeter}
+                  weight={fruit.weight}
+                  onClick={() => handelFruitCardClick(fruit?._id)}
                 />
               ))}
             </div>
@@ -110,11 +139,12 @@ const HomePageContent = ({
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3">
               {treeList.map((tree: Product, index: number) => (
                 <ProductCard
-                  key={tree.gardener + index}
-                  gardener={tree.gardener}
+                  key={tree.tree_name || 0 + index}
+                  name={tree.tree_name}
                   image={tree.image}
-                  status={tree.status}
-                  title={tree.title}
+                  quantity={tree.quantity}
+                  description={tree.description}
+                  onClick={() => handelTreeCardClick(tree?._id)}
                 />
               ))}
             </div>
@@ -127,9 +157,10 @@ const HomePageContent = ({
               {blogPosts.map((blog: BlogCardProp, index: number) => (
                 <BlogCard
                   key={blog.title + index}
-                  image={blog.image}
-                  shortDescription={blog.shortDescription}
+                  image={Nature.src}
+                  short_description={blog.short_description}
                   title={blog.title}
+                  onClick={() => handelBlogCardClick(blog?._id)}
                 />
               ))}
             </div>

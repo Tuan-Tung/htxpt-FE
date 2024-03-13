@@ -4,7 +4,7 @@ import { AboutCategories, SideBarItems } from '@/types';
 export const GARDENER_TITLE = 'Nhà vườn';
 export const FRUIT_TITLE = 'Phân Loại Quả';
 export const BLOG_TITLE = 'Bài viết mới nhất';
-export const TREE_TITLE = 'Phân Loại Quả';
+export const TREE_TITLE = 'Phân Loại Cây';
 export const EMPTY_PAGE_TEXT = 'Chưa có thông tin';
 
 export const SIDEBAR_ITEM = {
@@ -105,3 +105,9 @@ export const ABOUT_BUTTON_CONTENT: AboutCategories[] = [
     label: ABOUT_CATEGORIES_CODE['COMMIT'],
   },
 ];
+
+export const EMPTY_DEFAULT_TEXT = '--';
+export const FORMAT_DATE_PICKER = 'DD/MM/YYYY';
+export const FORMAT_TIME_PICKER = 'HH:mm:ss';
+export const FORMAT_DATETIME_PICKER = 'DD/MM/YYYY HH:mm:ss';
+export const DATE_FORMAT = 'MMMM DD, YYYY  HH:mm:ss';

@@ -26,6 +26,14 @@ export const GARDENER_TEXT = 'Nhà vườn';
 
 export const STATUS_TEXT = 'Tình trạng';
 
+export const SHAPE = 'Kiểu dáng';
+export const DIMETER = 'Đường kính';
+export const WEIGHT = 'Cân nặng';
+export const RANG_PRICE = 'Khoảng giá';
+export const QUANTITY = 'Số lượng';
+export const DESCRIPTION = 'Mô tả';
+
+
 export const CoreValueItem: CoreValueContentItem[] = [
   {
     image: Integrity.src,

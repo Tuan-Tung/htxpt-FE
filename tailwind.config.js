@@ -18,10 +18,13 @@ module.exports = {
         light_grey: '#C7CCCE',
         error: '#FF0422',
         error_toast_bg: 'rgba(255, 4.25, 33.90, 0.05)',
+        blackA6: 'rgba(0, 0, 0, 0.4)'
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'garden': "url('../public/images/Rectangle355.png')",
+        '404': "url('../public/images/404.png')",
       },
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],

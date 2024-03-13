@@ -1,13 +1,16 @@
 'use client';
 
 import { NextPage } from 'next';
+import { useEffect } from 'react';
 
-import { BlogCardProp } from '@/components/BlogCard';
 import { Gardener } from '@/components/GardenerCard';
+import { useBlog } from '@/components/hooks/blog';
+import { useBonsai } from '@/components/hooks/bonsai';
+import { useFruitCategory } from '@/components/hooks/fruit';
+import { useGardener } from '@/components/hooks/gardener';
 import HomePageContent from '@/components/Pages/HomePageContent';
-import { Product } from '@/components/ProductCard';
 import { Nature } from '@/public/images';
-import { useSelector } from '@/stores/store';
+// import { useSelector } from '@/stores/store';
 
 export const gardenersList: Gardener[] = [
   {
@@ -62,78 +65,29 @@ export const gardenersList: Gardener[] = [
   },
 ];
 
-export const productsList: Product[] = [
-  {
-    image: Nature.src,
-    title: 'Beautiful Roses',
-    gardener: 'John Doe',
-    status: 'AVAILABLE',
-  },
-  {
-    image: Nature.src,
-    title: 'Tulips Bouquet',
-    gardener: 'Jane Smith',
-    status: 'OUT_OF_STOCK',
-  },
-  {
-    image: Nature.src,
-    title: 'Daisies Bundle',
-    gardener: 'Alice Johnson',
-    status: 'COMING_SOON',
-  },
-  {
-    image: Nature.src,
-    title: 'Orchids Collection',
-    gardener: 'Robert Brown',
-    status: 'AVAILABLE',
-  },
-];
-
-const blogPosts: BlogCardProp[] = [
-  {
-    image: Nature.src,
-    title: 'The Art of Gardening: A Comprehensive Guide',
-    shortDescription:
-      'Discover the art of gardening with this comprehensive guide, where we discuss various gardening techniques and tips for beginners and professionals alike.',
-  },
-  {
-    image: Nature.src,
-    title: 'Understanding Soil Health: A Key Factor in Gardening',
-    shortDescription:
-      'Soil health plays a crucial role in the success of your garden. Learn how to assess and improve the health of your soil in this informative post.',
-  },
-  {
-    image: Nature.src,
-    title: 'Indoor Gardening: Top Plants to Grow at Home',
-    shortDescription:
-      "Indoor gardening can be a rewarding hobby. Explore our list of top plants you can easily grow at home, even if you're a beginner!",
-  },
-  {
-    image: Nature.src,
-    title: 'Watering Guide: When and How to Water Your Plants',
-    shortDescription:
-      'Correct watering is essential for plant health. This guide explores when and how to water your plants for optimal growth.',
-  },
-  {
-    image: Nature.src,
-    title: 'Pruning 101: Keeping Your Plants in Shape',
-    shortDescription:
-      'Pruning your plants can encourage better growth and flowering. Learn the basics of pruning in this helpful blog post.',
-  },
-];
-
 const Home: NextPage = () => {
-  const { gardeners } = useSelector((state) => state.gardener);
-  const { fruits } = useSelector((state) => state.product);
+  // const { gardeners } = useSelector((state) => state.gardener);
+  // const { fruits } = useSelector((state) => state.product);
+  // console.log('fruits', fruits);
+  const { data, onGetGarden } = useGardener({limit: 5});
+  const { data: dataFruitCategory, onGetFruitCategory } = useFruitCategory();
+  const { data: dataBonsai,onGetBonsai } = useBonsai({});
+  const { data: dataBlog, onGetBlog } = useBlog({});
 
-  console.log('fruits', fruits);
+
+  useEffect(() => {
+    onGetGarden;
+    onGetFruitCategory;
+    onGetBonsai;
+    onGetBlog;
+  }, [onGetGarden, onGetFruitCategory,onGetBonsai,onGetBlog])
 
   return (
     <HomePageContent
-      gardenersList={gardeners}
-      fruitList={productsList}
-      blogPosts={blogPosts}
-      treeList={productsList}
+      gardenersList={data}
+      fruitList={dataFruitCategory}
+      blogPosts={dataBlog}
+      treeList={dataBonsai}
     />
   );
 };

@@ -18,7 +18,8 @@
     "react/jsx-key": "off",
     "cd ": "off",
     "tailwindcss/classnames-order": "error",
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "@typescript-eslint/no-explicit-any": "off"
   },
   "settings": {
     "tailwindcss": {
