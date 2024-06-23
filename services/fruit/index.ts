@@ -8,7 +8,7 @@ class FruitServices {
         return api.get(`/fruit/${id}`);
     };
     handleFetchFruitByCategory = (id: string) => {
-        return api.get(`/fruit/category/${id}`);
+        return api.get(`/fruit-category/${id}`);
     };
     handleFetchFruitCategory = () => {
         return api.get(`/fruit-category`);

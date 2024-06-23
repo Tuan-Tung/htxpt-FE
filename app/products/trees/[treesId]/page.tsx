@@ -22,7 +22,7 @@ const DetailFruitCategoriesPage: NextPage = (): React.ReactElement => {
     )
   }
   return <div>
-    <DetailProductCard title={'Cây Bonsai'} CommonProduct={<DetailProduct />} />
+    <DetailProductCard title={'Cây Bonsai'} CommonProduct={<DetailProduct />} quantity={0} productImg={undefined} name={''} bonsaiQuantity={0} fruitQuantity={0} joinedAt={''} phone={''} />
   </div>;
 };
 

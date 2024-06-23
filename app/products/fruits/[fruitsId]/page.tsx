@@ -47,8 +47,7 @@ const DetailFruitCategoriesPage: NextPage = (): React.ReactElement => {
       quantity={data?.quantity}
       bonsaiQuantity={data?.gardens?.bonsai?.length}
       fruitQuantity={data?.gardens?.fruits?.length}
-      joinedAt={data?.gardens?.created_at}
-    />
+      joinedAt={data?.gardens?.created_at} phone={data?.phone} />
   </div>;
 };
 
