@@ -119,7 +119,6 @@ export const useFruitDetail = (id: string) => {
 export const useFruitByCategory = (id: string) => {
   const { enqueueSnackbar } = useSnackbar();
   const [data, setData] = useState([]);
-  console.log(id);
 
   const handleFetchFruitByCategory = async () => {
     

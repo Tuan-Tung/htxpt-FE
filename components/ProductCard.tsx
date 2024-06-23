@@ -50,31 +50,31 @@ const ProductCard = ({
         <div className="mb-[11px] text-[18px] font-bold leading-[28px]">{name}</div>
         {isFruit ?
           <div>
-            <div className="mb-1.5 box-border flex items-center gap-2 px-1 text-[12px]">
+            <div className="mb-1.5 box-border flex items-center px-2 text-[12px]">
               <Icon color="#699C3A" name="ic_fruit_outline" size={20} aria-label="Location Icon" />
-              <span className="truncate-ellipsis">{SHAPE} : {shape || 0}</span>
+              <span className="truncate-ellipsis pl-2 max-w-[140px] sm:max-w-[175px]">{SHAPE} : {shape || 0}</span>
             </div>
-            <div className="mb-1.5 box-border flex items-center gap-2 px-1 text-[12px]">
+            <div className="mb-1.5 box-border flex items-center px-2 text-[12px]">
               <Icon color="#699C3A" name="ic_fruit_outline" size={20} aria-label="Location Icon" />
-              <span className="truncate-ellipsis">{WEIGHT} : {!_.isEmpty(weight) ? `${weight[0]} - ${weight[1]}` : 0} {`(g)`}</span>
+              <span className="truncate-ellipsis pl-2 max-w-[140px] sm:max-w-[175px]">{WEIGHT} : {!_.isEmpty(weight) ? `${weight[0]} - ${weight[1]}` : 0} {`(g)`}</span>
             </div>
-            <div className="mb-1.5 box-border flex items-center gap-2 px-1 text-[12px]">
+            <div className="mb-1.5 box-border flex items-center px-2 text-[12px]">
               <Icon color="#699C3A" name="ic_fruit_outline" size={20} aria-label="Location Icon" />
-              <span className="truncate-ellipsis">{RANG_PRICE} : {range_price} VNĐ</span>
+              <span className="truncate-ellipsis pl-2 max-w-[140px] sm:max-w-[175px]">{RANG_PRICE} : {range_price} VNĐ</span>
             </div>
-            <div className="mb-1.5 box-border flex items-center gap-2 px-1 text-[12px]">
+            <div className="mb-1.5 box-border flex items-center px-2 text-[12px]">
               <Icon color="#699C3A" name="ic_fruit_outline" size={20} aria-label="Location Icon" />
-              <span className="truncate-ellipsis">{DIMETER} : {!_.isEmpty(dimeter) ? `${dimeter[0]} - ${dimeter[1]}` : 0} {`(cm)`}</span>
+              <span className="truncate-ellipsis pl-2 max-w-[140px] sm:max-w-[175px]">{DIMETER} : {!_.isEmpty(dimeter) ? `${dimeter[0]} - ${dimeter[1]}` : 0} {`(cm)`}</span>
             </div>
           </div> :
           <div>
-            <div className="mb-1.5 box-border flex items-center gap-2 px-1 text-[12px]">
+            <div className="mb-1.5 box-border flex items-center px-2 text-[12px]">
               <Icon color="#699C3A" name="ic_trees_outline" size={20} aria-label="Location Icon" />
-              <span className="truncate-ellipsis">{QUANTITY} : {quantity}</span>
+              <span className="truncate-ellipsis pl-2 max-w-[140px] sm:max-w-[175px]">{QUANTITY} : {quantity}</span>
             </div>
-            <div className="mb-1.5 box-border flex items-center gap-2 px-1 text-[12px]">
+            <div className="mb-1.5 box-border flex items-center px-2 text-[12px]">
               <Icon color="#699C3A" name="ic_trees_outline" size={20} aria-label="Location Icon" />
-              <span className="truncate-ellipsis">{DESCRIPTION} : {description}</span>
+              <span className="truncate-ellipsis pl-2 max-w-[140px] sm:max-w-[175px]">{DESCRIPTION} : {description}</span>
             </div>
           </div>
         }
