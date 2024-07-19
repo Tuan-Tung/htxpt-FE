@@ -6,7 +6,7 @@ import AlertDialogDemo from '@/components/DetailProduct/ModalContact';
 import Icon from '@/components/Icon';
 import { GARDENER_TITLE } from '@/constants/common';
 import { CALL_TEXT, MESSAGE_TEXT } from '@/constants/footer';
-import { CEOAvatar, Nature, Objects } from '@/public/images';
+import { Nature, Objects } from '@/public/images';
 import { formatDateForm } from '@/utils';
 
 export interface IPropInfoGarden {

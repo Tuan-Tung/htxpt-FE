@@ -4,7 +4,6 @@ import React from 'react';
 
 import Icon from '@/components/Icon';
 import { DocsSearch } from '@/components/Search';
-import { UserAccountNav } from '@/components/UserAccountNav';
 import { SLOGAN_TEXT, WELCOME_TEXT } from '@/constants/header';
 import { commonActions } from '@/features/common/commonSlice';
 import { RootState, useDispatch, useSelector } from '@/stores/store';

@@ -7,14 +7,13 @@ import {
   CORE_VALUE_CONTENT_TEXT,
   CORE_VALUE_TITLE_TEXT,
   CoreValueItem,
-  GENDER,
   MISSION_CONTENT_TEXT,
   MISSION_TITLE_TEXT,
   ROLE_NAME,
   VISION_CONTENT_TEXT,
-  VISION_TITLE_TEXT,
+  VISION_TITLE_TEXT
 } from '@/constants/about';
-import { CEOAvatar, CEOAvatar1 } from '@/public/images';
+import { CEOAvatar1 } from '@/public/images';
 import { CoreValueContentItem } from '@/types';
 
 const AboutUsPageContent: NextPage = (): React.ReactElement => {

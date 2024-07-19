@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { Nature } from '@/public/images';
 
 const Slide = ({img}: any): React.ReactElement => {
   return (

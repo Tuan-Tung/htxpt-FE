@@ -4,7 +4,7 @@ import { NextPage } from 'next';
 import { useRouter } from 'next/navigation';
 import React, { useCallback, useEffect } from 'react';
 
-import { useFruit, useFruitCategory } from '@/components/hooks/fruit';
+import { useFruit } from '@/components/hooks/fruit';
 import ProductCard, { Product } from '@/components/ProductCard';
 import ProductInformation from '@/components/PrroductInformation';
 import { DemoFruit, FruitInfoBg } from '@/public/images';
