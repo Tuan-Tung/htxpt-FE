@@ -66,11 +66,11 @@ export const NAVBAR_ITEMS: SideBarItems[] = [
     icon: 'ic_layer_outline',
     name: SIDEBAR_ITEM['PRODUCTS'],
   },
-  {
-    code: 'BLOG',
-    icon: 'ic_layout_outline',
-    name: SIDEBAR_ITEM['BLOG'],
-  },
+  // {
+  //   code: 'BLOG',
+  //   icon: 'ic_layout_outline',
+  //   name: SIDEBAR_ITEM['BLOG'],
+  // },
 ];
 
 export const ABOUT_BUTTON_CONTENT: AboutCategories[] = [

@@ -44,7 +44,7 @@ export const useBlog = (params: any) => {
 
 export const useBlogDetail = (id: string) => {
   const { enqueueSnackbar } = useSnackbar();
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<any>([]);
   const handleFetchBlogById = async () => {
 
     try {
