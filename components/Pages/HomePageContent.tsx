@@ -9,8 +9,7 @@ import ProductCard, { Product } from '@/components/ProductCard';
 import ScrollSnapBase from '@/components/ScrollSnapBase';
 import Slide from '@/components/Slide';
 import { BLOG_TITLE, FRUIT_TITLE, GARDENER_TITLE, TREE_TITLE } from '@/constants/common';
-import { FruitAbout, Nature } from '@/public/images';
-import { Banner1,Banner2,Banner3,Banner4 } from '@/public/images';
+import { Banner1, Banner2, Banner3, Banner4, FruitAbout } from '@/public/images';
 
 import { TGardener } from '@/types';
 

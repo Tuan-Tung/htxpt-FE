@@ -2,16 +2,16 @@
 import { useBlogDetail } from '@/components/hooks/blog';
 import { useParams } from 'next/navigation';
 // import Image from 'next/image'
-import { useEffect } from 'react';
+import { Fruit2, FruitAbout } from '@/public/images';
 import dayjs from 'dayjs';
 import Image from 'next/image';
-import { CEOAvatar, Fruit2, FruitAbout } from '@/public/images';
+import { useEffect } from 'react';
 
 const BlogDetailPage = () => {
   const params = useParams();
   console.log(params);
 
-  const { data, onGetBlogById, refetchBlogById } = useBlogDetail(params['blogId'] as string);
+  const { data, onGetBlogById } = useBlogDetail(params['blogId'] as string);
 
   useEffect(() => {
     onGetBlogById;
