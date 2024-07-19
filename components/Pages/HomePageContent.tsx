@@ -9,7 +9,9 @@ import ProductCard, { Product } from '@/components/ProductCard';
 import ScrollSnapBase from '@/components/ScrollSnapBase';
 import Slide from '@/components/Slide';
 import { BLOG_TITLE, FRUIT_TITLE, GARDENER_TITLE, TREE_TITLE } from '@/constants/common';
-import { Nature } from '@/public/images';
+import { FruitAbout, Nature } from '@/public/images';
+import { Banner1,Banner2,Banner3,Banner4 } from '@/public/images';
+
 import { TGardener } from '@/types';
 
 type HomeContentProps = {
@@ -22,15 +24,15 @@ type HomeContentProps = {
 const contentSlide = [
   {
     id: 1,
-    content: <Slide />,
+    content: <Slide img={Banner1}/>,
   },
   {
     id: 2,
-    content: <Slide />,
+    content: <Slide img={Banner2}/>,
   },
   {
     id: 3,
-    content: <Slide />,
+    content: <Slide img={Banner4}/>,
   },
 ];
 
@@ -72,7 +74,7 @@ const HomePageContent = ({
         <div className="hidden w-3/5  shrink-0 lg:block">
           <div className="w-full">
             <div className="relative h-[256px] w-full overflow-hidden rounded-lg">
-              <Image width={1000} height={1000} src={Nature.src} alt="Home About" />
+              <Image width={1000} height={1000} src={Banner3.src} alt="Home About" />
             </div>
           </div>
         </div>
@@ -94,7 +96,7 @@ const HomePageContent = ({
             <Link href={'/gardeners/all'}>xem thêm</Link>
           </div>
         </div>
-        <div className="flex flex-col gap-3 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+        <div className="grid gap-3 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
           {gardenersList.map((gardener: TGardener, index: number) => (
             <GardenerCard
               _id={gardener._id}
@@ -119,7 +121,7 @@ const HomePageContent = ({
             <div className="truncate-ellipsis text-primary text-[24px] font-bold md:text-[36px]">
               {FRUIT_TITLE}
             </div>
-            <div className="flex flex-col gap-3 md:grid md:grid-cols-2 2xl:grid-cols-3">
+            <div className="grid gap-3 grid-cols-2 lg:grid-cols-3">
               {fruitList.map((fruit: Product, index: number) => (
                 <ProductCard
                   key={fruit.category_name || 0 + index}
@@ -158,7 +160,7 @@ const HomePageContent = ({
               {blogPosts.map((blog: BlogCardProp, index: number) => (
                 <BlogCard
                   key={blog.title + index}
-                  image={Nature.src}
+                  image={FruitAbout.src}
                   short_description={blog.short_description}
                   title={blog.title}
                   onClick={() => handelBlogCardClick(blog?._id)}

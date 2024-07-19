@@ -16,7 +16,7 @@ export const CORE_VALUE_TITLE_TEXT = 'Giá trị cốt lõi';
 export const CORE_VALUE_CONTENT_TEXT =
   '“Trở thành biểu tượng niêm tin hàng đầu Việt Nam về cây trồng Phật thủ, mang lại tiện ích phục vụ cuộc sống người dân Đắc Sở.”';
 
-export const CEO_NAME = 'Nguyễn Văn A';
+export const CEO_NAME = 'Nguyễn Quang Định';
 
 export const ROLE_NAME = 'Chủ tịch HTX';
 

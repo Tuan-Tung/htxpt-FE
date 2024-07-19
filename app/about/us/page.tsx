@@ -14,7 +14,7 @@ import {
   VISION_CONTENT_TEXT,
   VISION_TITLE_TEXT,
 } from '@/constants/about';
-import { CEOAvatar } from '@/public/images';
+import { CEOAvatar, CEOAvatar1 } from '@/public/images';
 import { CoreValueContentItem } from '@/types';
 
 const AboutUsPageContent: NextPage = (): React.ReactElement => {
@@ -39,11 +39,11 @@ const AboutUsPageContent: NextPage = (): React.ReactElement => {
           <div className="flex flex-col space-y-2">
             <div className="flex items-end justify-center">
               <div className="w-30 h-42 relative z-10 mr-[20px] rounded-lg">
-                <Image width={122} height={169} src={CEOAvatar.src} alt="avatar" />
+                <Image width={122} height={169} src={CEOAvatar1.src} alt="avatar" />
               </div>
               <div className="bg-primary ml-[-120px] flex h-[132px] w-full flex-col items-end rounded-lg p-3 text-white shadow-md">
                 <div className="font-bold">
-                  {GENDER} {CEO_NAME}
+                   {CEO_NAME}
                 </div>
                 <div className="font-body">{ROLE_NAME}</div>
               </div>

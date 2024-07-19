@@ -6,7 +6,7 @@ import AlertDialogDemo from '@/components/DetailProduct/ModalContact';
 import Icon from '@/components/Icon';
 import { GARDENER_TITLE } from '@/constants/common';
 import { CALL_TEXT, MESSAGE_TEXT } from '@/constants/footer';
-import { CEOAvatar, Nature } from '@/public/images';
+import { CEOAvatar, Nature, Objects } from '@/public/images';
 import { formatDateForm } from '@/utils';
 
 export interface IPropInfoGarden {
@@ -26,7 +26,7 @@ const DetailInfoGarden = ({ name, bonsaiQuantity, fruitQuantity, joinedAt,phone 
         >
           <div className="flex items-end gap-2.5">
             <div className="relative h-[74px] w-[74px] overflow-hidden rounded-full">
-              <Image src={CEOAvatar.src} alt="Gardener Avatar" layout="fill" objectFit="cover" />
+              <Image src={Objects.src} alt="Gardener Avatar" layout="fill" objectFit="cover" />
             </div>
             <div className="flex flex-col">
               <span className="font-semibold text-white">{GARDENER_TITLE}</span>

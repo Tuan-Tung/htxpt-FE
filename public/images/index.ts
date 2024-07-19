@@ -1,6 +1,7 @@
 export { default as NotFoundImg } from './404.png';
 export { default as About } from './about.png';
 export { default as CEOAvatar } from './CEOavatar.png';
+export { default as CEOAvatar1 } from './CEOavatar.jpg';
 export { default as Commit } from './commit.png';
 export { default as DemoFruit } from './demo-fruit.png';
 export { default as Fair } from './fair.png';
@@ -19,9 +20,17 @@ export { default as Logo } from './logo.png';
 export { default as LogoDefault } from './logo-default.png';
 export { default as Morality } from './morality.png';
 export { default as Nature } from './nature.png';
-export { default as Objects } from './OBJECTS.svg';
+export { default as Objects } from './nv.jpg';
 export { default as Respect } from './respect.png';
 export { default as Strategy } from './strategy.png';
 export { default as System } from './system.png';
 export { default as DemoTree } from './tree.png';
 
+export { default as Banner1 } from './tree/banner1.jpg';
+export { default as Banner2 } from './tree/banner2.jpg';
+export { default as Banner3 } from './tree/banner3.jpg';
+export { default as Banner4 } from './tree/banner4.jpg';
+export { default as Fruit1 } from './fruit1.jpg';
+export { default as Fruit2 } from './fruit1.jpg';
+export { default as Fruit3 } from './fruit1.jpg';
+export { default as Fruit4 } from './fruit1.jpg';

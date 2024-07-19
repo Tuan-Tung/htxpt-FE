@@ -32,7 +32,7 @@ const GardenerLayout = ({ children }: PropsWithChildren): React.ReactElement => 
             Nhà vườn
           </Button>
         </div>
-        <div className="min-w-[120px] flex-1">
+        {/* <div className="min-w-[120px] flex-1">
           <Button
             size="lg"
             fullWidth
@@ -45,7 +45,7 @@ const GardenerLayout = ({ children }: PropsWithChildren): React.ReactElement => 
           >
             Yêu thích
           </Button>
-        </div>
+        </div> */}
       </div>
       {children}
     </div>

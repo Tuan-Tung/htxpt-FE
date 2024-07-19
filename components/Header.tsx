@@ -33,7 +33,7 @@ const Header: React.FC = (): React.ReactElement => {
         <div onClick={handleOnMenuClick} className="flex items-center md:hidden">
           <Icon name="ic_menu_outline" color="#fff" size={14} />
         </div>
-        <UserAccountNav name="khanh" />
+        {/* <UserAccountNav name="khanh" /> */}
       </div>
     </div>
   );
