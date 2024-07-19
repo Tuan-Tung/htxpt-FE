@@ -17,7 +17,7 @@ import { FooterFacebook, FooterLocation, FooterLogo, FooterMail } from '@/public
 
 const Footer = (): React.ReactElement => {
   return (
-    <footer className="left-[260px] px-4 md:px-0">
+    <footer className="left-[260px] md:px-0">
       <div className="flex flex-col justify-between bg-white p-4 md:flex-row md:p-14">
         <div className="mb-4 flex flex-col items-center space-y-3.5 md:mb-0 md:items-start">
           <Image src={FooterLogo.src} alt="logo" width={158} height={58} />
@@ -35,13 +35,13 @@ const Footer = (): React.ReactElement => {
           </div>
         </div>
         <div className="mb-4 flex flex-col space-y-2.5 md:mb-0">
-          <div className="font-bold text-primary">{CUSTOMER_SUPPORT_TEXT}</div>
+          <div className="text-primary font-bold">{CUSTOMER_SUPPORT_TEXT}</div>
           <div>{ABOUT_US_TEXT}</div>
           <div>{ABOUT_SYSTEM_TEXT}</div>
           <div>{BOOKING_TEXT}</div>
         </div>
         <div className="mb-4 flex flex-col space-y-2.5 md:mb-0">
-          <div className="font-bold text-primary">{POLICY_TEXT}</div>
+          <div className="text-primary font-bold">{POLICY_TEXT}</div>
           <div>{SELL_POLICY_TEXT}</div>
           <div>{REFUND_POLICY_TEXT}</div>
           <div>{DELIVERY_POLICY_TEXT}</div>

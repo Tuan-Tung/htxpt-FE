@@ -65,19 +65,18 @@ const HomePageContent = ({
     },
     [route]
   );
-  
 
   return (
     <div className="space-y-8">
       <div className="flex lg:space-x-6">
-        <div className="w-3/5 shrink-0  hidden lg:block">
+        <div className="hidden w-3/5  shrink-0 lg:block">
           <div className="w-full">
             <div className="relative h-[256px] w-full overflow-hidden rounded-lg">
               <Image width={1000} height={1000} src={Nature.src} alt="Home About" />
             </div>
           </div>
         </div>
-        <div className="h-64 w-full lg:w-2/5 shrink">
+        <div className="h-64 w-full shrink lg:w-2/5">
           <ScrollSnapBase
             contentSlide={contentSlide}
             isShowButtonHeader={true}
@@ -87,13 +86,15 @@ const HomePageContent = ({
         </div>
       </div>
       <div className="flex flex-col space-y-4">
-        <div className='flex items-center justify-between'>
-          <div className="truncate-ellipsis text-[36px] font-bold text-primary">{GARDENER_TITLE}</div>
-          <div className='text-primary'>
+        <div className="flex items-center justify-between">
+          <div className="truncate-ellipsis text-primary text-[24px] font-bold md:text-[36px]">
+            {GARDENER_TITLE}
+          </div>
+          <div className="text-primary">
             <Link href={'/gardeners/all'}>xem thêm</Link>
           </div>
         </div>
-        <div className="grid gap-3 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+        <div className="flex flex-col gap-3 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
           {gardenersList.map((gardener: TGardener, index: number) => (
             <GardenerCard
               _id={gardener._id}
@@ -107,18 +108,18 @@ const HomePageContent = ({
               phone={gardener.phone}
               product_category={gardener.product_category}
               onClick={() => handelGardenerCardClick(gardener._id)}
-            // isLiked={gardenerLikes.includes(gardener._id)}
+              // isLiked={gardenerLikes.includes(gardener._id)}
             />
           ))}
         </div>
       </div>
-      <div className="flex xl:space-x-8 flex-wrap lg:flex-nowrap">
-        <div className="flex w-full lg:w-3/5 flex-col space-y-8">
+      <div className="flex flex-wrap lg:flex-nowrap xl:space-x-8">
+        <div className="flex w-full flex-col space-y-8 lg:w-3/5">
           <div className="flex flex-col space-y-4">
-            <div className="truncate-ellipsis text-[36px] font-bold text-primary">
+            <div className="truncate-ellipsis text-primary text-[24px] font-bold md:text-[36px]">
               {FRUIT_TITLE}
             </div>
-            <div className="grid gap-4 grid-cols-2 2xl:grid-cols-3">
+            <div className="flex flex-col gap-3 md:grid md:grid-cols-2 2xl:grid-cols-3">
               {fruitList.map((fruit: Product, index: number) => (
                 <ProductCard
                   key={fruit.category_name || 0 + index}
@@ -135,8 +136,8 @@ const HomePageContent = ({
             </div>
           </div>
           <div className="flex flex-col space-y-4">
-            <div className="truncate-ellipsis text-[36px] font-bold text-primary">{TREE_TITLE}</div>
-            <div className="grid gap-4 grid-cols-2 2xl:grid-cols-3">
+            <div className="truncate-ellipsis text-primary text-[24px] font-bold md:text-[36px]">{TREE_TITLE}</div>
+            <div className="grid grid-cols-2 gap-4 2xl:grid-cols-3">
               {treeList.map((tree: Product, index: number) => (
                 <ProductCard
                   key={tree.tree_name || 0 + index}
@@ -152,7 +153,7 @@ const HomePageContent = ({
         </div>
         <div className="w-full lg:w-2/5">
           <div className="sticky top-20 flex flex-col space-y-4">
-            <div className="truncate-ellipsis text-[36px] font-bold text-primary">{BLOG_TITLE}</div>
+            <div className="truncate-ellipsis text-primary text-[24px] font-bold md:text-[36px]">{BLOG_TITLE}</div>
             <div className="flex flex-col space-y-3">
               {blogPosts.map((blog: BlogCardProp, index: number) => (
                 <BlogCard

@@ -2,10 +2,12 @@ import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch as useDispatchBase, useSelector as useSelectorBase } from 'react-redux';
 import { combineReducers } from 'redux';
 
+import commonReducer from '@/features/common/commonSlice';
 import gardenerReducer from '@/features/gardener/gardenerSlice';
 import productReducer from '@/features/products/productsSlice';
 
 const rootReducers = combineReducers({
+  common: commonReducer,
   gardener: gardenerReducer,
   product: productReducer,
 });
