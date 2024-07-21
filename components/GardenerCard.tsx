@@ -40,7 +40,7 @@ const GardenerCard = ({
         {image ? (
           <Image src={image} alt="Gardener Image" layout="fill" objectFit="cover" />
         ) : (
-          <Image src={Objects.src} alt="Gardener Image" layout="fill" objectFit="cover" className="m-auto mt-2 !w-auto" />
+          <Image src={Objects.src} alt="Gardener Image" layout="fill" objectFit="cover" className="m-auto !w-auto" />
         )}
       </div>
       <div className="truncate p-4 sm:p-6">
