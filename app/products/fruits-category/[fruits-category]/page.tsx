@@ -72,7 +72,7 @@ const DetailFruitCategoriesPage: NextPage = (): React.ReactElement => {
   };
   return (
     <div className="">
-      <div className="flex h-[229px] items-start justify-between bg-garden pl-[33px] pr-[100px]">
+      <div className="flex h-[229px] items-start justify-between bg-garden pl-[33px] lg:pr-[100px]">
         <div className="inline-flex flex-col items-start justify-start gap-[5px] py-[30px]">
           <div className="text-base font-normal leading-normal text-white">Mô tả:</div>
           <div className="text-base font-normal leading-normal text-white">
@@ -89,7 +89,7 @@ const DetailFruitCategoriesPage: NextPage = (): React.ReactElement => {
             Sử dụng: Thăm biếu bạn bè, trưng tết, để thờ,…
           </div>
         </div>
-        <div className="h-[229px] w-[236px]">
+        <div className="h-[229px] w-[236px] hidden md:block">
           <Image
             className="!static"
             src={DemoFruit.src}
