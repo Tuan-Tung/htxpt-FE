@@ -34,3 +34,8 @@ export { default as Fruit1 } from './fruit1.jpg';
 export { default as Fruit2 } from './fruit1.jpg';
 export { default as Fruit3 } from './fruit1.jpg';
 export { default as Fruit4 } from './fruit1.jpg';
+
+export { default as FruitDrying } from './Phat_thu_2_73ad2bd8c6.webp';
+export { default as FruitDryingAbout } from './fruit-drying.png';
+export { default as DryingBanner1 } from './pts.jpg';
+export { default as DryingBanner2 } from './pts1.jpg';

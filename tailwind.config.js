@@ -24,6 +24,7 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         garden: "url('../public/images/Rectangle355.png')",
+        FruitDrying: "url('../public/images/Phat_thu_2_73ad2bd8c6.webp')",
         404: "url('../public/images/404.png')",
       },
       fontFamily: {
