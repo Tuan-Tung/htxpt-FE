@@ -2,21 +2,16 @@
 
 import { NextPage } from 'next';
 import { useRouter } from 'next/navigation';
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback } from 'react';
 
-import { useFruit } from '@/components/hooks/fruit';
-import ProductCard, { Product } from '@/components/ProductCard';
+import ProductCard from '@/components/ProductCard';
 import ProductInformation from '@/components/PrroductInformation';
+import { DATA_FRUIT } from '@/mock_data/data_gardeners';
 import { DemoFruit, FruitInfoBg } from '@/public/images';
+import { Fruit } from '@/types/mock';
 
 const ListFruitsPage: NextPage = (): React.ReactElement => {
   const route = useRouter();
-
-  const { data: dataFruitCategory, onGetFruit } = useFruit({});
-
-  useEffect(() => {
-    onGetFruit;
-  }, [onGetFruit])
 
   const handelFruitCardClick = useCallback(
     (id: string | undefined) => {
@@ -35,7 +30,7 @@ const ListFruitsPage: NextPage = (): React.ReactElement => {
         weight={[1.5, 3]}
       />
       <div className="mt-8 grid gap-3 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-        {dataFruitCategory.map((fruit: Product, index: number) => (
+        {DATA_FRUIT.map((fruit: Fruit, index: number) => (
           <ProductCard
           key={fruit.category_name || 0 + index}
           isFruit

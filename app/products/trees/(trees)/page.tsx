@@ -3,21 +3,16 @@
 
 import { NextPage } from 'next';
 import { useRouter } from 'next/navigation';
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback } from 'react';
 
-import { useBonsai } from '@/components/hooks/bonsai';
-import ProductCard, { Product } from '@/components/ProductCard';
+import ProductCard from '@/components/ProductCard';
 import ProductInformation from '@/components/PrroductInformation';
+import { DATA_BONSAI } from '@/mock_data/data_gardeners';
 import { DemoFruit, Nature } from '@/public/images';
+import { Bonsai } from '@/types/mock';
 
 const ListTreesPage: NextPage = (): React.ReactElement => {
   const route = useRouter();
-
-  const { data: dataBonsai,onGetBonsai } = useBonsai({});
-
-  useEffect(() => {
-    onGetBonsai;
-  }, [onGetBonsai])
 
   const handelTreeCardClick = useCallback(
     (id: string | undefined) => {
@@ -36,7 +31,7 @@ const ListTreesPage: NextPage = (): React.ReactElement => {
        fruitQuantity={[40, 75]}
       />
       <div className="mt-8 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-        {dataBonsai.map((tree: Product, index: number) => (
+        {DATA_BONSAI.map((tree: Bonsai, index: number) => (
           <ProductCard
           key={tree.tree_name || 0 + index}
           name={tree.tree_name}

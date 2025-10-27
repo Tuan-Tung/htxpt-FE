@@ -1,11 +1,8 @@
+import { Blog } from '@/types/mock';
 import Image from 'next/image';
 import React from 'react';
 
-export type BlogCardProp = {
-  _id?: string;
-  image: string;
-  title: string;
-  short_description: string;
+export type BlogCardProp = Blog & {
   onClick?: React.MouseEventHandler<HTMLDivElement>;
 };
 

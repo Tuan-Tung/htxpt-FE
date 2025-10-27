@@ -5,19 +5,19 @@ import React, { useCallback } from 'react';
 
 import BlogCard, { BlogCardProp } from '@/components/BlogCard';
 import GardenerCard from '@/components/GardenerCard';
-import ProductCard, { Product } from '@/components/ProductCard';
+import ProductCard from '@/components/ProductCard';
 import ScrollSnapBase from '@/components/ScrollSnapBase';
 import Slide from '@/components/Slide';
 import { BLOG_TITLE, FRUIT_TITLE, GARDENER_TITLE, TREE_TITLE } from '@/constants/common';
 import { Banner1, Banner2, Banner3, Banner4, FruitAbout, FruitDryingAbout } from '@/public/images';
 
-import { TGardener } from '@/types';
+import { Blog, Bonsai, Fruit, Gardener } from '@/types/mock';
 
 type HomeContentProps = {
-  gardenersList: TGardener[];
-  fruitList: Product[];
+  gardenersList: Gardener[];
+  fruitList: Fruit[];
   blogPosts: BlogCardProp[];
-  treeList: Product[];
+  treeList: Bonsai[];
 };
 
 const contentSlide = [
@@ -99,7 +99,7 @@ const HomePageContent = ({
         <div className="w-full md:w-1/2 flex items-center">
           <div>
             <h3 className="truncate-ellipsis text-primary text-[24px] font-bold md:text-[36px]">
-              Sản phẩm tiêu biểu
+              Sản Phẩm Tiêu Biểu
             </h3>
             <p className="font-semibold lg:text-xl">Phật thủ sấy khô</p>
             <p className="py-4 pr-12 lg:text-lg">
@@ -137,7 +137,7 @@ const HomePageContent = ({
           </div>
         </div>
         <div className="grid gap-3 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-          {gardenersList.map((gardener: TGardener, index: number) => (
+          {gardenersList.slice(0, 5).map((gardener: Gardener, index: number) => (
             <GardenerCard
               _id={gardener._id}
               // onHeartIconClick={() => handleHeartIconClicked(gardener.id)}
@@ -162,7 +162,7 @@ const HomePageContent = ({
               {FRUIT_TITLE}
             </div>
             <div className="grid gap-3 grid-cols-2 lg:grid-cols-3">
-              {fruitList.map((fruit: Product, index: number) => (
+              {fruitList.slice(0, 3).map((fruit: Fruit, index: number) => (
                 <ProductCard
                   key={fruit.category_name || 0 + index}
                   isFruit
@@ -182,7 +182,7 @@ const HomePageContent = ({
               {TREE_TITLE}
             </div>
             <div className="grid grid-cols-2 gap-4 2xl:grid-cols-3">
-              {treeList.map((tree: Product, index: number) => (
+              {treeList.slice(0, 3).map((tree: Bonsai, index: number) => (
                 <ProductCard
                   key={tree.tree_name || 0 + index}
                   name={tree.tree_name}
@@ -200,8 +200,8 @@ const HomePageContent = ({
             <div className="truncate-ellipsis text-primary text-[24px] font-bold md:text-[36px]">
               {BLOG_TITLE}
             </div>
-            <div className="flex flex-col space-y-3">
-              {blogPosts.map((blog: BlogCardProp, index: number) => (
+            <div className="flex flex-col space-y-3 max-h-[calc(4*theme('spacing.64')+3*theme('spacing.3'))] overflow-y-auto pr-2">
+              {blogPosts.map((blog: Blog, index: number) => (
                 <BlogCard
                   key={blog.title + index}
                   image={FruitAbout.src}

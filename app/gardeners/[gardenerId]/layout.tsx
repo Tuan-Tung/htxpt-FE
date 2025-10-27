@@ -37,20 +37,14 @@ const GardenerLayout = ({ children }: PropsWithChildren): React.ReactElement => 
         <Link href="/" className="text-[#699C3A]">
           Hợp Tác Xã
         </Link>
-        <span className='px-2'>{">"}</span>
+        <span className="px-2">{'>'}</span>
         <Link href="/gardeners/all" className="text-[#699C3A]">
           Nhà vườn
         </Link>
-        <span className='px-2'>{">"}</span>
+        <span className="px-2">{'>'}</span>
         <span>Nhà vườn {`${gardeners?.first_name} ${gardeners?.last_name}`}</span>
       </div>
-      <DetailInfoGarden
-        name={`${gardeners?.first_name} ${gardeners?.last_name}`}
-        bonsaiQuantity={gardeners?.fruits?.length}
-        fruitQuantity={gardeners?.bonsai?.length}
-        joinedAt={gardeners?.created_at}
-        phone={gardeners?.phone}
-      />
+      <DetailInfoGarden id={params.gardenerId as string} />
       <div className="mt-[42px]">
         <div className="min-h-screen min-w-full">
           <div className="mb-[30px] inline-flex space-x-[5px]">

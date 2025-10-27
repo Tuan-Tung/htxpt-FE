@@ -4,16 +4,15 @@ import { useRouter } from 'next/navigation';
 import { useCallback, useState } from 'react';
 
 import GardenerCard from '@/components/GardenerCard';
-import { TGardener } from '@/types';
+import { Gardener } from '@/types/mock';
 
 type GardenerGridProps = {
-  items: TGardener[];
+  items: Gardener[];
 };
 
 export default function GardenerItemsGrid({ items }: GardenerGridProps) {
   const router = useRouter();
   const [gardenerLikes, setGardenerLikes] = useState<string[]>([]);
-console.log(items);
 
   const handleHeartIconClicked = useCallback(
     (id: string) => {
@@ -36,7 +35,7 @@ console.log(items);
   );
   return (
     <div className="grid gap-3 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-      {items.map((gardener: TGardener, index: number) => (
+      {items.map((gardener: Gardener, index: number) => (
         <GardenerCard
           _id={gardener._id}
           onHeartIconClick={() => handleHeartIconClicked(gardener._id)}

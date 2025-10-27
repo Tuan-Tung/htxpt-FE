@@ -1,4 +1,4 @@
-export const FOOTER_LOCATION_TEXT = 'Địa chỉ: Đắc Sở, Hoài Đức, Hà Nội.';
+export const FOOTER_LOCATION_TEXT = 'Địa chỉ: Đắc Sở, Dương Hòa, Hà Nội.';
 
 export const FOOTER_EMAIL_TEXT = 'htxphathudacso@gmail.com';
 

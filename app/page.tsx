@@ -1,16 +1,11 @@
 'use client';
 
 import { NextPage } from 'next';
-import { useEffect } from 'react';
 
 import { Gardener } from '@/components/GardenerCard';
-import { useBlog } from '@/components/hooks/blog';
-import { useBonsai } from '@/components/hooks/bonsai';
-import { useFruitCategory } from '@/components/hooks/fruit';
-import { useGardener } from '@/components/hooks/gardener';
 import HomePageContent from '@/components/Pages/HomePageContent';
+import { DATA_BLOG, DATA_BONSAI, DATA_FRUIT, DATA_GARDENERS } from '@/mock_data/data_gardeners';
 import { Nature } from '@/public/images';
-// import { useSelector } from '@/stores/store';
 
 export const gardenersList: Gardener[] = [
   {
@@ -66,28 +61,13 @@ export const gardenersList: Gardener[] = [
 ];
 
 const Home: NextPage = () => {
-  // const { gardeners } = useSelector((state) => state.gardener);
-  // const { fruits } = useSelector((state) => state.product);
-  // console.log('fruits', fruits);
-  const { data, onGetGarden } = useGardener({limit: 5});
-  const { data: dataFruitCategory, onGetFruitCategory } = useFruitCategory();
-  const { data: dataBonsai,onGetBonsai } = useBonsai({});
-  const { data: dataBlog, onGetBlog } = useBlog({});
-
-
-  useEffect(() => {
-    onGetGarden;
-    onGetFruitCategory;
-    onGetBonsai;
-    onGetBlog;
-  }, [onGetGarden, onGetFruitCategory,onGetBonsai,onGetBlog])
 
   return (
     <HomePageContent
-      gardenersList={data}
-      fruitList={dataFruitCategory}
-      blogPosts={dataBlog}
-      treeList={dataBonsai}
+      gardenersList={DATA_GARDENERS}
+      fruitList={DATA_FRUIT}
+      blogPosts={DATA_BLOG}
+      treeList={DATA_BONSAI}
     />
   );
 };

@@ -2,9 +2,9 @@ import { About, Commit, History, Human_Resources, Strategy, System } from '@/pub
 import { AboutCategories, SideBarItems } from '@/types';
 
 export const GARDENER_TITLE = 'Nhà vườn';
-export const FRUIT_TITLE = 'Phân Loại Quả';
-export const BLOG_TITLE = 'Bài viết mới nhất';
-export const TREE_TITLE = 'Phân Loại Cây';
+export const FRUIT_TITLE = 'Phật Thủ Trưng Bày';
+export const BLOG_TITLE = 'Bài Viết Mới Nhất';
+export const TREE_TITLE = 'Cây Bonsai';
 export const EMPTY_PAGE_TEXT = 'Chưa có thông tin';
 
 export const SIDEBAR_ITEM = {
