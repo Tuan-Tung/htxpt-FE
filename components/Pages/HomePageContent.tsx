@@ -63,12 +63,12 @@ const HomePageContent = ({
     },
     [route]
   );
-  const handelBlogCardClick = useCallback(
-    (id: string | undefined) => {
-      route.push(`/blog/${id}`);
-    },
-    [route]
-  );
+  // const handelBlogCardClick = useCallback(
+  //   (id: string | undefined) => {
+  //     route.push(`/blog/${id}`);
+  //   },
+  //   [route]
+  // );
 
   return (
     <div className="space-y-8">
@@ -202,13 +202,15 @@ const HomePageContent = ({
             </div>
             <div className="flex flex-col space-y-3 max-h-[calc(4*theme('spacing.64')+3*theme('spacing.3'))] overflow-y-auto pr-2">
               {blogPosts.map((blog: Blog, index: number) => (
+                <Link href={blog?.link || "#"} target="_blank" rel="noopener noreferrer">
                 <BlogCard
                   key={blog.title + index}
                   image={FruitAbout.src}
                   short_description={blog.short_description}
                   title={blog.title}
-                  onClick={() => handelBlogCardClick(blog?._id)}
+                  // onClick={() => handelBlogCardClick(blog?._id)}
                 />
+                </Link>
               ))}
             </div>
           </div>

@@ -3,19 +3,19 @@ import Image from 'next/image';
 import React from 'react';
 
 export type BlogCardProp = Blog & {
-  onClick?: React.MouseEventHandler<HTMLDivElement>;
+  // onClick?: React.MouseEventHandler<HTMLDivElement>;
 };
 
 const BlogCard = ({
   title,
   short_description,
   image,
-  onClick,
+  // onClick,
 }: BlogCardProp): React.ReactElement => {
   return (
     <div
       className="flex max-h-[125px] w-full cursor-pointer overflow-hidden rounded-lg bg-white shadow-md"
-      onClick={onClick}
+      // onClick={onClick}
     >
       <div className="w-1/2 shrink-0">
         <Image src={image} alt={title} layout="responsive" width={1} height={1} objectFit="cover" />

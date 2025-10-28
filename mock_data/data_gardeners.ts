@@ -87,7 +87,12 @@ export const DATA_FRUIT = [
     "key": "phật thủ loại 1",
     "isFruit": true,
     "category_name": "Phật Thủ Loại 1",
-    "image": "",
+    "image": "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761662958/samples/food/Qu%E1%BA%A3_6_brjvwh.png",
+    "imgList": [
+      "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761662957/samples/food/Qu%E1%BA%A3_8_mi9gdp.png",
+      "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761662957/samples/food/Qu%E1%BA%A3_9_petmcn.png", 
+      "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761662959/samples/food/Qu%E1%BA%A3_7_z5nciw.png"
+    ],
     "range_price": "150.000 - 250.000",
     "shape": "Ngón tay thon dài, uốn cong tự nhiên",
     "dimeter": "8-12 cm",
@@ -98,7 +103,12 @@ export const DATA_FRUIT = [
     "key": "phật thủ loại 2",
     "isFruit": true,
     "category_name": "Phật Thủ Loại 2",
-    "image": "",
+    "image": "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761662959/samples/food/Qu%E1%BA%A3_11_lzjdy7.png",
+    "imgList": [
+      "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761662960/samples/food/Qu%E1%BA%A3_4_kebfle.png",
+      "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761662957/samples/food/Qu%E1%BA%A3_10_xosoae.png",
+      "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761662960/samples/food/Qu%E1%BA%A3_5_okeao5.png"
+    ],
     "range_price": "150.000 - 250.000",
     "shape": "Bàn tay Phật mở rộng, ngón đều",
     "dimeter": "10-14 cm",
@@ -109,7 +119,12 @@ export const DATA_FRUIT = [
     "key": "phật thủ đặc biệt",
     "isFruit": true,
     "category_name": "Phật Thủ Đặc Biệt",
-    "image": "",
+    "image": "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761662960/samples/food/Qu%E1%BA%A3_3_jmcbh0.png",
+    "imgList": [
+      "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761662962/samples/food/Qu%E1%BA%A3_1_wt2etz.png",
+      "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761662963/samples/food/Qu%E1%BA%A3_2_gby678.png",
+      "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761662959/samples/food/Qu%E1%BA%A3_7_z5nciw.png"
+    ],
     "range_price": "500.000 - 1.000.000",
     "shape": "Hình rồng cuốn, vàng óng ánh, hương quyến rũ",
     "dimeter": "18-22 cm",
@@ -120,7 +135,13 @@ export const DATA_FRUIT = [
     "key": "phật thủ loại 3",
     "isFruit": true,
     "category_name": "Phật Thủ Loại 3",
-    "image": "",
+    "image": "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761662955/samples/food/Qu%E1%BA%A3_14_wa8ot8.png",
+    "imgList": [
+      "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761662964/samples/food/Qu%E1%BA%A3_16_vxd8fk.png",
+      "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761662955/samples/food/Qu%E1%BA%A3_12_mf3dmd.png",
+      "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761662955/samples/food/Qu%E1%BA%A3_13_k91nvd.png",
+      "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761662955/samples/food/Qu%E1%BA%A3_15_mzq02i.png"
+    ],
     "range_price": "150.000 - 250.000",
     "shape": "Ngón tay Phật chụm lại, cân đối",
     "dimeter": "9-13 cm",
@@ -132,130 +153,118 @@ export const DATA_BONSAI = [
   {
     "_id": "21",
     "tree_name": "Bonsai Phật Thủ Cổ Thụ",
-    "image": "https://res.cloudinary.com/dknfeccra/image/upload/v1761379733/samples/fruit/02521f1b-5149-40ba-945b-7a07e521c632_yyizw6.jpg",
+    "image": "https://res.cloudinary.com/dknfeccra/image/upload/v1761660878/sam/z7154150886897_35a1e8d7c169d8622337020c5107b096_rofviq.jpg",
     "quantity": 5,
-    "description": "Cây 50 năm tuổi, dáng thế rồng bay, rễ bám đá tự nhiên."
+    "description": "Cây 50 năm tuổi, dáng thế rồng bay, rễ bám đá tự nhiên.",
+    "imgList": [
+      "https://res.cloudinary.com/dknfeccra/image/upload/v1761660878/sam/z7154150886897_35a1e8d7c169d8622337020c5107b096_rofviq.jpg",
+      "https://res.cloudinary.com/dknfeccra/image/upload/v1761660878/sam/z7154138147362_209a65838d821c2c87f74d7106ac0c9e_xoi0wk.jpg",
+      "https://res.cloudinary.com/dknfeccra/image/upload/v1761660878/sam/z7154150886897_35a1e8d7c169d8622337020c5107b096_rofviq.jpg"
+    ],
+    "story": "Cây Phật Thủ cổ thụ 50 năm tuổi, dáng rồng uốn lượn trên đá tự nhiên. Mỗi quả vàng óng như bàn tay Phật ban phước. Hương thơm quyện quanh, biểu tượng trường thọ và thịnh vượng."
   },
   {
     "_id": "22",
     "tree_name": "Bonsai Phật Thủ Mini",
-    "image": "https://res.cloudinary.com/dknfeccra/image/upload/v1761379734/samples/fruit/e8244af3-5f7e-43c6-b102-80a11b370684_yrx4cv.jpg",
+    "image": "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761664384/samples/food/z5154108546797_93ee4c00abcac4c5647c0b4803186513_ins1me.jpg",
     "quantity": 15,
-    "description": "Kích thước nhỏ gọn, quả Phật Thủ trang trí quanh năm."
+    "description": "Kích thước nhỏ gọn, quả Phật Thủ trang trí quanh năm.",
+    "imgList": [
+      "https://res.cloudinary.com/dknfeccra/image/upload/v1761660878/sam/z7154138147362_209a65838d821c2c87f74d7106ac0c9e_xoi0wk.jpg",
+      "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761664381/samples/food/z5279252675689_b998b5fdf730d216546bc050558900f2_kkwoyl.jpg",
+      "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761664379/samples/food/z5154108556768_5221d49ff348172e42aa0d5172baa7bc_v7sfqq.jpg"
+    ],
+    "story": "Bonsai mini nhỏ nhắn, quả Phật Thủ vàng tươi treo quanh năm. Dễ chăm, phù hợp bàn làm việc. Mang ý nghĩa may mắn, tài lộc nhỏ mà tinh tế."
   },
   {
     "_id": "23",
     "tree_name": "Bonsai Phật Thủ Hữu Cơ",
-    "image": "https://res.cloudinary.com/dknfeccra/image/upload/v1761379733/samples/fruit/02521f1b-5149-40ba-945b-7a07e521c632_yyizw6.jpg",
+    "image": "https://res.cloudinary.com/dknfeccra/image/upload/v1761660878/sam/z7154150886897_35a1e8d7c169d8622337020c5107b096_rofviq.jpg",
     "quantity": 8,
-    "description": "Trồng hữu cơ, quả vàng óng, hương thơm quyến rũ."
+    "description": "Trồng hữu cơ, quả vàng óng, hương thơm quyến rũ.",
+    "imgList": [
+      "https://res.cloudinary.com/dknfeccra/image/upload/v1761660878/sam/z7154150886897_35a1e8d7c169d8622337020c5107b096_rofviq.jpg",
+      "https://res.cloudinary.com/dknfeccra/image/upload/v1761379735/samples/fruit/huu-co-1.jpg",
+      "https://res.cloudinary.com/dknfeccra/image/upload/v1761379735/samples/fruit/huu-co-2.jpg"
+    ],
+    "story": "Trồng hoàn toàn hữu cơ, không phân hóa học. Quả Phật Thủ vàng óng, thơm nồng tự nhiên. Lá xanh mướt, thân cây khỏe mạnh, an toàn tuyệt đối khi dùng làm trà, mứt."
   },
   {
     "_id": "24",
     "tree_name": "Bonsai Phật Thủ Đôi",
-    "image": "https://res.cloudinary.com/dknfeccra/image/upload/v1761379734/samples/fruit/e8244af3-5f7e-43c6-b102-80a11b370684_yrx4cv.jpg",
+    "image": "https://res.cloudinary.com/dknfeccra/image/upload/v1761660878/sam/z7154138147362_209a65838d821c2c87f74d7106ac0c9e_xoi0wk.jpg",
     "quantity": 3,
-    "description": "Cặp cây song sinh, biểu tượng phú quý."
+    "description": "Cặp cây song sinh, biểu tượng phú quý.",
+    "imgList": [
+      "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761664379/samples/food/z6148512093627_702ef9ca21d32c19a867aff1323b834b_l8dfet.jpg",
+      "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761664379/samples/food/z5154108556768_5221d49ff348172e42aa0d5172baa7bc_v7sfqq.jpg",
+      "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761664380/samples/food/z7154471051612_5b32b784eec4dffd336ec0dd348615a5_bey75i.jpg"
+    ],
+    "story": "Cặp song sinh hiếm có, hai cây cùng gốc, cùng dáng. Biểu tượng phu thê viên mãn, phú quý song hành. Quả vàng đồng đều, hương thơm hòa quyện."
   },
   {
     "_id": "25",
     "tree_name": "Bonsai Phật Thủ Thác Đổ",
-    "image": "",
+    "image": "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761664380/samples/food/z7154471051612_5b32b784eec4dffd336ec0dd348615a5_bey75i.jpg",
     "quantity": 4,
-    "description": "Dáng thác đổ hùng vĩ, quả treo lủng lẳng."
+    "description": "Dáng thác đổ hùng vĩ, quả treo lủng lẳng.",
+    "imgList": [
+      "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761664380/samples/food/z5279252666255_38125b3711e49a12596c155205814d68_fkmlhj.jpg",
+      "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761664380/samples/food/z7154471051612_5b32b784eec4dffd336ec0dd348615a5_bey75i.jpg",
+      "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761664379/samples/food/z6148512093627_702ef9ca21d32c19a867aff1323b834b_l8dfet.jpg"
+    ],
+    "story": "Dáng thác đổ mạnh mẽ, thân uốn cong như suối chảy. Quả Phật Thủ treo lủng lẳng từng chùm vàng rực. Tạo cảm giác hùng vĩ, thịnh vượng cho không gian sống."
   },
   {
     "_id": "26",
     "tree_name": "Bonsai Phật Thủ Nhật Bản",
-    "image": "",
+    "image": "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761664384/samples/food/z5154108546797_93ee4c00abcac4c5647c0b4803186513_ins1me.jpg",
     "quantity": 10,
-    "description": "Kỹ thuật uốn Shohin, quả nhỏ đều đẹp."
+    "description": "Kỹ thuật uốn Shohin, quả nhỏ đều đẹp.",
+    "imgList": [
+     "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761664380/samples/food/z5279252666255_38125b3711e49a12596c155205814d68_fkmlhj.jpg",
+      "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761664380/samples/food/z7154471051612_5b32b784eec4dffd336ec0dd348615a5_bey75i.jpg",
+      "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761664379/samples/food/z6148512093627_702ef9ca21d32c19a867aff1323b834b_l8dfet.jpg"
+    ],
+    "story": "Áp dụng kỹ thuật Shohin Nhật Bản, cây nhỏ tinh xảo. Quả Phật Thủ đều đặn, vàng óng ánh. Tỷ lệ hoàn hảo, mang vẻ đẹp thiền định, thanh lịch."
   },
   {
     "_id": "27",
     "tree_name": "Bonsai Phật Thủ Vàng Ròng",
-    "image": "",
+    "image": "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761664380/samples/food/z5279252666255_38125b3711e49a12596c155205814d68_fkmlhj.jpg",
     "quantity": 2,
-    "description": "Quả vàng rực, lá xanh mướt, cao cấp trưng bày."
+    "description": "Quả vàng rực, lá xanh mướt, cao cấp trưng bày.",
+    "imgList": [
+      "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761664379/samples/food/z6148512093627_702ef9ca21d32c19a867aff1323b834b_l8dfet.jpg",
+      "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761664379/samples/food/z5154108556768_5221d49ff348172e42aa0d5172baa7bc_v7sfqq.jpg",
+      "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761664380/samples/food/z7154471051612_5b32b784eec4dffd336ec0dd348615a5_bey75i.jpg"
+    ],
+    "story": "Quả vàng rực như vàng ròng, lá xanh bóng mượt. Cây cao cấp, chỉ dành trưng bày phòng khách VIP. Mỗi quả toát lên vẻ sang trọng, quyền quý."
   },
   {
     "_id": "28",
     "tree_name": "Bonsai Phật Thủ Rừng",
-    "image": "",
+    "image": "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761664379/samples/food/z6148512093627_702ef9ca21d32c19a867aff1323b834b_l8dfet.jpg",
     "quantity": 6,
-    "description": "Dáng rừng tự nhiên, nhiều tầng quả."
+    "description": "Dáng rừng tự nhiên, nhiều tầng quả.",
+    "imgList": [
+      "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761664380/samples/food/z7154471051612_5b32b784eec4dffd336ec0dd348615a5_bey75i.jpg",
+      "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761664379/samples/food/z6148512093627_702ef9ca21d32c19a867aff1323b834b_l8dfet.jpg",
+      "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761664384/samples/food/z5154108546797_93ee4c00abcac4c5647c0b4803186513_ins1me.jpg"
+    ],
+    "story": "Dáng rừng tự nhiên, nhiều tầng tán sum suê. Quả Phật Thủ mọc từng chùm theo tầng lớp. Gợi hình ảnh rừng vàng biển bạc, phồn vinh thịnh vượng."
   },
-  {
-    "_id": "29",
-    "tree_name": "Bonsai Phật Thủ Phong Thủy",
-    "image": "",
-    "quantity": 7,
-    "description": "Mang tài lộc, đặt bàn làm việc."
-  },
-  {
-    "_id": "210",
-    "tree_name": "Bonsai Phật Thủ Siêu Quả",
-    "image": "",
-    "quantity": 1,
-    "description": "Cây mẹ 30 quả cùng lúc, hiếm có."
-  }
 ]
 
 export const DATA_BLOG = [
-  {
-    "key": "Kỹ thuật uốn bonsai Phật Thủ-0",
-    "_id": "b1",
-    "image": "",
-    "short_description": "Hướng dẫn chi tiết uốn dây, cắt tỉa giữ dáng bonsai Phật Thủ bền đẹp.",
-    "title": "Kỹ thuật uốn bonsai Phật Thủ"
-  },
+  
   {
     "key": "Công dụng quả Phật Thủ-1",
     "_id": "b2",
     "image": "",
     "short_description": "Khám phá lợi ích sức khỏe từ trà Phật Thủ sấy khô tự nhiên.",
-    "title": "Công dụng quả Phật Thủ"
+    "title": "Công dụng quả Phật Thủ",
+    "link": "https://suckhoedoisong.vn/phat-thu-khong-chi-tho-dep-ma-con-la-vi-thuoc-quy-169220128094506124.htm",
   },
-  {
-    "key": "Chọn quả trưng Tết-2",
-    "_id": "b3",
-    "image": "",
-    "short_description": "Mẹo chọn Phật Thủ loại 1, đặc biệt để bàn thờ thêm may mắn.",
-    "title": "Chọn quả trưng Tết"
-  },
-  {
-    "key": "Lịch sử cây Phật Thủ-3",
-    "_id": "b4",
-    "image": "",
-    "short_description": "Nguồn gốc và ý nghĩa phong thủy của cây biểu tượng tài lộc.",
-    "title": "Lịch sử cây Phật Thủ"
-  },
-  {
-    "key": "Bảo quản bonsai mùa đông-4",
-    "_id": "b5",
-    "image": "",
-    "short_description": "Cách che chắn, giảm tưới giúp cây sống khỏe qua đông lạnh.",
-    "title": "Bảo quản bonsai mùa đông"
-  },
-  {
-    "key": "Làm trà Phật Thủ tại nhà-5",
-    "_id": "b6",
-    "image": "",
-    "short_description": "Công thức sấy khô và pha trà thơm ngon, tốt cho tiêu hóa.",
-    "title": "Làm trà Phật Thủ tại nhà"
-  },
-  {
-    "key": "Top 5 dáng bonsai đẹp-6",
-    "_id": "b7",
-    "image": "",
-    "short_description": "Giới thiệu các thế bonsai Phật Thủ được yêu thích nhất.",
-    "title": "Top 5 dáng bonsai đẹp"
-  },
-  {
-    "key": "Nhận biết hàng thật-7",
-    "_id": "b8",
-    "image": "",
-    "short_description": "Phân biệt Phật Thủ hữu cơ với hàng nhuộm màu hóa chất.",
-    "title": "Nhận biết hàng thật"
-  }
+ 
 ]

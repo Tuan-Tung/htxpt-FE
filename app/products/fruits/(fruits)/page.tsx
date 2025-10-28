@@ -15,7 +15,7 @@ const ListFruitsPage: NextPage = (): React.ReactElement => {
 
   const handelFruitCardClick = useCallback(
     (id: string | undefined) => {
-      route.push(`/products/fruits/${id}`);
+      route.push(`/products/fruits-category/${id}`);
     },
     [route]
   );

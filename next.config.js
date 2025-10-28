@@ -1,7 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-   domains: ['drive.google.com','res.cloudinary.com'],
+   remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        pathname: '**',
+      },
+    ],
   },
   typescript: {
     // !! WARN !!

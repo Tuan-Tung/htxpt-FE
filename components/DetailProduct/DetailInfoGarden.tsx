@@ -28,8 +28,6 @@ interface Garden {
   reviews: string;
   ordering: string;
 }
-const avatarBorder =
-  'https://res.cloudinary.com/dknfeccra/image/upload/v1761489194/sam/Khung_avt-08_zq6q53.png';
 export default function GardenerDetail({ id }: { id: string }) {
   const dataDetail: Garden | undefined = DATA_GARDENERS_DETAIL.find((item) => item._id === id);
   if (!dataDetail) {
@@ -63,13 +61,8 @@ export default function GardenerDetail({ id }: { id: string }) {
         <div className="min-h-0 md:min-h-[540px] p-6 rounded-xl grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
           {/* Left: Avatar full height */}
           <div className="relative h-full aspect-square">
-            <Image
-              src={dataDetail.image}
-              alt="Chủ vườn"
-              fill
-              className="rounded-full object-cover"
-            />
-            <Image src={avatarBorder} alt="Viền" fill className="pointer-events-none" />
+            <Image src={dataDetail.image} alt="Chủ vườn" fill className=" object-cover" />
+            {/* <Image src={avatarBorder} alt="Viền" fill className="pointer-events-none" /> */}
           </div>
 
           {/* Right: Info */}
@@ -99,7 +92,6 @@ export default function GardenerDetail({ id }: { id: string }) {
           </div>
         </div>
 
-        {/* Process, Price, Review - Bordered, no bg */}
         <div className="border-2 border-[#65a30d] rounded-xl p-6 space-y-6">
           <div>
             <h3 className="font-semibold text-[#65a30d] mb-1">Quy trình</h3>
@@ -115,8 +107,14 @@ export default function GardenerDetail({ id }: { id: string }) {
           </div>
         </div>
 
+        <div className='flex justify-center'>
+          <div className="w-[300px] h-[1px] bg-[#65a30d]" />
+        </div>
         {/* Carousel Gallery */}
         <div className="rounded-xl overflow-hidden">
+          <h2 className="text-center text-[#65a30d] text-2xl font-bold mb-4">
+            Sản phẩm của nhà vườn
+          </h2>
           <Slider {...sliderSettings} autoplay dots>
             {dataDetail.images.fruits.map((src, i) => (
               <div key={i} className="relative h-64 md:h-[650px]">

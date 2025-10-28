@@ -33,7 +33,7 @@ const GardenerLayout = ({ children }: PropsWithChildren): React.ReactElement => 
   dispatch(gardenerActions.setGardeners(data));
   return (
     <div>
-      <div>
+      {/* <div>
         <Link href="/" className="text-[#699C3A]">
           Hợp Tác Xã
         </Link>
@@ -43,9 +43,9 @@ const GardenerLayout = ({ children }: PropsWithChildren): React.ReactElement => 
         </Link>
         <span className="px-2">{'>'}</span>
         <span>Nhà vườn {`${gardeners?.first_name} ${gardeners?.last_name}`}</span>
-      </div>
+      </div> */}
       <DetailInfoGarden id={params.gardenerId as string} />
-      <div className="mt-[42px]">
+      {/* <div className="mt-[42px]">
         <div className="min-h-screen min-w-full">
           <div className="mb-[30px] inline-flex space-x-[5px]">
             <div className="min-w-[120px] flex-1">
@@ -79,7 +79,7 @@ const GardenerLayout = ({ children }: PropsWithChildren): React.ReactElement => 
           </div>
           {children}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

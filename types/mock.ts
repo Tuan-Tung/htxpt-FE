@@ -18,6 +18,7 @@ export interface Fruit {
   shape: string;
   dimeter: string;
   weight: string;
+  imgList?: string[]
 }
 export interface Bonsai {
   _id: string;
@@ -25,6 +26,8 @@ export interface Bonsai {
   image: string;
   quantity: number;
   description: string;
+  imgList?: string[];
+  story?: string;
 }
 export interface Blog {
   key: string;
@@ -32,4 +35,5 @@ export interface Blog {
   image: string;
   short_description: string;
   title: string;
+  link?: string
 }

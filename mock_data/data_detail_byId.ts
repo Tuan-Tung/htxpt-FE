@@ -291,7 +291,7 @@ export const DATA_GARDENERS_DETAIL =[
     "first_name": "Nhà vườn",
     "last_name": "Lương Anh Đức",
     "rating_avg": 4.7,
-    "image": "images/luonganhduc_owner.jpg",
+    "image": "https://res.cloudinary.com/dkzpakm7v/image/upload/v1761662959/samples/food/Qu%E1%BA%A3_7_z5nciw.png",
     "location": "Đắc Sở - Dương Hòa - Hà Nội",
     "phone": "0989568056",
     "product_category": ["Bonsai", "Phật Thủ Sấy", "Phật Thủ Trưng Bày"],
