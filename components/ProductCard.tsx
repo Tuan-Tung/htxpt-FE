@@ -1,11 +1,10 @@
-
-import _ from 'lodash';
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
 
 import Icon, { ICONS } from '@/components/Icon';
 import { DESCRIPTION, DIMETER, QUANTITY, RANG_PRICE, SHAPE, WEIGHT } from '@/constants/about';
 import { DemoFruit, DemoTree } from '@/public/images';
+import { Skeleton } from '@/components/ui/Skeleton';
 
 export type Product = {
   _id?: string;
@@ -22,10 +21,6 @@ export type Product = {
   description?: string;
 };
 
-type ProductCardProps = Product & {
-  onClick?: React.MouseEventHandler<HTMLDivElement>;
-};
-
 const ProductDetail: React.FC<{ icon: keyof typeof ICONS; label: string; value: any; unit?: string }> = ({ icon, label, value, unit }) => (
   <div className="mb-1.5 box-border flex w-full flex-1 items-center justify-start px-6 text-[14px] sm:text-sm md:px-4 md:text-base lg:px-2 lg:text-lg">
     <Icon color="#699C3A" name={icon} size={20} aria-label={label} />
@@ -35,6 +30,9 @@ const ProductDetail: React.FC<{ icon: keyof typeof ICONS; label: string; value: 
   </div>
 );
 
+type ProductCardProps = Product & {
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
+};
 const ProductCard = ({
   range_price,
   isFruit,
@@ -47,20 +45,22 @@ const ProductCard = ({
   image,
   onClick,
 }: ProductCardProps): React.ReactElement => {
+  const [loaded, setLoaded] = useState(false);
+  const src = image || (isFruit ? DemoFruit.src : DemoTree.src);
+
   return (
     <div onClick={onClick} className="flex max-w-sm cursor-pointer flex-col overflow-hidden rounded-lg bg-white shadow-lg">
       <div className="aspect-w-1 aspect-h-1 relative w-full">
-        {!image ? <Image
-          src={isFruit ? DemoFruit.src : DemoTree.src}
+        {!loaded && <Skeleton className="absolute inset-0 h-full w-full rounded-t-lg bg-gray-200" />}
+        <Image
+          src={src}
           alt={isFruit ? 'Fruit Image' : 'Tree Image'}
-          layout="fill"
+          fill
           objectFit="cover"
-        /> : <Image
-          src={image}
-          alt={isFruit ? 'Fruit Image' : 'Tree Image'}
-          layout="fill"
-          objectFit="cover"
-        /> }
+          loading="lazy"
+          className={`transition-opacity ${loaded ? 'opacity-100' : 'opacity-0'}`}
+          onLoad={() => setLoaded(true)}
+        />
       </div>
       <div className="flex flex-col items-center py-6">
         <div className="mb-3 text-lg font-bold">{name}</div>

@@ -31,6 +31,7 @@ const Header: React.FC = (): React.ReactElement => {
       <div className="flex flex-1 justify-between md:justify-end">
         <div onClick={handleOnMenuClick} className="flex items-center md:hidden">
           <Icon name="ic_menu_outline" color="#fff" size={14} />
+          <h2 className="text-lg text-white font-bold ml-2">{WELCOME_TEXT}</h2>
         </div>
         {/* <UserAccountNav name="khanh" /> */}
       </div>
