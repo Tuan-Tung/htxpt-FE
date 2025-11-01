@@ -28,26 +28,26 @@ const DetailProductCard = (props: PropsDetailProduct) => {
                 <div className="inline-flex flex-col items-start justify-start gap-[5px]">
                   <div className="inline-flex items-center justify-start gap-[5px]">
                     <Icon color="#699C3A" name="ic_dollar_sign" size={20} aria-label="Location Icon" />
-                    <div className="Gi  text-base font-normal leading-normal text-black">Giá:</div>
+                    <div className="Gi  text-lg font-normal leading-normal text-black">Giá:</div>
                   </div>
                   <div className="inline-flex items-center justify-start gap-[5px]">
                     <Icon color="#699C3A" name="ic_status_outline" size={20} aria-label="Location Icon" />
-                    <div className=" text-base font-normal leading-normal text-black">Tình trạng:</div>
+                    <div className=" text-lg font-normal leading-normal text-black">Tình trạng:</div>
                   </div>
                   <div className="inline-flex items-center justify-start gap-[5px]">
                     <Icon color="#699C3A" name="ic_cube_outline" size={20} aria-label="Location Icon" />
-                    <div className=" text-base font-normal leading-normal text-black">Mã:</div>
+                    <div className=" text-lg font-normal leading-normal text-black">Mã:</div>
                   </div>
                   <div className="inline-flex items-center justify-start gap-[5px]">
                     <Icon color="#699C3A" name="ic_menu_outline" size={20} aria-label="Location Icon" />
-                    <div className=" text-base font-normal leading-normal text-black">Danh mục:</div>
+                    <div className=" text-lg font-normal leading-normal text-black">Danh mục:</div>
                   </div>
                 </div>
                 <div className="inline-flex flex-col items-start justify-start gap-[5px]">
-                  <div className=" text-base font-normal leading-normal text-black">Liên hệ nhà vườn</div>
-                  <div className=" text-base font-normal leading-normal text-lime-600">{quantity > 0 ? `${PRODUCT_STATUS.AVAILABLE} ( ${quantity} quả)` : PRODUCT_STATUS.OUT_OF_STOCK}</div>
-                  <div className=" text-base font-normal leading-normal text-black">N/A</div>
-                  <div className=" text-base font-normal leading-normal text-lime-600">{name}</div>
+                  <div className=" text-lg font-normal leading-normal text-black">Liên hệ nhà vườn</div>
+                  <div className=" text-lg font-normal leading-normal text-lime-600">{quantity > 0 ? `${PRODUCT_STATUS.AVAILABLE} ( ${quantity} quả)` : PRODUCT_STATUS.OUT_OF_STOCK}</div>
+                  <div className=" text-lg font-normal leading-normal text-black">N/A</div>
+                  <div className=" text-lg font-normal leading-normal text-lime-600">{name}</div>
                 </div>
               </div>
               {CommonProduct}

@@ -22,7 +22,7 @@ export type Product = {
 };
 
 const ProductDetail: React.FC<{ icon: keyof typeof ICONS; label: string; value: any; unit?: string }> = ({ icon, label, value, unit }) => (
-  <div className="mb-1.5 box-border flex w-full flex-1 items-center justify-start px-6 text-[14px] sm:text-sm md:px-4 md:text-base lg:px-2 lg:text-lg">
+  <div className="mb-1.5 box-border flex w-full flex-1 items-center justify-start px-6 text-[14px] sm:text-sm md:px-4 md:text-lg lg:px-2 lg:text-lg">
     <Icon color="#699C3A" name={icon} size={20} aria-label={label} />
     <span className="truncate-ellipsis max-w-full pl-2">
       {label}: {value || 0} {unit}
@@ -63,7 +63,7 @@ const ProductCard = ({
         />
       </div>
       <div className="flex flex-col items-center py-6">
-        <div className="mb-3 text-lg font-bold">{name}</div>
+        <div className="mb-3 text-lg font-bold truncate-ellipsis max-w-full pl-2">{name}</div>
         {isFruit ? (
           <>
             <ProductDetail icon="ic_fruit_outline" label={SHAPE} value={shape} />

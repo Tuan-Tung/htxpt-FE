@@ -54,14 +54,14 @@ const GardenerCard = ({
       <div className="p-4 sm:p-6">
         <div className="flex items-center justify-between gap-1">
           <div className="truncate text-lg font-bold sm:text-xl">{last_name}</div>
-          <div className="text-primary flex items-center gap-[2px] text-sm sm:text-base">
+          <div className="text-primary flex items-center gap-[2px] text-sm sm:text-lg">
             {rating_avg ? (
               <>
                 <Icon name="ic_star" color="#699C3A" size={13} />
                 {rating_avg}
               </>
             ) : (
-              <div className="text-sm sm:text-base">New</div>
+              <div className="text-sm sm:text-lg">New</div>
             )}
           </div>
         </div>

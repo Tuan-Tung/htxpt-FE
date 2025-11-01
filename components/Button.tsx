@@ -42,7 +42,7 @@ const Button = (props: ButtonProps): React.ReactElement => {
     size === 'sm'
       ? 'px-1 py-0.5 text-sm font-light'
       : size === 'md'
-      ? 'px-2 py-1 text-base font-medium'
+      ? 'px-2 py-1 text-lg font-medium'
       : size === 'lg'
       ? 'px-3 py-2 text-lg font-semibold'
       : size === 'xl'

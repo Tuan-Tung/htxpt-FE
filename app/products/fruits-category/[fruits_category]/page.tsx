@@ -33,7 +33,7 @@ const dataDetail: Fruit | undefined = DATA_FRUIT.find((item) => item._id === par
     return <div>Không tìm cây</div>;
   }
   return (
-    <div className="min-h-screen bg-gradient-to-b from-yellow-50 to-orange-50 p-4 md:p-8">
+    <div className="min-h-screen bg-gradient-to-b from-green-50 to-lime-50 p-4 md:p-8">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-3xl md:text-5xl font-bold text-amber-800 text-center mb-6">
           Quả Phật Thủ
@@ -42,7 +42,7 @@ const dataDetail: Fruit | undefined = DATA_FRUIT.find((item) => item._id === par
         <div className="grid md:grid-cols-2 gap-6 mb-8">
           <div className="bg-white rounded-xl shadow-lg p-6">
             <h2 className="text-xl font-semibold text-amber-700 mb-4">Thông tin</h2>
-            <div className="space-y-2 text-gray-700 text-sm md:text-base">
+            <div className="space-y-2 text-gray-700 text-sm md:text-lg">
               <p><strong>Tên:</strong> Phật Thủ (Citrus medica var. sarcodactylis)</p>
               <p><strong>Đường kính:</strong> 15-25 cm</p>
               <p><strong>Trọng lượng:</strong> 500g - 1.5kg</p>
@@ -53,7 +53,7 @@ const dataDetail: Fruit | undefined = DATA_FRUIT.find((item) => item._id === par
 
           <div className="bg-white rounded-xl shadow-lg p-6">
             <h2 className="text-xl font-semibold text-amber-700 mb-4">Mô tả</h2>
-            <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+            <p className="text-gray-700 text-sm md:text-lg leading-relaxed">
               Quả Phật Thủ hình bàn tay Phật, vỏ vàng thơm, biểu tượng may mắn. Dùng thờ cúng, trà, mứt, tinh dầu.
             </p>
           </div>
