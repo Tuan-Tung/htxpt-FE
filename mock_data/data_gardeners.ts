@@ -207,7 +207,7 @@ export const DATA_BONSAI = [
   },
   {
     _id: '21',
-    tree_name: '🌿 CỬA LÒNG TRANH CHÂU',
+    tree_name: '🌿 CỬU LONG TRANH CHÂU',
     image: 'https://res.cloudinary.com/dkzpakm7v/image/upload/v1761969404/samples/anh/2_czukia.jpg',
     quantity: 5,
     description: 'Cây dáng thế rồng bay, rễ bám đá tự nhiên.',

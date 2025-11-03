@@ -10,6 +10,7 @@ export const EMPTY_PAGE_TEXT = 'Chưa có thông tin';
 export const SIDEBAR_ITEM = {
   HOME: 'Trang chủ',
   ABOUT: 'Giới thiệu',
+  STORY: 'Câu chuyện sản phẩm',
   'FRUIT-INFORMATION': 'Quả phật thủ',
   GARDENERS: 'Nhà vườn',
   PRODUCTS: 'Danh mục sản phẩm',
@@ -50,6 +51,11 @@ export const NAVBAR_ITEMS: SideBarItems[] = [
     code: 'ABOUT',
     icon: 'ic_browser_outline',
     name: SIDEBAR_ITEM['ABOUT'],
+  },
+  {
+    code: 'STORY',
+    icon: 'ic_star_outline',
+    name: SIDEBAR_ITEM['STORY'],
   },
   {
     code: 'FRUIT-INFORMATION',

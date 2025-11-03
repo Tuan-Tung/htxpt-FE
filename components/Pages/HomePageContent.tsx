@@ -3,14 +3,31 @@ import { useRouter } from 'next/navigation';
 import React, { lazy, Suspense, useCallback } from 'react';
 
 import { BLOG_TITLE, FRUIT_TITLE, GARDENER_TITLE, TREE_TITLE } from '@/constants/common';
-import { FruitAbout } from '@/public/images';
-
+import Slide from '@/components/Slide';
 import { BlogCardProp } from '@/components/BlogCard';
 import { Blog, Bonsai, Fruit, Gardener } from '@/types/mock';
+import Image from 'next/image';
+import ScrollSnapBase from '@/components/ScrollSnapBase';
+import { Banner1, Banner2, Banner3, Banner4, FruitAbout, FruitDryingAbout } from '@/public/images';
 
 const BlogCard = lazy(() => import('@/components/BlogCard'));
 const GardenerCard = lazy(() => import('@/components/GardenerCard'));
 const ProductCard = lazy(() => import('@/components/ProductCard'));
+
+const contentSlide = [
+  {
+    id: 1,
+    content: <Slide img={Banner1} />,
+  },
+  {
+    id: 2,
+    content: <Slide img={Banner2} />,
+  },
+  {
+    id: 3,
+    content: <Slide img={Banner4} />,
+  },
+];
 
 type HomeContentProps = {
   gardenersList: Gardener[];
@@ -35,7 +52,7 @@ const HomePageContent = ({
     (id: string | undefined) => route.push(`/products/fruits-category/${id}`),
     [route]
   );
-  // const handelFruitDryingClick = useCallback(() => route.push(`/products/fruit-drying`), [route]);
+  const handelFruitDryingClick = useCallback(() => route.push(`/products/fruit-drying`), [route]);
   const handelTreeCardClick = useCallback(
     (id: string | undefined) => route.push(`/products/trees/${id}`),
     [route]
@@ -43,7 +60,61 @@ const HomePageContent = ({
 
   return (
     <div className="space-y-8">
-      {/* ... giữ nguyên phần banner & about ... */}
+      <div className="flex lg:space-x-6">
+        <div className="hidden w-3/5  shrink-0 lg:block">
+          <div className="w-full">
+            <div className="relative h-[256px] w-full overflow-hidden rounded-lg">
+              <Image
+                width={1000}
+                height={1000}
+                src={Banner3.src}
+                alt="Home About"
+                className="h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+        <div className="h-64 w-full shrink lg:w-2/5 !m-0 md:pl-[2rem]">
+          <ScrollSnapBase
+            contentSlide={contentSlide}
+            isShowButtonHeader={true}
+            initialSlice={0}
+            hasIndicator
+          />
+        </div>
+      </div>
+      <div className="flex justify-between flex-wrap">
+        <div className="w-full md:w-1/2 flex items-center">
+          <div>
+            <h3 className="truncate-ellipsis text-primary text-[24px] font-bold md:text-[36px]">
+              Sản Phẩm Tiêu Biểu
+            </h3>
+            <p className="font-semibold lg:text-xl">Phật thủ sấy khô</p>
+            <p className="py-4 pr-12 lg:text-lg">
+              Quả phật thủ sấy, hay còn gọi là Phật thủ khô, là một sản phẩm chế biến từ quả phật
+              thủ tươi. Phật thủ, một loại trái cây thuộc họ cam quýt, có hình dáng độc đáo giống
+              như những ngón tay Phật, được sử dụng phổ biến trong ẩm thực và y học cổ truyền. Phật
+              thủ tươi chứa nhiều tinh dầu và có hương thơm đặc trưng, thường được sử dụng để làm
+              gia vị, trang trí hoặc trong các món tráng miệng.
+            </p>
+            <button
+              className="bg-[#699C3A] text-white hover:bg-white hover:text-[#699C3A] border border-[#699C3A] px-4 py-2 mb-4"
+              onClick={handelFruitDryingClick}
+            >
+              Xem chi tiết
+            </button>
+          </div>
+        </div>
+        <div className="w-full md:w-1/2 flex justify-center">
+          <Image
+            width={500}
+            height={500}
+            src={FruitDryingAbout.src}
+            alt="Home About"
+            className="h-full object-cover drop-shadow-2xl"
+          />
+        </div>
+      </div>
 
       <div className="flex flex-col space-y-4">
         <div className="flex items-center justify-between">
