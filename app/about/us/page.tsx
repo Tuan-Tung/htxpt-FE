@@ -20,21 +20,21 @@ const AboutUsPageContent: NextPage = (): React.ReactElement => {
   return (
     <div className="flex flex-col space-y-7 rounded-lg bg-white p-4 md:p-12">
       <div className="flex flex-col space-y-12 md:flex-row md:space-x-16 md:space-y-0">
-        <div className="flex flex-col space-y-12">
+        <div className="flex flex-col space-y-12 md:max-w-[70%]">
           <div className="flex flex-col items-start space-y-7">
             <div className="text-primary decoration-light_grey border-b-[3px] border-gray-300 text-[24px] font-bold md:text-[36px]">
               {VISION_TITLE_TEXT}
             </div>
-            <div className="font-body">{VISION_CONTENT_TEXT}</div>
+            <div className="font-body text-lg">{VISION_CONTENT_TEXT}</div>
           </div>
           <div className="flex flex-col items-start space-y-7 text-left md:items-end md:text-right">
             <div className="text-primary decoration-light_grey border-b-[3px] border-gray-300 text-[24px] font-bold md:text-[36px]">
               {MISSION_TITLE_TEXT}
             </div>
-            <div className="font-body">{MISSION_CONTENT_TEXT}</div>
+            <div className="font-body text-lg">{MISSION_CONTENT_TEXT}</div>
           </div>
         </div>
-        <div className="mx-auto flex max-w-[281px] justify-center md:mx-0">
+        <div className="mx-auto flex max-w-[350px] justify-center md:mx-0">
           <div className="flex flex-col space-y-2">
             <div className="flex items-end justify-center">
               <div className="w-30 h-42 relative z-10 mr-[20px] rounded-lg">
@@ -44,14 +44,12 @@ const AboutUsPageContent: NextPage = (): React.ReactElement => {
                 <div className="font-bold">
                    {CEO_NAME}
                 </div>
-                <div className="font-body">{ROLE_NAME}</div>
+                <div className="font-body text-lg">{ROLE_NAME}</div>
               </div>
             </div>
             <div className="text-center text-[14px] font-light md:text-left md:text-[18px]">
-              <span className="text-primary font-semibold">“ Đoàn kết</span> là sức mạnh… khi có sự
-              <span className="text-primary font-semibold"> chung sức</span> và{' '}
-              <span className="text-primary font-semibold">hợp tác</span>, tiếng Anh có thể đạt được
-              những điều <span className="text-primary font-semibold">tuyệt vời. ”</span>
+              <span className="text-primary font-semibold">“ Đoàn kết</span> là sức mạnh. Hướng tới xây dựng
+              <span className="text-primary font-semibold"> sản phẩm làng nghề”</span>
             </div>
           </div>
         </div>
@@ -61,7 +59,7 @@ const AboutUsPageContent: NextPage = (): React.ReactElement => {
           {CORE_VALUE_TITLE_TEXT}
         </div>
         <div>
-          <div>{CORE_VALUE_CONTENT_TEXT}</div>
+          <div className='md:max-w-[70%] text-lg'>{CORE_VALUE_CONTENT_TEXT}</div>
           <div className="mt-3 flex flex-wrap justify-center md:justify-between">
             {CoreValueItem.map((item: CoreValueContentItem) => (
               <div
@@ -72,7 +70,7 @@ const AboutUsPageContent: NextPage = (): React.ReactElement => {
                   <Image src={item.image} layout="fill" objectFit="contain" alt="Core Value" />
                 </div>
                 <div className="text-primary font-semibold">{item.title}</div>
-                <div className="font-body text-center">{item.content}</div>
+                <div className="font-body text-center text-lg">{item.content}</div>
               </div>
             ))}
           </div>

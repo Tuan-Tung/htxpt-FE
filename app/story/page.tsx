@@ -6,7 +6,7 @@ import Image from 'next/image';
 export default function StoryLayout() {
   return (
     <>
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white p-4 md:p-8">
+      <div className="min-h-screen bg-gradient-to-br from-[#A8D67A] to-[#D8F0C8] p-4 md:p-8 rounded-lg">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             {/* Left Column */}
@@ -92,7 +92,7 @@ export default function StoryLayout() {
                   HỢP TÁC XÃ PHÁT THỦ ĐẶC SỞ
                 </p>
                 <p className="text-sm text-gray-700 md:text-lg">
-                  Địa chỉ: Số 21, đường Đặc Sở 1, thôn Chùa Ngu, xã Dương Hòa, thành phố Hà Nội.
+                  Địa chỉ: Số 21, đường Đặc Sở 1, thôn Chùa Ngụ, xã Dương Hòa, thành phố Hà Nội.
                 </p>
                 <p className="text-sm text-gray-700 md:text-lg">
                   Điện thoại: 0986.696.119 – 0788.838.888
