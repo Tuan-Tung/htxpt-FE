@@ -1,10 +1,9 @@
 'use client';
 
-import { DryingBanner1, DryingBanner2, FruitDrying, FruitDryingAbout } from '@/public/images';
+import { DryingBanner1, DryingBanner2 } from '@/public/images';
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import React from 'react';
 const mock_data = [
   {
@@ -44,7 +43,6 @@ const CommonElement = ({ data, index }: { data: IProps; index: number }) => {
   );
 };
 const FruitsDryingPage: NextPage = (): React.ReactElement => {
-  const route = useRouter();
 
   return (
     <div>
@@ -65,11 +63,11 @@ const FruitsDryingPage: NextPage = (): React.ReactElement => {
           <div className="w-full lg:w-1/2 lg:pr-4">
             <p className="text-[20px] lg:text-[30px] font-semibold">Nguồn gốc</p>
             <p className="text-lg">
-              Quả phật thủ (Citrus medica var. sarcodactylis) có nguồn gốc từ vùng Đông Á, đặc biệt
+              {`Quả phật thủ có nguồn gốc từ vùng Đông Á, đặc biệt
               là Trung Quốc và Việt Nam. Đây là loại trái cây có hình dáng độc đáo, giống như những
               ngón tay Phật, nên được gọi là "phật thủ". Phật thủ thường được trồng ở những vùng có
               khí hậu ôn đới và cận nhiệt đới. Tại Việt Nam, phật thủ được trồng phổ biến ở các tỉnh
-              phía Bắc như Hưng Yên, Hà Nội và Bắc Giang.{' '}
+              phía Bắc như Hưng Yên, Hà Nội và Bắc Giang.`}
               <Link href="https://maps.app.goo.gl/mJCoXqKo4Bvxd1aB6" target="_blank">
                 <strong className="text-[#0079FC]">Đặc biệt là ở Đắc Sở</strong>
               </Link>

@@ -1,34 +1,29 @@
 'use client';
 
-import { useParams, usePathname, useRouter } from 'next/navigation';
-import React, { PropsWithChildren, useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'next/navigation';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
-import Button from '@/components/Button';
 import DetailInfoGarden from '@/components/DetailProduct/DetailInfoGarden';
 import { useGardenerDetail } from '@/components/hooks/gardener';
 import { gardenerActions } from '@/features/gardener/gardenerSlice';
-import { RootState } from '@/stores/store';
-import Link from 'next/link';
 
-const GardenerLayout = ({ children }: PropsWithChildren): React.ReactElement => {
-  const router = useRouter();
-  const pathname = usePathname();
+const GardenerLayout = (): React.ReactElement => {
+  // const router = useRouter();
   const params = useParams();
-  const [, setActiveTab] = useState('fruits');
+  // const [, setActiveTab] = useState('fruits');
 
   const { data, onGetGardenById } = useGardenerDetail(params.gardenerId);
   const dispatch = useDispatch();
 
-  const handleButtonClick = (code: string) => {
-    setActiveTab(code);
-    router.push(`/gardeners/${params.gardenerId}/${code}`);
-  };
+  // const handleButtonClick = (code: string) => {
+  //   setActiveTab(code);
+  //   router.push(`/gardeners/${params.gardenerId}/${code}`);
+  // };
 
   useEffect(() => {
     onGetGardenById;
   }, [onGetGardenById]);
-  const { gardeners } = useSelector((state: RootState) => state.gardener);
 
   dispatch(gardenerActions.setGardeners(data));
   return (

@@ -1,7 +1,6 @@
 import { NextPage } from 'next';
 import React from 'react';
 
-import EmptyPage from '@/components/Pages/EmptyPage';
 import Image from 'next/image';
 
 const AboutHistoryPage: NextPage = (): React.ReactElement => {

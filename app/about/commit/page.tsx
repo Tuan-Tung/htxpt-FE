@@ -26,7 +26,7 @@ const AboutCommitPage: NextPage = (): React.ReactElement => {
         </div>
         <div className="mt-16 text-center">
           <p className="text-2xl italic text-amber-700 font-medium">
-            "Mang hương phật thủ Đắc Sở đến mọi gia đình Việt"
+            {`"Mang hương phật thủ Đắc Sở đến mọi gia đình Việt"`}
           </p>
         </div>
       </div>
