@@ -206,7 +206,7 @@ const HomePageContent = ({
                     rel="noopener noreferrer"
                   >
                     <BlogCard
-                      image={FruitAbout.src}
+                      image={blog.image || FruitAbout.src}
                       short_description={blog.short_description}
                       title={blog.title}
                       key={''}

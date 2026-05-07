@@ -1,6 +1,6 @@
+import { Commit1, Commit2 } from '@/public/images';
 import { NextPage } from 'next';
 import React from 'react';
-
 
 const AboutCommitPage: NextPage = (): React.ReactElement => {
   return (
@@ -23,6 +23,14 @@ const AboutCommitPage: NextPage = (): React.ReactElement => {
               <p className="text-lg font-medium text-gray-800">{commit}</p>
             </div>
           ))}
+        </div>
+        <div className='h-[1px] bg-[#555] w-1/2 m-auto mt-6 md:mt-16'/>
+        <h2 className="text-3xl md:text-5xl font-bold text-amber-900 text-center my-12">
+          Giấy chứng nhận 
+        </h2>
+        <div className="flex justify-center gap-8">
+          <img src={Commit1.src} className='w-1/3'/>
+          <img src={Commit2.src} className='w-1/3'/>
         </div>
         <div className="mt-16 text-center">
           <p className="text-2xl italic text-amber-700 font-medium">

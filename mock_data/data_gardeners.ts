@@ -290,4 +290,12 @@ export const DATA_BLOG = [
     title: 'Công dụng quả Phật Thủ',
     link: 'https://suckhoedoisong.vn/phat-thu-khong-chi-tho-dep-ma-con-la-vi-thuoc-quy-169220128094506124.htm',
   },
+  {
+    key: 'Phật thủ bonsai Đắc Sở',
+    _id: 'b1',
+    image: 'https://res.cloudinary.com/dkzpakm7v/image/upload/v1778132190/blog_athkxk.jpg',
+    short_description: 'Tinh hoa nghệ thuật và giải pháp kiến tạo không gian xanh',
+    title: 'Phật thủ bonsai Đắc Sở',
+    link: 'https://vanhoathoidai.vn/phat-thu-bonsai-dac-so-tinh-hoa-nghe-thuat-va-giai-phap-kien-tao-khong-gian-xanh-a45801.html?gidzl=GXeAA9M3AYTB0G8ecfKg8aGD0YwCadbtNGq1UjYLUtjR2mGXZPLy85jSLowFmdnr30q3VZ7ch1aubeSh9m',
+  },
 ];
