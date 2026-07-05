@@ -39,7 +39,7 @@ const RootLayout = ({ children }: PropsWithChildren): React.ReactElement => {
         <ClientOnly>
             <ReduxProvider>
               <SideBar items={NAVBAR_ITEMS} />
-              <div className="flex w-full flex-col md:pl-[260px]">
+              <div className="flex w-full flex-col xl:pl-[260px]">
                 <Header />
                 <div className="mt-[70px] min-h-[calc(100vh-410px)] w-full p-[24px] md:p-[54px]">{children}</div>
                 <Footer />

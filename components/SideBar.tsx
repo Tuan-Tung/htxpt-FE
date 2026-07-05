@@ -23,6 +23,11 @@ type DashboardNavProps = {
   items: SideBarItems[];
 };
 
+// Matches Tailwind's `xl` breakpoint — the sidebar only docks permanently at
+// this width and up; below it (including tablets in portrait) it's an
+// overlay toggled via the header's menu button.
+const DESKTOP_BREAKPOINT = 1280;
+
 const SideBar = ({ items }: DashboardNavProps): React.ReactElement => {
   const router = useRouter();
   const pathname = usePathname();
@@ -37,7 +42,7 @@ const SideBar = ({ items }: DashboardNavProps): React.ReactElement => {
 
   const handleClick = (itemCode: string, href: string) => {
     setActiveItem(itemCode.toLowerCase());
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < DESKTOP_BREAKPOINT) {
       dispatch(commonActions.setIsSideBarDisplay(false));
     }
     router.push(href);
@@ -86,16 +91,16 @@ const SideBar = ({ items }: DashboardNavProps): React.ReactElement => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768) {
+      if (window.innerWidth >= DESKTOP_BREAKPOINT) {
         dispatch(commonActions.setIsSideBarDisplay(true));
       } else {
         dispatch(commonActions.setIsSideBarDisplay(false));
       }
     };
-  
+
     window.addEventListener('resize', handleResize);
     requestAnimationFrame(handleResize);
-  
+
     return () => {
       window.removeEventListener('resize', handleResize);
     };
@@ -106,7 +111,7 @@ const SideBar = ({ items }: DashboardNavProps): React.ReactElement => {
     enter: { transform: 'translateX(0%)', opacity: 1 },
     leave: { transform: 'translateX(-100%)', opacity: 0 },
     config: config.stiff,
-    immediate: window.innerWidth >= 768 
+    immediate: window.innerWidth >= DESKTOP_BREAKPOINT
   });
 
   return (
@@ -117,7 +122,7 @@ const SideBar = ({ items }: DashboardNavProps): React.ReactElement => {
             <animated.div
               style={styles}
               className={cn(
-                `fixed inset-y-0 left-0 z-50 flex h-screen w-full flex-col border-r border-border_soft bg-white md:w-[260px]`
+                `fixed inset-y-0 left-0 z-50 flex h-screen w-full flex-col border-r border-border_soft bg-white xl:w-[260px]`
               )}
             >
               <div className="flex items-center justify-center border-b border-border_soft py-6">
@@ -175,7 +180,7 @@ const SideBar = ({ items }: DashboardNavProps): React.ReactElement => {
             </animated.div>
           )
       )}
-      {isSideBarDisplay && window.innerWidth < 768 && (
+      {isSideBarDisplay && window.innerWidth < DESKTOP_BREAKPOINT && (
         <div
           className="fixed inset-0 z-40 bg-black bg-opacity-50"
           onClick={() => dispatch(commonActions.setIsSideBarDisplay(false))}
