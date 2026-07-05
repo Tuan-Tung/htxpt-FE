@@ -58,7 +58,7 @@ const ProductCard = ({
           <span className="absolute left-2 top-2 rounded-full bg-primary/90 px-3 py-1 text-xs font-semibold text-white shadow-soft backdrop-blur-sm">
             {isFruit ? 'Phật thủ' : 'Bonsai'}
           </span>
-          <div className="absolute inset-x-0 bottom-0 bg-primary_blue/80 py-2 text-center text-xs font-bold uppercase tracking-wide text-white backdrop-blur-sm transition-colors group-hover:bg-primary_blue">
+          <div className="absolute inset-x-0 bottom-0 bg-primary_dark/80 py-2 text-center text-xs font-bold uppercase tracking-wide text-white backdrop-blur-sm transition-colors group-hover:bg-primary_dark">
             Xem chi tiết
           </div>
         </div>
