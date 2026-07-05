@@ -183,7 +183,7 @@ const SideBar = ({ items }: DashboardNavProps): React.ReactElement => {
                   onClick={handleLogoClicked}
                 />
               </div>
-              <div className="relative flex flex-1 flex-col gap-1 overflow-y-auto px-4 py-6 text-[14px] font-semibold text-dark_grey">
+              <div className="relative flex flex-1 flex-col justify-start overflow-y-auto px-4 py-6 text-[14px] font-semibold text-dark_grey">
                 <div
                   className="absolute left-4 right-4 h-10 rounded-xl bg-primary_light transition-all duration-300 ease-out"
                   style={{ top: `${indicatorOffset}px` }}
@@ -196,7 +196,7 @@ const SideBar = ({ items }: DashboardNavProps): React.ReactElement => {
                       onClick={() => handleClick(item.code, getHref(item.code))}
                       ref={(el) => (itemRefs.current[index] = el)}
                       className={cn(
-                        'group relative z-10 flex cursor-pointer items-center gap-3 rounded-xl px-4 py-[10px] transition-colors duration-200 hover:text-primary',
+                        'group relative z-10 mb-1 flex shrink-0 cursor-pointer items-center gap-3 rounded-xl px-4 py-[10px] transition-colors duration-200 hover:text-primary',
                         active ? 'text-primary' : ''
                       )}
                     >

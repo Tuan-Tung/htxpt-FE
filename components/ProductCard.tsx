@@ -21,12 +21,24 @@ export type Product = {
   description?: string;
 };
 
-const ProductDetail: React.FC<{ icon: keyof typeof ICONS; label: string; value: any; unit?: string }> = ({ icon, label, value, unit }) => (
-  <div className="mb-1.5 box-border flex w-full flex-1 items-center justify-start px-6 text-[14px] text-dark_grey sm:text-sm md:px-4 md:text-lg lg:px-2 lg:text-lg">
-    <Icon color="#699C3A" name={icon} size={20} aria-label={label} />
-    <span className="truncate-ellipsis max-w-full pl-2">
-      <span className="font-semibold text-black">{label}:</span> {value || 0} {unit}
-    </span>
+const ProductDetail: React.FC<{ icon: keyof typeof ICONS; label: string; value: any; unit?: string; clamp?: boolean }> = ({
+  icon,
+  label,
+  value,
+  unit,
+  clamp,
+}) => (
+  <div className="flex w-full items-start gap-2">
+    <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary_light">
+      <Icon color="#699C3A" name={icon} size={13} aria-label={label} />
+    </div>
+    <div className="min-w-0 flex-1">
+      <div className="text-[11px] uppercase tracking-wide text-dark_grey/60">{label}</div>
+      <div className={`text-sm font-semibold text-black ${clamp ? 'line-clamp-2' : 'truncate'}`}>
+        {value || 0}
+        {unit ? ` ${unit}` : ''}
+      </div>
+    </div>
   </div>
 );
 
@@ -66,20 +78,20 @@ const ProductCard = ({
           {isFruit ? 'Phật thủ' : 'Bonsai'}
         </span>
       </div>
-      <div className="flex flex-col items-center py-6">
-        <div className="mb-3 text-lg font-bold truncate-ellipsis max-w-full pl-2">{name}</div>
+      <div className="flex flex-col items-start gap-3 px-5 py-5">
+        <div className="w-full truncate text-lg font-bold text-black">{name}</div>
         {isFruit ? (
-          <>
-            <ProductDetail icon="ic_fruit_outline" label={SHAPE} value={shape} />
-            <ProductDetail icon="ic_fruit_outline" label={WEIGHT} value={weight} unit="g" />
+          <div className="flex w-full flex-col gap-3">
+            <ProductDetail icon="ic_fruit_outline" label={SHAPE} value={shape} clamp />
+            <ProductDetail icon="ic_fruit_outline" label={WEIGHT} value={weight} />
+            <ProductDetail icon="ic_fruit_outline" label={DIMETER} value={dimeter} />
             <ProductDetail icon="ic_fruit_outline" label={RANG_PRICE} value={range_price} unit="VNĐ" />
-            <ProductDetail icon="ic_fruit_outline" label={DIMETER} value={dimeter} unit="cm" />
-          </>
+          </div>
         ) : (
-          <>
-            <ProductDetail icon="ic_trees_outline" label={QUANTITY} value={quantity} />
-            <ProductDetail icon="ic_trees_outline" label={DESCRIPTION} value={description} />
-          </>
+          <div className="flex w-full flex-col gap-3">
+            <ProductDetail icon="ic_trees_outline" label={QUANTITY} value={quantity} unit="cây" />
+            <ProductDetail icon="ic_trees_outline" label={DESCRIPTION} value={description} clamp />
+          </div>
         )}
       </div>
     </div>
