@@ -36,6 +36,22 @@ const ProductDetail: React.FC<{ icon: keyof typeof ICONS; label: string; value: 
   </div>
 );
 
+const SpecChip: React.FC<{ icon: keyof typeof ICONS; label: string; value: any; unit?: string }> = ({
+  icon,
+  label,
+  value,
+  unit,
+}) => (
+  <span
+    className="inline-flex items-center gap-1 rounded-full bg-primary_light px-2.5 py-1 text-[11px] font-semibold text-primary sm:text-xs"
+    aria-label={label}
+  >
+    <Icon color="#699C3A" name={icon} size={12} />
+    {value || 0}
+    {unit ? ` ${unit}` : ''}
+  </span>
+);
+
 export { ProductCardSkeleton } from '@/components/CardSkeletons';
 
 type ProductCardProps = Product & {
@@ -81,15 +97,19 @@ const ProductCard = ({
         <div className="flex flex-col items-start gap-2 px-5 py-4">
           <div className="w-full truncate text-base font-bold text-black">{name}</div>
           {isFruit ? (
-            <div className="flex w-full flex-col gap-1.5">
+            <div className="flex w-full flex-col gap-2">
+              <div className="flex w-full flex-wrap gap-1.5">
+                <SpecChip icon="ic_fruit_outline" label={WEIGHT} value={weight} />
+                <SpecChip icon="ic_fruit_outline" label={DIMETER} value={dimeter} />
+                <SpecChip icon="ic_fruit_outline" label={RANG_PRICE} value={range_price} unit="VNĐ" />
+              </div>
               <ProductDetail icon="ic_fruit_outline" label={SHAPE} value={shape} />
-              <ProductDetail icon="ic_fruit_outline" label={WEIGHT} value={weight} />
-              <ProductDetail icon="ic_fruit_outline" label={DIMETER} value={dimeter} />
-              <ProductDetail icon="ic_fruit_outline" label={RANG_PRICE} value={range_price} unit="VNĐ" />
             </div>
           ) : (
-            <div className="flex w-full flex-col gap-1.5">
-              <ProductDetail icon="ic_trees_outline" label={QUANTITY} value={quantity} unit="cây" />
+            <div className="flex w-full flex-col gap-2">
+              <div className="flex w-full flex-wrap gap-1.5">
+                <SpecChip icon="ic_trees_outline" label={QUANTITY} value={quantity} unit="cây" />
+              </div>
               <ProductDetail icon="ic_trees_outline" label={DESCRIPTION} value={description} />
             </div>
           )}

@@ -20,17 +20,17 @@ const Footer = (): React.ReactElement => {
     <footer>
       <div className="flex flex-col justify-between gap-8 bg-white p-4 xl:flex-row xl:p-14">
         <div className="mb-4 flex flex-col items-center space-y-3.5 xl:mb-0 xl:items-start">
-          <Image src={FooterLogo.src} alt="logo" width={158} height={58} />
+          <Image src={FooterLogo} alt="logo" className="h-auto w-[158px]" />
           <div className="text-dark-grey flex space-x-3">
-            <Image src={FooterLocation.src} alt="location" width={20} height={20} />
+            <Image src={FooterLocation} alt="location" className="h-5 w-auto" />
             <div>{FOOTER_LOCATION_TEXT}</div>
           </div>
           <div className="text-dark-grey flex space-x-3">
-            <Image src={FooterMail.src} alt="mail" width={20} height={20} />
+            <Image src={FooterMail} alt="mail" className="h-5 w-auto" />
             <div>{FOOTER_LOCATION_TEXT}</div>
           </div>
           <div className="text-dark-grey flex space-x-3">
-            <Image src={FooterFacebook.src} alt="facebook" width={20} height={20} />
+            <Image src={FooterFacebook} alt="facebook" className="h-5 w-auto" />
             <div>{FOOTER_FACEBOOK_TEXT}</div>
           </div>
         </div>
