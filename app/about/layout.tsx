@@ -17,9 +17,9 @@ const AboutLayout = ({ children }: PropsWithChildren): React.ReactElement => {
 
   return (
     <div className="min-h-screen min-w-full">
-      <div className="custom-scrollbar mb-[30px] flex w-full space-x-[5px] overflow-y-scroll">
+      <div className="custom-scrollbar mb-[30px] flex w-full gap-2 overflow-x-auto pb-1">
         {ABOUT_BUTTON_CONTENT.map((item: AboutCategories) => (
-          <div className="flex min-w-[50px] flex-1 gap-2 md:min-w-[186px]">
+          <div key={item.code.toString()} className="min-w-[72px] flex-1 md:min-w-[186px]">
             <Button
               size="md"
               variant="image"
@@ -28,9 +28,9 @@ const AboutLayout = ({ children }: PropsWithChildren): React.ReactElement => {
               fullWidth
               isActive={pathname.includes(item.code.toString().toLocaleLowerCase())}
               onClick={() => handleButtonClick(item.code.toString())}
-              className="flex items-center justify-center"
+              className="items-center justify-center"
             >
-              <span className="hidden md:inline">{item.label}</span> {/* Label chỉ hiển thị trên màn hình lớn */}
+              <span>{item.label}</span>
             </Button>
           </div>
         ))}
