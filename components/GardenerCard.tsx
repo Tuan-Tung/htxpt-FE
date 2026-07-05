@@ -21,6 +21,8 @@ type GardenerProps = TGardener & {
   onHeartIconClick?: React.MouseEventHandler<HTMLDivElement>;
 };
 
+export { GardenerCardSkeleton } from '@/components/CardSkeletons';
+
 const GardenerCard = ({
   last_name,
   image = '',

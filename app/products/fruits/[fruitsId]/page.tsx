@@ -6,18 +6,34 @@ import React, { useEffect } from 'react';
 
 import DetailProductCard from '@/components/DetailProduct/DetailProductCard';
 import { useFruitDetail } from '@/components/hooks/fruit';
+import { Skeleton } from '@/components/ui/Skeleton';
 import _ from 'lodash';
+
+const DetailFruitSkeleton = () => (
+  <div className="flex flex-col gap-6 md:flex-row">
+    <Skeleton className="h-72 w-full rounded-lg bg-gray-200 md:w-1/2" />
+    <div className="w-full space-y-3 md:w-1/2">
+      <Skeleton className="h-8 w-2/3 bg-gray-200" />
+      <Skeleton className="h-4 w-full bg-gray-200" />
+      <Skeleton className="h-4 w-full bg-gray-200" />
+      <Skeleton className="h-4 w-1/2 bg-gray-200" />
+    </div>
+  </div>
+);
 
 const DetailFruitCategoriesPage: NextPage = (): React.ReactElement => {
   const params = useParams()
 
   const { data, onGetFruitById } = useFruitDetail(params['fruitsId'] as string)
 
-  console.log(data);
-
   useEffect(() => {
     onGetFruitById;
   }, [onGetFruitById])
+
+  if (onGetFruitById.isLoading) {
+    return <DetailFruitSkeleton />;
+  }
+
   const DetailProduct = () => {
 
     return (

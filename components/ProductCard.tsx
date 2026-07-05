@@ -36,6 +36,8 @@ const ProductDetail: React.FC<{ icon: keyof typeof ICONS; label: string; value: 
   </div>
 );
 
+export { ProductCardSkeleton } from '@/components/CardSkeletons';
+
 type ProductCardProps = Product & {
   onClick?: React.MouseEventHandler<HTMLDivElement>;
 };

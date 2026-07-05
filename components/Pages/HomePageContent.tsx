@@ -9,10 +9,14 @@ import { Blog, Bonsai, Fruit, Gardener } from '@/types/mock';
 import Image from 'next/image';
 import ScrollSnapBase from '@/components/ScrollSnapBase';
 import { Banner1, Banner2, Banner3, Banner4, FruitAbout, FruitDryingAbout } from '@/public/images';
+import { BlogCardSkeleton, GardenerCardSkeleton, ProductCardSkeleton } from '@/components/CardSkeletons';
 
 const BlogCard = lazy(() => import('@/components/BlogCard'));
 const GardenerCard = lazy(() => import('@/components/GardenerCard'));
 const ProductCard = lazy(() => import('@/components/ProductCard'));
+
+const skeletonList = (count: number, Skeleton: () => React.ReactElement) =>
+  Array.from({ length: count }).map((_, index) => <Skeleton key={index} />);
 
 const contentSlide = [
   {
@@ -131,7 +135,7 @@ const HomePageContent = ({
           </Link>
         </div>
         <div className="grid gap-4 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-          <Suspense fallback={<div className="col-span-full h-48 bg-gray-200 rounded-lg" />}>
+          <Suspense fallback={<>{skeletonList(5, GardenerCardSkeleton)}</>}>
             {gardenersList.slice(0, 5).map((gardener: Gardener, index: number) => (
               <GardenerCard
                 key={gardener.first_name + index}
@@ -157,7 +161,7 @@ const HomePageContent = ({
               {FRUIT_TITLE}
             </div>
             <div className="grid gap-4 grid-cols-2 lg:grid-cols-3">
-              <Suspense fallback={<div className="col-span-full h-48 bg-gray-200 rounded-lg" />}>
+              <Suspense fallback={<>{skeletonList(3, ProductCardSkeleton)}</>}>
                 {fruitList.slice(0, 3).map((fruit: Fruit, index: number) => (
                   <ProductCard
                     key={fruit.category_name || 0 + index}
@@ -180,7 +184,7 @@ const HomePageContent = ({
               {TREE_TITLE}
             </div>
             <div className="grid grid-cols-2 gap-4 2xl:grid-cols-3">
-              <Suspense fallback={<div className="col-span-full h-48 bg-gray-200 rounded-lg" />}>
+              <Suspense fallback={<>{skeletonList(3, ProductCardSkeleton)}</>}>
                 {treeList.slice(0, 3).map((tree: Bonsai, index: number) => (
                   <ProductCard
                     key={tree.tree_name || 0 + index}
@@ -202,7 +206,7 @@ const HomePageContent = ({
               {BLOG_TITLE}
             </div>
             <div className="flex flex-col space-y-3 max-h-[calc(4*theme('spacing.64')+3*theme('spacing.3'))] overflow-y-auto pr-2">
-              <Suspense fallback={<div className="h-64 bg-gray-200 rounded-lg animate-pulse" />}>
+              <Suspense fallback={<>{skeletonList(3, BlogCardSkeleton)}</>}>
                 {blogPosts.map((blog: Blog, index: number) => (
                   <Link
                     key={blog.key + index}

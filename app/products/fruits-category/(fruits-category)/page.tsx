@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import React, { useCallback, useEffect } from 'react';
 
 import { useFruitCategory } from '@/components/hooks/fruit';
+import { ProductCardSkeleton } from '@/components/CardSkeletons';
 import ProductCard, { Product } from '@/components/ProductCard';
 import ProductInformation from '@/components/PrroductInformation';
 import { DemoFruit, FruitInfoBg } from '@/public/images';
@@ -13,6 +14,7 @@ const ListFruitsPage: NextPage = (): React.ReactElement => {
   const route = useRouter();
 
   const { data: dataFruitCategory, onGetFruitCategory } = useFruitCategory();
+  const isLoading = onGetFruitCategory.isLoading;
 
   useEffect(() => {
     onGetFruitCategory;
@@ -35,19 +37,21 @@ const ListFruitsPage: NextPage = (): React.ReactElement => {
         weight={[1.5, 3]}
       />
       <div className="mt-8 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-        {dataFruitCategory.map((fruit: Product, index: number) => (
-          <ProductCard
-          key={fruit.category_name || 0 + index}
-          isFruit
-          name={fruit?.category_name}
-          image={fruit.image}
-          range_price={fruit.range_price}
-          shape={fruit.shape}
-          dimeter={fruit.dimeter}
-          weight={fruit.weight}
-          onClick={() => handelFruitCardClick(fruit?._id)}
-          />
-        ))}
+        {isLoading
+          ? Array.from({ length: 10 }).map((_, index) => <ProductCardSkeleton key={index} />)
+          : dataFruitCategory.map((fruit: Product, index: number) => (
+              <ProductCard
+                key={fruit.category_name || 0 + index}
+                isFruit
+                name={fruit?.category_name}
+                image={fruit.image}
+                range_price={fruit.range_price}
+                shape={fruit.shape}
+                dimeter={fruit.dimeter}
+                weight={fruit.weight}
+                onClick={() => handelFruitCardClick(fruit?._id)}
+              />
+            ))}
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 'use client';
 import { useBlogDetail } from '@/components/hooks/blog';
+import { Skeleton } from '@/components/ui/Skeleton';
 import { useParams } from 'next/navigation';
 // import Image from 'next/image'
 import { Fruit2, FruitAbout } from '@/public/images';
@@ -7,16 +8,35 @@ import dayjs from 'dayjs';
 import Image from 'next/image';
 import { useEffect } from 'react';
 
+const BlogDetailSkeleton = () => (
+  <div className="bg-white">
+    <div className="flex flex-wrap justify-between gap-6 p-4 sm:p-6 xl:p-11">
+      <div className="flex-1 space-y-4">
+        <Skeleton className="h-10 w-3/4 bg-gray-200 lg:h-16" />
+        <Skeleton className="h-5 w-40 bg-gray-200" />
+      </div>
+      <Skeleton className="h-52 w-full rounded-md bg-gray-200 md:w-1/3" />
+    </div>
+    <div className="space-y-2 p-4 sm:p-6 xl:p-11">
+      <Skeleton className="h-4 w-full bg-gray-200" />
+      <Skeleton className="h-4 w-full bg-gray-200" />
+      <Skeleton className="h-4 w-2/3 bg-gray-200" />
+    </div>
+  </div>
+);
+
 const BlogDetailPage = () => {
   const params = useParams();
-  console.log(params);
 
   const { data, onGetBlogById } = useBlogDetail(params['blogId'] as string);
 
   useEffect(() => {
     onGetBlogById;
   }, [onGetBlogById]);
-  console.log(data);
+
+  if (onGetBlogById.isLoading) {
+    return <BlogDetailSkeleton />;
+  }
 
   return (
     <div>
