@@ -170,50 +170,63 @@ const SideBar = ({ items }: DashboardNavProps): React.ReactElement => {
             <animated.div
               style={styles}
               className={cn(
-                `fixed inset-y-0 left-0 z-50 h-screen w-full flex-col space-y-[54px] bg-white md:w-[260px]`
+                `fixed inset-y-0 left-0 z-50 flex h-screen w-full flex-col border-r border-border_soft bg-white md:w-[260px]`
               )}
             >
-              <div className="flex items-center justify-center py-2">
+              <div className="flex items-center justify-center border-b border-border_soft py-6">
                 <Image
                   src={Logo.src}
                   alt="logo"
-                  width={129}
-                  height={49}
+                  width={120}
+                  height={46}
+                  className="cursor-pointer transition-transform hover:scale-105"
                   onClick={handleLogoClicked}
                 />
               </div>
-              <div className="relative flex flex-col text-[14px] font-bold text-dark_grey">
+              <div className="relative flex flex-1 flex-col gap-1 overflow-y-auto px-4 py-6 text-[14px] font-semibold text-dark_grey">
                 <div
-                  className="absolute left-0 h-[40px] w-[5px] bg-primary transition-all duration-500 ease-in-out"
+                  className="absolute left-4 right-4 h-10 rounded-xl bg-primary_light transition-all duration-300 ease-out"
                   style={{ top: `${indicatorOffset}px` }}
                 />
-                {items.map((item: SideBarItems, index: number) => (
-                  <div
-                    key={item.code}
-                    onClick={() => handleClick(item.code, getHref(item.code))}
-                    ref={(el) => (itemRefs.current[index] = el)}
-                    className={`flex cursor-pointer items-center gap-[24px] px-[24px] py-[8px] hover:text-primary ${
-                      activeItem === item.code.toLowerCase() ? 'text-primary' : ''
-                    }`}
-                  >
-                    <div className="w-[24px]">
-                      <Icon name={item.icon} size={24} />
+                {items.map((item: SideBarItems, index: number) => {
+                  const active = activeItem === item.code.toLowerCase();
+                  return (
+                    <div
+                      key={item.code}
+                      onClick={() => handleClick(item.code, getHref(item.code))}
+                      ref={(el) => (itemRefs.current[index] = el)}
+                      className={cn(
+                        'group relative z-10 flex cursor-pointer items-center gap-3 rounded-xl px-4 py-[10px] transition-colors duration-200 hover:text-primary',
+                        active ? 'text-primary' : ''
+                      )}
+                    >
+                      <div
+                        className={cn(
+                          'flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition-colors',
+                          active ? 'bg-white shadow-soft' : 'group-hover:bg-white'
+                        )}
+                      >
+                        <Icon name={item.icon} size={20} />
+                      </div>
+                      <div className="leading-[20px]">{item.name}</div>
                     </div>
-                    <div className="leading-[20px]">{item.name}</div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
-              <div className="p-9">
-                <div
-                  className="relative h-72 w-full bg-contain bg-center bg-no-repeat text-center text-[14px]"
-                  style={{ backgroundImage: `url(${HelpCenter.src})` }}
-                >
-                  <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/3 flex-col gap-[18px] text-[14px]">
-                    <div className="font-bold text-black">{HELP_CENTER_TITLE_TEXT}</div>
-                    <div className="text-dark-grey font-normal">{HELP_CENTER_CONTENT_TEXT}</div>
-                    <div className="m-auto cursor-pointer overflow-ellipsis whitespace-nowrap rounded-lg bg-white p-3 font-semibold text-black">
-                      {HELP_CENTER_BUTTON_CONTENT}
-                    </div>
+              <div className="p-5">
+                <div className="relative overflow-hidden rounded-2xl bg-gradient-to-b from-primary_light to-white p-5 text-center shadow-soft">
+                  <div
+                    className="mx-auto mb-4 h-24 w-24 bg-contain bg-center bg-no-repeat"
+                    style={{ backgroundImage: `url(${HelpCenter.src})` }}
+                  />
+                  <div className="mb-1 text-[14px] font-bold text-dark_grey">
+                    {HELP_CENTER_TITLE_TEXT}
+                  </div>
+                  <div className="mb-4 text-[13px] font-normal leading-relaxed text-dark_grey/70">
+                    {HELP_CENTER_CONTENT_TEXT}
+                  </div>
+                  <div className="mx-auto w-fit cursor-pointer rounded-full bg-primary px-5 py-2 text-[13px] font-semibold text-white shadow-soft transition-colors hover:bg-primary_dark">
+                    {HELP_CENTER_BUTTON_CONTENT}
                   </div>
                 </div>
               </div>

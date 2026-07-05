@@ -59,11 +59,11 @@ const HomePageContent = ({
   );
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-14">
       <div className="flex lg:space-x-6">
         <div className="hidden w-3/5  shrink-0 lg:block">
           <div className="w-full">
-            <div className="relative h-[256px] w-full overflow-hidden rounded-lg">
+            <div className="relative h-[256px] w-full overflow-hidden rounded-2xl shadow-card">
               <Image
                 width={1000}
                 height={1000}
@@ -74,7 +74,7 @@ const HomePageContent = ({
             </div>
           </div>
         </div>
-        <div className="h-64 w-full shrink lg:w-2/5 !m-0 md:pl-[2rem]">
+        <div className="h-64 w-full shrink overflow-hidden rounded-2xl shadow-card lg:w-2/5 !m-0 md:pl-[2rem]">
           <ScrollSnapBase
             contentSlide={contentSlide}
             isShowButtonHeader={true}
@@ -83,14 +83,16 @@ const HomePageContent = ({
           />
         </div>
       </div>
-      <div className="flex justify-between flex-wrap">
+      <div className="flex flex-wrap items-center justify-between overflow-hidden rounded-2xl bg-white p-6 shadow-card md:p-10">
         <div className="w-full md:w-1/2 flex items-center">
           <div>
-            <h3 className="truncate-ellipsis text-primary text-[24px] font-bold md:text-[36px]">
-              Sản Phẩm Tiêu Biểu
+            <span className="inline-block rounded-full bg-primary_light px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary">
+              Sản phẩm tiêu biểu
+            </span>
+            <h3 className="truncate-ellipsis mt-3 text-[24px] font-extrabold text-black md:text-[36px]">
+              Phật thủ sấy khô
             </h3>
-            <p className="font-semibold lg:text-xl">Phật thủ sấy khô</p>
-            <p className="py-4 pr-12 lg:text-lg">
+            <p className="py-4 pr-12 leading-relaxed text-dark_grey lg:text-lg">
               Quả phật thủ sấy, hay còn gọi là Phật thủ khô, là một sản phẩm chế biến từ quả phật
               thủ tươi. Phật thủ, một loại trái cây thuộc họ cam quýt, có hình dáng độc đáo giống
               như những ngón tay Phật, được sử dụng phổ biến trong ẩm thực và y học cổ truyền. Phật
@@ -98,7 +100,7 @@ const HomePageContent = ({
               gia vị, trang trí hoặc trong các món tráng miệng.
             </p>
             <button
-              className="bg-[#699C3A] text-white hover:bg-white hover:text-[#699C3A] border border-[#699C3A] px-4 py-2 mb-4"
+              className="rounded-full bg-primary px-6 py-3 font-semibold text-white shadow-soft transition-all hover:-translate-y-0.5 hover:bg-primary_dark hover:shadow-card-hover"
               onClick={handelFruitDryingClick}
             >
               Xem chi tiết
@@ -116,16 +118,19 @@ const HomePageContent = ({
         </div>
       </div>
 
-      <div className="flex flex-col space-y-4">
+      <div className="flex flex-col space-y-5">
         <div className="flex items-center justify-between">
-          <div className="truncate-ellipsis text-primary text-[24px] font-bold md:text-[36px]">
+          <div className="relative pl-4 text-[24px] font-extrabold text-black md:text-[32px] before:absolute before:left-0 before:top-[6px] before:h-[70%] before:w-1.5 before:rounded-full before:bg-primary">
             {GARDENER_TITLE}
           </div>
-          <div className="text-primary">
-            <Link href="/gardeners/all">xem thêm</Link>
-          </div>
+          <Link
+            href="/gardeners/all"
+            className="flex items-center gap-1 rounded-full border border-primary px-4 py-1.5 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white"
+          >
+            Xem thêm <span aria-hidden>→</span>
+          </Link>
         </div>
-        <div className="grid gap-3 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+        <div className="grid gap-4 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
           <Suspense fallback={<div className="col-span-full h-48 bg-gray-200 rounded-lg" />}>
             {gardenersList.slice(0, 5).map((gardener: Gardener, index: number) => (
               <GardenerCard
@@ -148,10 +153,10 @@ const HomePageContent = ({
       <div className="flex flex-wrap lg:flex-nowrap xl:space-x-8">
         <div className="flex w-full flex-col space-y-8 lg:w-3/5">
           <div className="flex flex-col space-y-4">
-            <div className="truncate-ellipsis text-primary text-[24px] font-bold md:text-[36px]">
+            <div className="relative pl-4 text-[24px] font-extrabold text-black md:text-[32px] before:absolute before:left-0 before:top-[6px] before:h-[70%] before:w-1.5 before:rounded-full before:bg-primary">
               {FRUIT_TITLE}
             </div>
-            <div className="grid gap-3 grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-4 grid-cols-2 lg:grid-cols-3">
               <Suspense fallback={<div className="col-span-full h-48 bg-gray-200 rounded-lg" />}>
                 {fruitList.slice(0, 3).map((fruit: Fruit, index: number) => (
                   <ProductCard
@@ -171,7 +176,7 @@ const HomePageContent = ({
           </div>
 
           <div className="flex flex-col space-y-4">
-            <div className="truncate-ellipsis text-primary text-[24px] font-bold md:text-[36px]">
+            <div className="relative pl-4 text-[24px] font-extrabold text-black md:text-[32px] before:absolute before:left-0 before:top-[6px] before:h-[70%] before:w-1.5 before:rounded-full before:bg-primary">
               {TREE_TITLE}
             </div>
             <div className="grid grid-cols-2 gap-4 2xl:grid-cols-3">
@@ -193,11 +198,11 @@ const HomePageContent = ({
 
         <div className="w-full lg:w-2/5">
           <div className="sticky top-20 flex flex-col space-y-4">
-            <div className="truncate-ellipsis text-primary text-[24px] font-bold md:text-[36px]">
+            <div className="relative pl-4 text-[24px] font-extrabold text-black md:text-[32px] before:absolute before:left-0 before:top-[6px] before:h-[70%] before:w-1.5 before:rounded-full before:bg-primary">
               {BLOG_TITLE}
             </div>
             <div className="flex flex-col space-y-3 max-h-[calc(4*theme('spacing.64')+3*theme('spacing.3'))] overflow-y-auto pr-2">
-              <Suspense fallback={<div className="h-64 bg-gray-200 rounded-lg" />}>
+              <Suspense fallback={<div className="h-64 bg-gray-200 rounded-lg animate-pulse" />}>
                 {blogPosts.map((blog: Blog, index: number) => (
                   <Link
                     key={blog.key + index}

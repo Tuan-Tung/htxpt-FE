@@ -22,10 +22,10 @@ export type Product = {
 };
 
 const ProductDetail: React.FC<{ icon: keyof typeof ICONS; label: string; value: any; unit?: string }> = ({ icon, label, value, unit }) => (
-  <div className="mb-1.5 box-border flex w-full flex-1 items-center justify-start px-6 text-[14px] sm:text-sm md:px-4 md:text-lg lg:px-2 lg:text-lg">
+  <div className="mb-1.5 box-border flex w-full flex-1 items-center justify-start px-6 text-[14px] text-dark_grey sm:text-sm md:px-4 md:text-lg lg:px-2 lg:text-lg">
     <Icon color="#699C3A" name={icon} size={20} aria-label={label} />
     <span className="truncate-ellipsis max-w-full pl-2">
-      {label}: {value || 0} {unit}
+      <span className="font-semibold text-black">{label}:</span> {value || 0} {unit}
     </span>
   </div>
 );
@@ -49,18 +49,20 @@ const ProductCard = ({
   const src = image || (isFruit ? DemoFruit.src : DemoTree.src);
 
   return (
-    <div onClick={onClick} className="flex max-w-sm cursor-pointer flex-col overflow-hidden rounded-lg bg-white shadow-lg">
-      <div className="aspect-w-1 aspect-h-1 relative w-full">
-        {!loaded && <Skeleton className="absolute inset-0 h-full w-full rounded-t-lg bg-gray-200" />}
+    <div onClick={onClick} className="group flex max-w-sm cursor-pointer flex-col overflow-hidden rounded-2xl bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
+      <div className="aspect-w-1 aspect-h-1 relative w-full overflow-hidden bg-gradient-to-br from-primary_light to-white">
+        {!loaded && <Skeleton className="absolute inset-0 h-full w-full bg-gray-200" />}
         <Image
           src={src}
           alt={isFruit ? 'Fruit Image' : 'Tree Image'}
           fill
-          objectFit="cover"
+          className={`object-cover transition-all duration-500 group-hover:scale-105 ${loaded ? 'opacity-100' : 'opacity-0'}`}
           loading="lazy"
-          className={`transition-opacity ${loaded ? 'opacity-100' : 'opacity-0'}`}
           onLoad={() => setLoaded(true)}
         />
+        <span className="absolute left-2 top-2 rounded-full bg-primary/90 px-3 py-1 text-xs font-semibold text-white shadow-soft backdrop-blur-sm">
+          {isFruit ? 'Phật thủ' : 'Bonsai'}
+        </span>
       </div>
       <div className="flex flex-col items-center py-6">
         <div className="mb-3 text-lg font-bold truncate-ellipsis max-w-full pl-2">{name}</div>

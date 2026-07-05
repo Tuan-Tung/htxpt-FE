@@ -11,14 +11,26 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: '#f0f0f0',
+        background: '#F7F8F3',
         primary: '#699C3A',
+        primary_dark: '#4C7A28',
+        primary_light: '#EEF5E5',
         secondary: '#C1F497',
+        accent: '#F2A93B',
         dark_grey: '#656366',
         light_grey: '#C7CCCE',
+        border_soft: '#E7EAE1',
         error: '#FF0422',
         error_toast_bg: 'rgba(255, 4.25, 33.90, 0.05)',
         blackA6: 'rgba(0, 0, 0, 0.4)',
+      },
+      boxShadow: {
+        card: '0 2px 10px rgba(31, 41, 20, 0.06)',
+        'card-hover': '0 16px 32px rgba(31, 41, 20, 0.12)',
+        soft: '0 1px 3px rgba(31, 41, 20, 0.08)',
+      },
+      borderRadius: {
+        xl2: '1.25rem',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
