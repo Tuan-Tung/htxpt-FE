@@ -35,7 +35,7 @@ const GardenerCard = ({
   return (
     <div
       onClick={onClick}
-      className="group flex cursor-pointer flex-col items-center overflow-hidden rounded-2xl bg-white p-4 text-center shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover sm:p-5"
+      className="group flex cursor-pointer flex-col items-center rounded-2xl bg-white p-4 text-center shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover sm:p-5"
     >
       <div className="relative h-20 w-20 shrink-0 sm:h-24 sm:w-24">
         <div className="relative h-full w-full overflow-hidden rounded-full bg-gradient-to-br from-primary_light to-white ring-4 ring-primary_light">

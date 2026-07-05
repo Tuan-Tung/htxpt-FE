@@ -55,38 +55,43 @@ const ProductCard = ({
   const src = image || (isFruit ? DemoFruit.src : DemoTree.src);
 
   return (
-    <div onClick={onClick} className="group flex max-w-sm cursor-pointer flex-col overflow-hidden rounded-2xl bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
-      <div className="relative w-full overflow-hidden">
-        <div className="aspect-w-1 aspect-h-1 relative w-full bg-gradient-to-br from-primary_light to-white">
-          {!loaded && <Skeleton className="absolute inset-0 h-full w-full bg-gray-200" />}
-          <Image
-            src={src}
-            alt={isFruit ? 'Fruit Image' : 'Tree Image'}
-            fill
-            className={`object-cover transition-all duration-500 group-hover:scale-105 ${loaded ? 'opacity-100' : 'opacity-0'}`}
-            loading="lazy"
-            onLoad={() => setLoaded(true)}
-          />
+    <div
+      onClick={onClick}
+      className="group max-w-sm cursor-pointer transition-transform duration-300 hover:-translate-y-1"
+    >
+      <div className="flex flex-col overflow-hidden rounded-2xl bg-white shadow-card transition-shadow duration-300 group-hover:shadow-card-hover">
+        <div className="relative w-full overflow-hidden">
+          <div className="aspect-w-1 aspect-h-1 relative w-full bg-gradient-to-br from-primary_light to-white">
+            {!loaded && <Skeleton className="absolute inset-0 h-full w-full bg-gray-200" />}
+            <Image
+              src={src}
+              alt={isFruit ? 'Fruit Image' : 'Tree Image'}
+              fill
+              className={`object-cover transition-all duration-500 group-hover:scale-105 ${loaded ? 'opacity-100' : 'opacity-0'}`}
+              loading="lazy"
+              onLoad={() => setLoaded(true)}
+            />
+          </div>
+          <span className="absolute left-2 top-2 rounded-full bg-primary/90 px-3 py-1 text-xs font-semibold text-white shadow-soft backdrop-blur-sm">
+            {isFruit ? 'Phật thủ' : 'Bonsai'}
+          </span>
         </div>
-        <span className="absolute left-2 top-2 rounded-full bg-primary/90 px-3 py-1 text-xs font-semibold text-white shadow-soft backdrop-blur-sm">
-          {isFruit ? 'Phật thủ' : 'Bonsai'}
-        </span>
-      </div>
-      <div className="flex flex-col items-start gap-2 px-5 py-4">
-        <div className="w-full truncate text-base font-bold text-black">{name}</div>
-        {isFruit ? (
-          <div className="flex w-full flex-col gap-1.5">
-            <ProductDetail icon="ic_fruit_outline" label={SHAPE} value={shape} />
-            <ProductDetail icon="ic_fruit_outline" label={WEIGHT} value={weight} />
-            <ProductDetail icon="ic_fruit_outline" label={DIMETER} value={dimeter} />
-            <ProductDetail icon="ic_fruit_outline" label={RANG_PRICE} value={range_price} unit="VNĐ" />
-          </div>
-        ) : (
-          <div className="flex w-full flex-col gap-1.5">
-            <ProductDetail icon="ic_trees_outline" label={QUANTITY} value={quantity} unit="cây" />
-            <ProductDetail icon="ic_trees_outline" label={DESCRIPTION} value={description} />
-          </div>
-        )}
+        <div className="flex flex-col items-start gap-2 px-5 py-4">
+          <div className="w-full truncate text-base font-bold text-black">{name}</div>
+          {isFruit ? (
+            <div className="flex w-full flex-col gap-1.5">
+              <ProductDetail icon="ic_fruit_outline" label={SHAPE} value={shape} />
+              <ProductDetail icon="ic_fruit_outline" label={WEIGHT} value={weight} />
+              <ProductDetail icon="ic_fruit_outline" label={DIMETER} value={dimeter} />
+              <ProductDetail icon="ic_fruit_outline" label={RANG_PRICE} value={range_price} unit="VNĐ" />
+            </div>
+          ) : (
+            <div className="flex w-full flex-col gap-1.5">
+              <ProductDetail icon="ic_trees_outline" label={QUANTITY} value={quantity} unit="cây" />
+              <ProductDetail icon="ic_trees_outline" label={DESCRIPTION} value={description} />
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
