@@ -1,70 +1,120 @@
 'use client';
 
+import _ from 'lodash';
 import { NextPage } from 'next';
 import { useParams } from 'next/navigation';
 import React, { useEffect } from 'react';
 
-import DetailProductCard from '@/components/DetailProduct/DetailProductCard';
 import { useFruitDetail } from '@/components/hooks/fruit';
+import ProductGallery from '@/components/ProductGallery';
 import { Skeleton } from '@/components/ui/Skeleton';
-import _ from 'lodash';
+import { DemoFruit } from '@/public/images';
 
 const DetailFruitSkeleton = () => (
-  <div className="flex flex-col gap-6 md:flex-row">
-    <Skeleton className="h-72 w-full rounded-lg bg-gray-200 md:w-1/2" />
-    <div className="w-full space-y-3 md:w-1/2">
+  <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2">
+    <Skeleton className="h-72 w-full rounded-2xl bg-gray-200 sm:h-96 lg:h-[520px]" />
+    <div className="w-full space-y-3">
+      <Skeleton className="h-6 w-24 rounded-full bg-gray-200" />
       <Skeleton className="h-8 w-2/3 bg-gray-200" />
-      <Skeleton className="h-4 w-full bg-gray-200" />
+      <Skeleton className="h-24 w-full bg-gray-200" />
       <Skeleton className="h-4 w-full bg-gray-200" />
       <Skeleton className="h-4 w-1/2 bg-gray-200" />
     </div>
   </div>
 );
 
-const DetailFruitCategoriesPage: NextPage = (): React.ReactElement => {
-  const params = useParams()
+const rangeText = (value: any, unit: string) =>
+  !_.isEmpty(value) ? `${value[0]} - ${value[1]} ${unit}` : `-- ${unit}`;
 
-  const { data, onGetFruitById } = useFruitDetail(params['fruitsId'] as string)
+const DetailFruitCategoriesPage: NextPage = (): React.ReactElement => {
+  const params = useParams();
+
+  const { data, onGetFruitById } = useFruitDetail(params['fruitsId'] as string);
 
   useEffect(() => {
     onGetFruitById;
-  }, [onGetFruitById])
+  }, [onGetFruitById]);
 
   if (onGetFruitById.isLoading) {
     return <DetailFruitSkeleton />;
   }
 
-  const DetailProduct = () => {
+  if (!data || _.isEmpty(data)) {
+    return <div className="p-8 text-center text-lg text-dark_grey">Không tìm thấy sản phẩm</div>;
+  }
 
-    return (
-      <div>
-        <div className=" mt-5 text-lg font-semibold leading-normal text-black">Chi tiết</div>
-        <div className='flex w-full'>
-          <div className="inline-flex flex-col items-start justify-start gap-[5px] pr-5">
-            <div className=" text-lg font-normal leading-normal text-black">Đường kính:</div>
-            <div className=" text-lg font-normal leading-normal text-black">Trọng lượng:</div>
-            <div className=" text-lg font-normal leading-normal text-black">Hình dáng:</div>
+  const images: string[] = !_.isEmpty(data?.fruit_images)
+    ? data.fruit_images.map((img: any) => (typeof img === 'string' ? img : img?.url)).filter(Boolean)
+    : [DemoFruit.src];
+
+  return (
+    <div className="rounded-lg bg-background">
+      <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2">
+        {/* Left: image gallery */}
+        <ProductGallery images={images} alt={data?.fruit_name || 'Phật thủ'} />
+
+        {/* Right: content */}
+        <div className="flex flex-col gap-5">
+          <span className="w-fit rounded-full bg-primary_light px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary">
+            Phật thủ
+          </span>
+          <h1 className="text-2xl font-extrabold text-primary_green md:text-4xl">
+            {data?.fruit_name || 'Phật thủ'}
+          </h1>
+
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+            <div className="rounded-xl bg-white p-4 text-center shadow-card">
+              <div className="text-xs uppercase tracking-wide text-dark_grey/60">Đường kính</div>
+              <div className="mt-1 font-bold text-primary_green">{rangeText(data?.dimeter, 'cm')}</div>
+            </div>
+            <div className="rounded-xl bg-white p-4 text-center shadow-card">
+              <div className="text-xs uppercase tracking-wide text-dark_grey/60">Trọng lượng</div>
+              <div className="mt-1 font-bold text-primary_green">{rangeText(data?.weight, 'g')}</div>
+            </div>
+            <div className="rounded-xl bg-white p-4 text-center shadow-card">
+              <div className="text-xs uppercase tracking-wide text-dark_grey/60">Còn lại</div>
+              <div className="mt-1 font-bold text-primary_green">{data?.quantity ?? 0} quả</div>
+            </div>
           </div>
-          <div className="inline-flex flex-col items-start justify-center gap-[5px]">
-            <div className=" text-lg font-normal leading-normal text-black"> {!_.isEmpty(data?.dimeter) ? `${data?.dimeter[0]} - ${data?.dimeter[1]}` : 0} {`(cm)`}</div>
-            <div className=" text-lg font-normal leading-normal text-black">{!_.isEmpty(data?.weight) ? `${data?.weight[0]} - ${data?.weight[1]}` : 0} {`(g)`}</div>
-            <div className=" text-lg font-normal leading-normal text-black">{!_.isEmpty(data?.weight) ? data?.shape.toString(): 'không'}</div>
+
+          <div>
+            <h2 className="mb-2 text-lg font-bold text-primary_green">Hình dáng</h2>
+            <p className="leading-relaxed text-dark_grey">
+              {!_.isEmpty(data?.shape) ? data.shape.toString() : 'Chưa có mô tả'}
+            </p>
           </div>
+
+          {data?.description && (
+            <div>
+              <h2 className="mb-2 text-lg font-bold text-primary_green">Mô tả</h2>
+              <p className="leading-relaxed text-dark_grey">{data.description}</p>
+            </div>
+          )}
+
+          {data?.usage && (
+            <div>
+              <h2 className="mb-2 text-lg font-bold text-primary_green">Công dụng</h2>
+              <p className="leading-relaxed text-dark_grey">{data.usage}</p>
+            </div>
+          )}
+
+          {data?.shelf_life && (
+            <div>
+              <h2 className="mb-2 text-lg font-bold text-primary_green">Thời gian sử dụng</h2>
+              <p className="leading-relaxed text-dark_grey">{data.shelf_life}</p>
+            </div>
+          )}
+
+          {data?.phone && (
+            <div className="rounded-2xl bg-primary_light/60 p-5">
+              <h2 className="mb-1 text-base font-bold text-primary_green">Liên hệ nhà vườn</h2>
+              <p className="text-dark_grey">{data.phone}</p>
+            </div>
+          )}
         </div>
       </div>
-    )
-  }
-  return <div>
-    <DetailProductCard
-      title={'Phật thủ đẹp'}
-      CommonProduct={<DetailProduct />}
-      productImg={data?.fruit_images}
-      name={data?.fruit_name}
-      quantity={data?.quantity}
-      bonsaiQuantity={data?.gardens?.bonsai?.length}
-      fruitQuantity={data?.gardens?.fruits?.length}
-      joinedAt={data?.gardens?.created_at} phone={data?.phone} />
-  </div>;
+    </div>
+  );
 };
 
 export default DetailFruitCategoriesPage;

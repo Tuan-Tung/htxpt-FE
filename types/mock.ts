@@ -19,6 +19,9 @@ export interface Fruit {
   dimeter: string;
   weight: string;
   imgList?: string[]
+  description?: string;
+  usage?: string;
+  shelf_life?: string;
 }
 export interface Bonsai {
   _id: string;

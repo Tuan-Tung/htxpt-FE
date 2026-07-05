@@ -9,11 +9,7 @@ const initialState: CommonState = {
 };
 
 const setIsSideBarDisplay: CaseReducer<CommonState, PayloadAction<boolean>> = (state, action) => {
-  if (action.payload) {
-    state.isSideBarDisplay = action.payload;
-  } else {
-    state.isSideBarDisplay = !state.isSideBarDisplay;
-  }
+  state.isSideBarDisplay = action.payload;
 };
 
 const commonSlice = createSlice({

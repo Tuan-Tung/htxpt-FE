@@ -37,7 +37,7 @@ const GardenerCard = ({
   return (
     <div
       onClick={onClick}
-      className="group flex cursor-pointer flex-col items-center rounded-2xl bg-white p-4 text-center shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover sm:p-5"
+      className="group flex h-full cursor-pointer flex-col items-center rounded-2xl bg-white p-4 text-center shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover sm:p-5"
     >
       <div className="relative h-20 w-20 shrink-0 sm:h-24 sm:w-24">
         <div className="relative h-full w-full overflow-hidden rounded-full bg-gradient-to-br from-primary_light to-white ring-4 ring-primary_light">
@@ -63,7 +63,7 @@ const GardenerCard = ({
         </div>
       </div>
 
-      <div className="mt-3 w-full truncate text-base font-bold sm:text-lg">{last_name}</div>
+      <div className="mt-3 w-full truncate text-base font-bold text-primary_green sm:text-lg">{last_name}</div>
       <div className="mt-2 flex w-full flex-col items-center gap-1.5 text-dark_grey">
         <div className="flex w-full items-center justify-center gap-1.5 text-xs sm:text-sm">
           <Icon color="#699C3A" name="ic_location_outline" size={16} />

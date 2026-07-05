@@ -64,8 +64,8 @@ const Button = (props: ButtonProps): React.ReactElement => {
         : 'bg-white text-dark-grey px-3'
       : variant === 'image'
       ? isActive
-        ? 'bg-white py-0 px-[10px] text-primary justify-start'
-        : 'py-0 px-[10px] bg-white text-dark-grey justify-start'
+        ? 'flex-col gap-1 bg-primary_light py-2 px-[10px] text-primary'
+        : 'flex-col gap-1 py-2 px-[10px] bg-white text-dark-grey'
       : '';
 
   const borderRadiusClasses =
@@ -91,8 +91,8 @@ const Button = (props: ButtonProps): React.ReactElement => {
         <Image
           src={image}
           alt={image}
-          width={43}
-          height={43}
+          width={variant === 'image' ? 32 : 43}
+          height={variant === 'image' ? 32 : 43}
           className={isActive ? '' : 'opacity-50'}
         />
       )}
@@ -103,8 +103,8 @@ const Button = (props: ButtonProps): React.ReactElement => {
       )}
       <div
         className={`flex flex-1 items-center ${
-          isActive ? 'text-primary-button font-bold' : 'text-dark-grey font-normal'
-        } justify-center text-[16px]`}
+          isActive ? 'font-bold' : 'font-normal'
+        } justify-center text-center ${variant === 'image' ? 'text-[11px] leading-tight sm:text-[16px]' : 'text-[16px]'}`}
       >
         {children}
       </div>

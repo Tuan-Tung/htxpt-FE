@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
 
-import Icon, { ICONS } from '@/components/Icon';
-import { DESCRIPTION, DIMETER, QUANTITY, RANG_PRICE, SHAPE, WEIGHT } from '@/constants/about';
 import { DemoFruit, DemoTree } from '@/public/images';
 import { Skeleton } from '@/components/ui/Skeleton';
 
@@ -21,47 +19,30 @@ export type Product = {
   description?: string;
 };
 
-const ProductDetail: React.FC<{ icon: keyof typeof ICONS; label: string; value: any; unit?: string }> = ({
-  icon,
-  label,
-  value,
-  unit,
-}) => (
-  <div className="flex w-full items-start gap-1.5 text-[13px] leading-snug text-dark_grey sm:text-sm">
-    <Icon color="#699C3A" name={icon} size={15} aria-label={label} />
-    <span className="line-clamp-2 min-w-0">
-      <span className="font-semibold text-black">{label}:</span> {value || 0}
-      {unit ? ` ${unit}` : ''}
-    </span>
-  </div>
-);
-
 export { ProductCardSkeleton } from '@/components/CardSkeletons';
 
 type ProductCardProps = Product & {
   onClick?: React.MouseEventHandler<HTMLDivElement>;
 };
 const ProductCard = ({
-  range_price,
+  _id,
   isFruit,
   shape,
-  dimeter,
-  weight,
   name,
-  quantity,
   description,
   image,
   onClick,
 }: ProductCardProps): React.ReactElement => {
   const [loaded, setLoaded] = useState(false);
   const src = image || (isFruit ? DemoFruit.src : DemoTree.src);
+  const tagline = isFruit ? shape : description;
 
   return (
     <div
       onClick={onClick}
-      className="group max-w-sm cursor-pointer transition-transform duration-300 hover:-translate-y-1"
+      className="group h-full max-w-sm cursor-pointer transition-transform duration-300 hover:-translate-y-1"
     >
-      <div className="flex flex-col overflow-hidden rounded-2xl bg-white shadow-card transition-shadow duration-300 group-hover:shadow-card-hover">
+      <div className="flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-card transition-shadow duration-300 group-hover:shadow-card-hover">
         <div className="relative w-full overflow-hidden">
           <div className="aspect-w-1 aspect-h-1 relative w-full bg-gradient-to-br from-primary_light to-white">
             {!loaded && <Skeleton className="absolute inset-0 h-full w-full bg-gray-200" />}
@@ -77,22 +58,16 @@ const ProductCard = ({
           <span className="absolute left-2 top-2 rounded-full bg-primary/90 px-3 py-1 text-xs font-semibold text-white shadow-soft backdrop-blur-sm">
             {isFruit ? 'Phật thủ' : 'Bonsai'}
           </span>
+          <div className="absolute inset-x-0 bottom-0 bg-primary_dark/80 py-2 text-center text-xs font-bold uppercase tracking-wide text-white backdrop-blur-sm transition-colors group-hover:bg-primary_dark">
+            Xem chi tiết
+          </div>
         </div>
-        <div className="flex flex-col items-start gap-2 px-5 py-4">
-          <div className="w-full truncate text-base font-bold text-black">{name}</div>
-          {isFruit ? (
-            <div className="flex w-full flex-col gap-1.5">
-              <ProductDetail icon="ic_fruit_outline" label={SHAPE} value={shape} />
-              <ProductDetail icon="ic_fruit_outline" label={WEIGHT} value={weight} />
-              <ProductDetail icon="ic_fruit_outline" label={DIMETER} value={dimeter} />
-              <ProductDetail icon="ic_fruit_outline" label={RANG_PRICE} value={range_price} unit="VNĐ" />
-            </div>
-          ) : (
-            <div className="flex w-full flex-col gap-1.5">
-              <ProductDetail icon="ic_trees_outline" label={QUANTITY} value={quantity} unit="cây" />
-              <ProductDetail icon="ic_trees_outline" label={DESCRIPTION} value={description} />
-            </div>
+        <div className="flex flex-1 flex-col items-start gap-1 px-5 py-4">
+          <div className="w-full truncate text-base font-bold text-primary_green">{name}</div>
+          {tagline && (
+            <p className="line-clamp-2 w-full text-sm italic text-dark_grey">{tagline}</p>
           )}
+          {_id && <p className="mt-auto w-full text-xs text-dark_grey/60">Mã SP: #{_id}</p>}
         </div>
       </div>
     </div>
