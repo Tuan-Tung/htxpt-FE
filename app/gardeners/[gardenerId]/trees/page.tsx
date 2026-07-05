@@ -24,6 +24,7 @@ const GardenerListTrees:NextPage = ():React.ReactElement => {
       {!_.isEmpty(gardeners?.bonsai) ? gardeners?.bonsai?.map((tree: Product, index: number) => (
         <ProductCard
         key={tree.tree_name || 0 + index}
+        _id={tree._id}
         name={tree.tree_name}
         image={tree.image}
         quantity={tree.quantity}

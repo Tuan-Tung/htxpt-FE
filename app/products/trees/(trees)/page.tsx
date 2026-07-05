@@ -34,6 +34,7 @@ const ListTreesPage: NextPage = (): React.ReactElement => {
         {DATA_BONSAI.map((tree: Bonsai, index: number) => (
           <ProductCard
           key={tree.tree_name || 0 + index}
+          _id={tree._id}
           name={tree.tree_name}
           image={tree.image}
           quantity={tree.quantity}

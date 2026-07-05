@@ -165,6 +165,7 @@ const HomePageContent = ({
                 {fruitList.slice(0, 3).map((fruit: Fruit, index: number) => (
                   <ProductCard
                     key={fruit.category_name || 0 + index}
+                    _id={fruit._id}
                     isFruit
                     name={fruit?.category_name}
                     image={fruit.image}
@@ -188,6 +189,7 @@ const HomePageContent = ({
                 {treeList.slice(0, 3).map((tree: Bonsai, index: number) => (
                   <ProductCard
                     key={tree.tree_name || 0 + index}
+                    _id={tree._id}
                     name={tree.tree_name}
                     image={tree.image}
                     quantity={tree.quantity}

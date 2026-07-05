@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
 
-import Icon, { ICONS } from '@/components/Icon';
-import { DESCRIPTION, DIMETER, QUANTITY, RANG_PRICE, SHAPE, WEIGHT } from '@/constants/about';
 import { DemoFruit, DemoTree } from '@/public/images';
 import { Skeleton } from '@/components/ui/Skeleton';
 
@@ -21,56 +19,23 @@ export type Product = {
   description?: string;
 };
 
-const ProductDetail: React.FC<{ icon: keyof typeof ICONS; label: string; value: any; unit?: string }> = ({
-  icon,
-  label,
-  value,
-  unit,
-}) => (
-  <div className="flex w-full items-start gap-1.5 text-[13px] leading-snug text-dark_grey sm:text-sm">
-    <Icon color="#699C3A" name={icon} size={15} aria-label={label} />
-    <span className="line-clamp-2 min-w-0">
-      <span className="font-semibold text-black">{label}:</span> {value || 0}
-      {unit ? ` ${unit}` : ''}
-    </span>
-  </div>
-);
-
-const SpecChip: React.FC<{ icon: keyof typeof ICONS; label: string; value: any; unit?: string }> = ({
-  icon,
-  label,
-  value,
-  unit,
-}) => (
-  <span
-    className="inline-flex items-center gap-1 rounded-full bg-primary_light px-2.5 py-1 text-[11px] font-semibold text-primary sm:text-xs"
-    aria-label={label}
-  >
-    <Icon color="#699C3A" name={icon} size={12} />
-    {value || 0}
-    {unit ? ` ${unit}` : ''}
-  </span>
-);
-
 export { ProductCardSkeleton } from '@/components/CardSkeletons';
 
 type ProductCardProps = Product & {
   onClick?: React.MouseEventHandler<HTMLDivElement>;
 };
 const ProductCard = ({
-  range_price,
+  _id,
   isFruit,
   shape,
-  dimeter,
-  weight,
   name,
-  quantity,
   description,
   image,
   onClick,
 }: ProductCardProps): React.ReactElement => {
   const [loaded, setLoaded] = useState(false);
   const src = image || (isFruit ? DemoFruit.src : DemoTree.src);
+  const tagline = isFruit ? shape : description;
 
   return (
     <div
@@ -93,26 +58,16 @@ const ProductCard = ({
           <span className="absolute left-2 top-2 rounded-full bg-primary/90 px-3 py-1 text-xs font-semibold text-white shadow-soft backdrop-blur-sm">
             {isFruit ? 'Phật thủ' : 'Bonsai'}
           </span>
+          <div className="absolute inset-x-0 bottom-0 bg-primary_dark/80 py-2 text-center text-xs font-bold uppercase tracking-wide text-white backdrop-blur-sm transition-colors group-hover:bg-primary_dark">
+            Xem chi tiết
+          </div>
         </div>
-        <div className="flex flex-col items-start gap-2 px-5 py-4">
+        <div className="flex flex-col items-start gap-1 px-5 py-4">
           <div className="w-full truncate text-base font-bold text-black">{name}</div>
-          {isFruit ? (
-            <div className="flex w-full flex-col gap-2">
-              <div className="flex w-full flex-wrap gap-1.5">
-                <SpecChip icon="ic_fruit_outline" label={WEIGHT} value={weight} />
-                <SpecChip icon="ic_fruit_outline" label={DIMETER} value={dimeter} />
-                <SpecChip icon="ic_fruit_outline" label={RANG_PRICE} value={range_price} unit="VNĐ" />
-              </div>
-              <ProductDetail icon="ic_fruit_outline" label={SHAPE} value={shape} />
-            </div>
-          ) : (
-            <div className="flex w-full flex-col gap-2">
-              <div className="flex w-full flex-wrap gap-1.5">
-                <SpecChip icon="ic_trees_outline" label={QUANTITY} value={quantity} unit="cây" />
-              </div>
-              <ProductDetail icon="ic_trees_outline" label={DESCRIPTION} value={description} />
-            </div>
+          {tagline && (
+            <p className="line-clamp-2 w-full text-sm italic text-dark_grey">{tagline}</p>
           )}
+          {_id && <p className="w-full text-xs text-dark_grey/60">Mã SP: #{_id}</p>}
         </div>
       </div>
     </div>

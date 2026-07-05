@@ -42,6 +42,7 @@ const ListFruitsPage: NextPage = (): React.ReactElement => {
           : dataFruitCategory.map((fruit: Product, index: number) => (
               <ProductCard
                 key={fruit.category_name || 0 + index}
+                _id={fruit._id}
                 isFruit
                 name={fruit?.category_name}
                 image={fruit.image}
