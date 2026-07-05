@@ -4,7 +4,7 @@
 import { animated, config, useTransition } from '@react-spring/web';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
-import React, { useCallback, useEffect, useLayoutEffect,useRef, useState } from 'react';
+import React, { useCallback, useEffect, useLayoutEffect, useState } from 'react';
 
 import Icon from '@/components/Icon';
 import { NAVBAR_ITEMS } from '@/constants/common';
@@ -27,8 +27,6 @@ const SideBar = ({ items }: DashboardNavProps): React.ReactElement => {
   const router = useRouter();
   const pathname = usePathname();
   const [activeItem, setActiveItem] = useState('');
-  const [indicatorOffset, setIndicatorOffset] = useState(0);
-  const itemRefs = useRef<(HTMLElement | null)[]>([]);
   const dispatch = useDispatch();
 
   const { isSideBarDisplay } = useSelector((state: RootState) => state.common);
@@ -73,70 +71,19 @@ const SideBar = ({ items }: DashboardNavProps): React.ReactElement => {
   const activeIndex = NAVBAR_ITEMS.findIndex((item) => isActive(item.code, getHref(item.code)));
 
   useLayoutEffect(() => {
-    const getActiveItemFromPath = () => {
-      const currentPath = pathname.split('/')[1];
-      const activeItem = NAVBAR_ITEMS.find((item) =>
-        currentPath === '' ? item.code === 'HOME' : currentPath.includes(item.code.toLowerCase())
-      );
-      if (activeItem) {
-        setActiveItem(activeItem.code.toLowerCase());
-      }
-    };
-    const getActiveOffset = () => {
-      if (activeIndex !== -1) {
-        const activeNavbarItem = NAVBAR_ITEMS[activeIndex];
-        setActiveItem(activeNavbarItem.code.toLowerCase());
-        const activeItemRef = itemRefs.current[activeIndex];
-
-        if (activeItemRef) {
-          setIndicatorOffset(activeItemRef.offsetTop);
-        }
-      }
-    };
-
-    getActiveOffset();
-    getActiveItemFromPath();
+    if (activeIndex !== -1) {
+      setActiveItem(NAVBAR_ITEMS[activeIndex].code.toLowerCase());
+      return;
+    }
+    const currentPath = pathname.split('/')[1];
+    const matchedItem = NAVBAR_ITEMS.find((item) =>
+      currentPath === '' ? item.code === 'HOME' : currentPath.includes(item.code.toLowerCase())
+    );
+    if (matchedItem) {
+      setActiveItem(matchedItem.code.toLowerCase());
+    }
   }, [activeIndex, pathname]);
 
-  useLayoutEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 768) {
-        dispatch(commonActions.setIsSideBarDisplay(true));
-      } else {
-        dispatch(commonActions.setIsSideBarDisplay(false));
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    handleResize();
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [dispatch]);
-
-  useLayoutEffect(() => {
-    if (activeIndex !== -1) {
-      const activeItemRef = itemRefs.current[activeIndex];
-      if (activeItemRef) {
-        setIndicatorOffset(activeItemRef.offsetTop);
-      }
-    }
-  }, [activeIndex]);
-  useEffect(() => {
-    const updateIndicatorOffset = () => {
-      if (activeIndex !== -1) {
-        const activeItemRef = itemRefs.current[activeIndex];
-        if (activeItemRef) {
-          setIndicatorOffset(activeItemRef.offsetTop);
-        }
-      }
-    };
-  
-    requestAnimationFrame(updateIndicatorOffset);
-  }, [activeIndex, itemRefs]);
-  
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
@@ -184,20 +131,15 @@ const SideBar = ({ items }: DashboardNavProps): React.ReactElement => {
                 />
               </div>
               <div className="relative flex flex-1 flex-col justify-start overflow-y-auto px-4 py-6 text-[14px] font-semibold text-dark_grey">
-                <div
-                  className="absolute left-4 right-4 h-10 rounded-xl bg-primary_light transition-all duration-300 ease-out"
-                  style={{ top: `${indicatorOffset}px` }}
-                />
-                {items.map((item: SideBarItems, index: number) => {
+                {items.map((item: SideBarItems) => {
                   const active = activeItem === item.code.toLowerCase();
                   return (
                     <div
                       key={item.code}
                       onClick={() => handleClick(item.code, getHref(item.code))}
-                      ref={(el) => (itemRefs.current[index] = el)}
                       className={cn(
-                        'group relative z-10 mb-1 flex shrink-0 cursor-pointer items-center gap-3 rounded-xl px-4 py-[10px] transition-colors duration-200 hover:text-primary',
-                        active ? 'text-primary' : ''
+                        'group mb-1 flex shrink-0 cursor-pointer items-center gap-3 rounded-xl px-4 py-[10px] transition-colors duration-200 hover:text-primary',
+                        active ? 'bg-primary_light text-primary' : ''
                       )}
                     >
                       <div
