@@ -86,6 +86,27 @@ const DetailFruitCategoriesPage: NextPage = (): React.ReactElement => {
             </p>
           </div>
 
+          {data?.description && (
+            <div>
+              <h2 className="mb-2 text-lg font-bold text-black">Mô tả</h2>
+              <p className="leading-relaxed text-dark_grey">{data.description}</p>
+            </div>
+          )}
+
+          {data?.usage && (
+            <div>
+              <h2 className="mb-2 text-lg font-bold text-black">Công dụng</h2>
+              <p className="leading-relaxed text-dark_grey">{data.usage}</p>
+            </div>
+          )}
+
+          {data?.shelf_life && (
+            <div>
+              <h2 className="mb-2 text-lg font-bold text-black">Thời gian sử dụng</h2>
+              <p className="leading-relaxed text-dark_grey">{data.shelf_life}</p>
+            </div>
+          )}
+
           {data?.phone && (
             <div className="rounded-2xl bg-primary_light/60 p-5">
               <h2 className="mb-1 text-base font-bold text-black">Liên hệ nhà vườn</h2>

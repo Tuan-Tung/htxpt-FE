@@ -40,9 +40,9 @@ const ProductCard = ({
   return (
     <div
       onClick={onClick}
-      className="group max-w-sm cursor-pointer transition-transform duration-300 hover:-translate-y-1"
+      className="group h-full max-w-sm cursor-pointer transition-transform duration-300 hover:-translate-y-1"
     >
-      <div className="flex flex-col overflow-hidden rounded-2xl bg-white shadow-card transition-shadow duration-300 group-hover:shadow-card-hover">
+      <div className="flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-card transition-shadow duration-300 group-hover:shadow-card-hover">
         <div className="relative w-full overflow-hidden">
           <div className="aspect-w-1 aspect-h-1 relative w-full bg-gradient-to-br from-primary_light to-white">
             {!loaded && <Skeleton className="absolute inset-0 h-full w-full bg-gray-200" />}
@@ -58,16 +58,16 @@ const ProductCard = ({
           <span className="absolute left-2 top-2 rounded-full bg-primary/90 px-3 py-1 text-xs font-semibold text-white shadow-soft backdrop-blur-sm">
             {isFruit ? 'Phật thủ' : 'Bonsai'}
           </span>
-          <div className="absolute inset-x-0 bottom-0 bg-primary_dark/80 py-2 text-center text-xs font-bold uppercase tracking-wide text-white backdrop-blur-sm transition-colors group-hover:bg-primary_dark">
+          <div className="absolute inset-x-0 bottom-0 bg-primary_blue/80 py-2 text-center text-xs font-bold uppercase tracking-wide text-white backdrop-blur-sm transition-colors group-hover:bg-primary_blue">
             Xem chi tiết
           </div>
         </div>
-        <div className="flex flex-col items-start gap-1 px-5 py-4">
-          <div className="w-full truncate text-base font-bold text-black">{name}</div>
+        <div className="flex flex-1 flex-col items-start gap-1 px-5 py-4">
+          <div className="w-full truncate text-base font-bold text-primary_green">{name}</div>
           {tagline && (
             <p className="line-clamp-2 w-full text-sm italic text-dark_grey">{tagline}</p>
           )}
-          {_id && <p className="w-full text-xs text-dark_grey/60">Mã SP: #{_id}</p>}
+          {_id && <p className="mt-auto w-full text-xs text-dark_grey/60">Mã SP: #{_id}</p>}
         </div>
       </div>
     </div>

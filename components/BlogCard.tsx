@@ -35,7 +35,7 @@ const BlogCard = ({
           />
         </div>
         <div className="flex w-1/2 flex-1 flex-col justify-center p-4">
-          <div className="truncate-ellipsis mb-2 font-bold transition-colors group-hover:text-primary">
+          <div className="truncate-ellipsis mb-2 font-bold text-primary_green transition-colors group-hover:text-primary">
             {title}
           </div>
           <div className="truncate-ellipsis-2-line text-sm text-gray-500">{short_description}</div>

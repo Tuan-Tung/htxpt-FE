@@ -6,6 +6,13 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+
+  --color-primary-green: #2D5016;
+  --color-primary-blue: #146ff8;
+  --color-accent-terra: #D45B34;
+  --color-bg-cream: #F9F7F3;
+  --color-text-dark: #2D5016;
+  --color-success: #4CAF50;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -104,6 +104,10 @@ export const DATA_FRUIT = [
     shape: 'Ngón tay thon dài, uốn cong tự nhiên',
     dimeter: '8-12 cm',
     weight: '0.8-1.2 kg',
+    description:
+      'Phật Thủ Loại 1 có dáng ngón tay thon dài, uốn cong tự nhiên như bàn tay Phật đang chắp lại, phù hợp chưng bàn thờ và trang trí phòng khách dịp Tết.',
+    usage: 'Thờ cúng, trang trí, làm quà tặng, ướp trà, ngâm rượu, làm mứt',
+    shelf_life: '2-3 tháng (tươi), 1 năm (khô)',
   },
   {
     _id: '12',
@@ -121,6 +125,10 @@ export const DATA_FRUIT = [
     shape: 'Bàn tay Phật mở rộng, ngón đều',
     dimeter: '10-14 cm',
     weight: '1.0-1.5 kg',
+    description:
+      'Phật Thủ Loại 2 sở hữu bàn tay Phật mở rộng, các ngón đều và căng tròn, mang ý nghĩa phúc lộc viên mãn, thích hợp làm quà biếu.',
+    usage: 'Thờ cúng, trang trí, làm quà tặng, ướp trà, ngâm rượu, làm mứt',
+    shelf_life: '2-3 tháng (tươi), 1 năm (khô)',
   },
   {
     _id: '18',
@@ -138,6 +146,10 @@ export const DATA_FRUIT = [
     shape: 'Hình rồng cuốn, vàng óng ánh, hương quyến rũ',
     dimeter: '18-22 cm',
     weight: '2.5-3.5 kg',
+    description:
+      'Phật Thủ Đặc Biệt có hình dáng độc đáo như rồng cuộn, vỏ vàng óng ánh và hương thơm quyến rũ đặc trưng, là lựa chọn cao cấp cho không gian thờ cúng trang trọng.',
+    usage: 'Thờ cúng, trang trí, làm quà biếu cao cấp, ướp trà, ngâm rượu',
+    shelf_life: '2-3 tháng (tươi), 1 năm (khô)',
   },
   {
     _id: '19',
@@ -156,6 +168,10 @@ export const DATA_FRUIT = [
     shape: 'Ngón tay Phật chụm lại, cân đối',
     dimeter: '9-13 cm',
     weight: '0.9-1.3 kg',
+    description:
+      'Phật Thủ Loại 3 có các ngón tay chụm lại cân đối, kích thước vừa phải, phù hợp bày trí bàn làm việc hoặc không gian nhỏ.',
+    usage: 'Thờ cúng, trang trí, làm quà tặng, ướp trà, ngâm rượu, làm mứt',
+    shelf_life: '2-3 tháng (tươi), 1 năm (khô)',
   },
 ];
 

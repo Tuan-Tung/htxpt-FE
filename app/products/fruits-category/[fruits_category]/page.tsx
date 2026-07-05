@@ -65,7 +65,7 @@ export default function FruitCategoryDetail() {
             </div>
             <div className="rounded-xl bg-white p-4 text-center shadow-card">
               <div className="text-xs uppercase tracking-wide text-dark_grey/60">Khoảng giá</div>
-              <div className="mt-1 font-bold text-primary">{dataDetail.range_price} VNĐ</div>
+              <div className="mt-1 font-bold text-accent_terra">{dataDetail.range_price} VNĐ</div>
             </div>
           </div>
 
@@ -73,6 +73,27 @@ export default function FruitCategoryDetail() {
             <h2 className="mb-2 text-lg font-bold text-black">Kiểu dáng</h2>
             <p className="leading-relaxed text-dark_grey">{dataDetail.shape}</p>
           </div>
+
+          {dataDetail.description && (
+            <div>
+              <h2 className="mb-2 text-lg font-bold text-black">Mô tả</h2>
+              <p className="leading-relaxed text-dark_grey">{dataDetail.description}</p>
+            </div>
+          )}
+
+          {dataDetail.usage && (
+            <div>
+              <h2 className="mb-2 text-lg font-bold text-black">Công dụng</h2>
+              <p className="leading-relaxed text-dark_grey">{dataDetail.usage}</p>
+            </div>
+          )}
+
+          {dataDetail.shelf_life && (
+            <div>
+              <h2 className="mb-2 text-lg font-bold text-black">Thời gian sử dụng</h2>
+              <p className="leading-relaxed text-dark_grey">{dataDetail.shelf_life}</p>
+            </div>
+          )}
         </div>
       </div>
     </div>
