@@ -1,24 +1,12 @@
 'use client';
 
-import Image from 'next/image';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import { Fruit } from '@/types/mock';
 import { DATA_FRUIT } from '@/mock_data/data_gardeners';
+import ProductGallery from '@/components/ProductGallery';
 import { useParams } from 'next/navigation';
 
 export default function FruitCategoryDetail() {
   const params = useParams();
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-  };
 
   const dataDetail: Fruit | undefined = DATA_FRUIT.find((item) => item._id === params.fruits_category);
 
@@ -32,20 +20,7 @@ export default function FruitCategoryDetail() {
     <div className="rounded-lg bg-background">
       <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2">
         {/* Left: image gallery */}
-        <div className="overflow-hidden rounded-2xl bg-white shadow-card">
-          <Slider {...settings}>
-            {images.map((src, i) => (
-              <div key={i} className="relative h-72 sm:h-96 lg:h-[520px]">
-                <Image
-                  src={src}
-                  alt={`${dataDetail.category_name} - ảnh ${i + 1}`}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            ))}
-          </Slider>
-        </div>
+        <ProductGallery images={images} alt={dataDetail.category_name} />
 
         {/* Right: content */}
         <div className="flex flex-col gap-5">

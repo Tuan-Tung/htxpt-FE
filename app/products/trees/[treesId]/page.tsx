@@ -1,24 +1,12 @@
 'use client';
 
-import Image from 'next/image';
-import Slider from 'react-slick';
 import { Bonsai } from '@/types/mock';
 import { DATA_BONSAI } from '@/mock_data/data_gardeners';
+import ProductGallery from '@/components/ProductGallery';
 import { useParams } from 'next/navigation';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
 export default function BonsaiDetail() {
   const params = useParams();
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-  };
 
   const dataDetail: Bonsai | undefined = DATA_BONSAI.find((item) => item._id === params.treesId);
 
@@ -32,15 +20,7 @@ export default function BonsaiDetail() {
     <div className="rounded-lg bg-background">
       <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2">
         {/* Left: image gallery */}
-        <div className="overflow-hidden rounded-2xl bg-white shadow-card">
-          <Slider {...settings}>
-            {images.map((src, i) => (
-              <div key={i} className="relative h-72 sm:h-96 lg:h-[520px]">
-                <Image src={src} alt={`${dataDetail.tree_name} - ảnh ${i + 1}`} fill className="object-cover" />
-              </div>
-            ))}
-          </Slider>
-        </div>
+        <ProductGallery images={images} alt={dataDetail.tree_name} />
 
         {/* Right: content */}
         <div className="flex flex-col gap-5">

@@ -2,11 +2,11 @@
 
 import _ from 'lodash';
 import { NextPage } from 'next';
-import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import React, { useEffect } from 'react';
 
 import { useFruitDetail } from '@/components/hooks/fruit';
+import ProductGallery from '@/components/ProductGallery';
 import { Skeleton } from '@/components/ui/Skeleton';
 import { DemoFruit } from '@/public/images';
 
@@ -51,9 +51,7 @@ const DetailFruitCategoriesPage: NextPage = (): React.ReactElement => {
     <div className="rounded-lg bg-background">
       <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2">
         {/* Left: image gallery */}
-        <div className="relative h-72 overflow-hidden rounded-2xl bg-white shadow-card sm:h-96 lg:h-[520px]">
-          <Image src={images[0]} alt={data?.fruit_name || 'Phật thủ'} fill className="object-cover" />
-        </div>
+        <ProductGallery images={images} alt={data?.fruit_name || 'Phật thủ'} />
 
         {/* Right: content */}
         <div className="flex flex-col gap-5">
