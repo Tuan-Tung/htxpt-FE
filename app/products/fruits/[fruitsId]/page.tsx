@@ -60,27 +60,27 @@ const DetailFruitCategoriesPage: NextPage = (): React.ReactElement => {
           <span className="w-fit rounded-full bg-primary_light px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary">
             Phật thủ
           </span>
-          <h1 className="text-2xl font-extrabold text-black md:text-4xl">
+          <h1 className="text-2xl font-extrabold text-primary_green md:text-4xl">
             {data?.fruit_name || 'Phật thủ'}
           </h1>
 
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
             <div className="rounded-xl bg-white p-4 text-center shadow-card">
               <div className="text-xs uppercase tracking-wide text-dark_grey/60">Đường kính</div>
-              <div className="mt-1 font-bold text-black">{rangeText(data?.dimeter, 'cm')}</div>
+              <div className="mt-1 font-bold text-primary_green">{rangeText(data?.dimeter, 'cm')}</div>
             </div>
             <div className="rounded-xl bg-white p-4 text-center shadow-card">
               <div className="text-xs uppercase tracking-wide text-dark_grey/60">Trọng lượng</div>
-              <div className="mt-1 font-bold text-black">{rangeText(data?.weight, 'g')}</div>
+              <div className="mt-1 font-bold text-primary_green">{rangeText(data?.weight, 'g')}</div>
             </div>
             <div className="rounded-xl bg-white p-4 text-center shadow-card">
               <div className="text-xs uppercase tracking-wide text-dark_grey/60">Còn lại</div>
-              <div className="mt-1 font-bold text-primary">{data?.quantity ?? 0} quả</div>
+              <div className="mt-1 font-bold text-primary_green">{data?.quantity ?? 0} quả</div>
             </div>
           </div>
 
           <div>
-            <h2 className="mb-2 text-lg font-bold text-black">Hình dáng</h2>
+            <h2 className="mb-2 text-lg font-bold text-primary_green">Hình dáng</h2>
             <p className="leading-relaxed text-dark_grey">
               {!_.isEmpty(data?.shape) ? data.shape.toString() : 'Chưa có mô tả'}
             </p>
@@ -88,28 +88,28 @@ const DetailFruitCategoriesPage: NextPage = (): React.ReactElement => {
 
           {data?.description && (
             <div>
-              <h2 className="mb-2 text-lg font-bold text-black">Mô tả</h2>
+              <h2 className="mb-2 text-lg font-bold text-primary_green">Mô tả</h2>
               <p className="leading-relaxed text-dark_grey">{data.description}</p>
             </div>
           )}
 
           {data?.usage && (
             <div>
-              <h2 className="mb-2 text-lg font-bold text-black">Công dụng</h2>
+              <h2 className="mb-2 text-lg font-bold text-primary_green">Công dụng</h2>
               <p className="leading-relaxed text-dark_grey">{data.usage}</p>
             </div>
           )}
 
           {data?.shelf_life && (
             <div>
-              <h2 className="mb-2 text-lg font-bold text-black">Thời gian sử dụng</h2>
+              <h2 className="mb-2 text-lg font-bold text-primary_green">Thời gian sử dụng</h2>
               <p className="leading-relaxed text-dark_grey">{data.shelf_life}</p>
             </div>
           )}
 
           {data?.phone && (
             <div className="rounded-2xl bg-primary_light/60 p-5">
-              <h2 className="mb-1 text-base font-bold text-black">Liên hệ nhà vườn</h2>
+              <h2 className="mb-1 text-base font-bold text-primary_green">Liên hệ nhà vườn</h2>
               <p className="text-dark_grey">{data.phone}</p>
             </div>
           )}

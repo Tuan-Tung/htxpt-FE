@@ -93,7 +93,7 @@ const HomePageContent = ({
             <span className="inline-block rounded-full bg-primary_light px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary">
               Sản phẩm tiêu biểu
             </span>
-            <h3 className="truncate-ellipsis mt-3 text-[24px] font-extrabold text-black md:text-[36px]">
+            <h3 className="truncate-ellipsis mt-3 text-[24px] font-extrabold text-primary_green md:text-[36px]">
               Phật thủ sấy khô
             </h3>
             <p className="py-4 pr-12 leading-relaxed text-dark_grey lg:text-lg">
@@ -124,7 +124,7 @@ const HomePageContent = ({
 
       <div className="flex flex-col space-y-5">
         <div className="flex items-center justify-between">
-          <div className="relative pl-4 text-[24px] font-extrabold text-black md:text-[32px] before:absolute before:left-0 before:top-[6px] before:h-[70%] before:w-1.5 before:rounded-full before:bg-primary">
+          <div className="relative pl-4 text-[24px] font-extrabold text-primary_green md:text-[32px] before:absolute before:left-0 before:top-[6px] before:h-[70%] before:w-1.5 before:rounded-full before:bg-primary">
             {GARDENER_TITLE}
           </div>
           <Link
@@ -157,7 +157,7 @@ const HomePageContent = ({
       <div className="flex flex-wrap lg:flex-nowrap xl:space-x-8">
         <div className="flex w-full flex-col space-y-8 lg:w-3/5">
           <div className="flex flex-col space-y-4">
-            <div className="relative pl-4 text-[24px] font-extrabold text-black md:text-[32px] before:absolute before:left-0 before:top-[6px] before:h-[70%] before:w-1.5 before:rounded-full before:bg-primary">
+            <div className="relative pl-4 text-[24px] font-extrabold text-primary_green md:text-[32px] before:absolute before:left-0 before:top-[6px] before:h-[70%] before:w-1.5 before:rounded-full before:bg-primary">
               {FRUIT_TITLE}
             </div>
             <div className="grid gap-4 grid-cols-2 lg:grid-cols-3">
@@ -181,7 +181,7 @@ const HomePageContent = ({
           </div>
 
           <div className="flex flex-col space-y-4">
-            <div className="relative pl-4 text-[24px] font-extrabold text-black md:text-[32px] before:absolute before:left-0 before:top-[6px] before:h-[70%] before:w-1.5 before:rounded-full before:bg-primary">
+            <div className="relative pl-4 text-[24px] font-extrabold text-primary_green md:text-[32px] before:absolute before:left-0 before:top-[6px] before:h-[70%] before:w-1.5 before:rounded-full before:bg-primary">
               {TREE_TITLE}
             </div>
             <div className="grid grid-cols-2 gap-4 2xl:grid-cols-3">
@@ -204,7 +204,7 @@ const HomePageContent = ({
 
         <div className="w-full lg:w-2/5">
           <div className="sticky top-20 flex flex-col space-y-4">
-            <div className="relative pl-4 text-[24px] font-extrabold text-black md:text-[32px] before:absolute before:left-0 before:top-[6px] before:h-[70%] before:w-1.5 before:rounded-full before:bg-primary">
+            <div className="relative pl-4 text-[24px] font-extrabold text-primary_green md:text-[32px] before:absolute before:left-0 before:top-[6px] before:h-[70%] before:w-1.5 before:rounded-full before:bg-primary">
               {BLOG_TITLE}
             </div>
             <div className="flex flex-col space-y-3 max-h-[calc(4*theme('spacing.64')+3*theme('spacing.3'))] overflow-y-auto pr-2">
