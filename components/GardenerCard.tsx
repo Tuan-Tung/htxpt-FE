@@ -35,13 +35,11 @@ const GardenerCard = ({
   return (
     <div
       onClick={onClick}
-      className="group flex cursor-pointer flex-col overflow-hidden rounded-2xl bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
+      className="group flex cursor-pointer flex-col items-center overflow-hidden rounded-2xl bg-white p-4 text-center shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover sm:p-5"
     >
-      <div className="relative w-full overflow-hidden">
-        <div className="aspect-w-1 aspect-h-1 relative w-full bg-gradient-to-br from-primary_light to-white">
-          {!loaded && (
-            <Skeleton className="absolute inset-0 h-full w-full bg-gray-200" />
-          )}
+      <div className="relative h-20 w-20 shrink-0 sm:h-24 sm:w-24">
+        <div className="relative h-full w-full overflow-hidden rounded-full bg-gradient-to-br from-primary_light to-white ring-4 ring-primary_light">
+          {!loaded && <Skeleton className="absolute inset-0 h-full w-full rounded-full bg-gray-200" />}
           <Image
             src={image || Objects.src}
             alt="Gardener"
@@ -51,10 +49,10 @@ const GardenerCard = ({
             loading="lazy"
           />
         </div>
-        <div className="absolute right-2 top-2 flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-xs font-bold text-primary shadow-soft backdrop-blur-sm sm:text-sm">
+        <div className="absolute -bottom-1 -right-1 flex items-center gap-0.5 rounded-full bg-white px-1.5 py-0.5 text-[11px] font-bold text-primary shadow-soft">
           {rating_avg ? (
             <>
-              <Icon name="ic_star" color="#699C3A" size={13} />
+              <Icon name="ic_star" color="#699C3A" size={11} />
               {rating_avg}
             </>
           ) : (
@@ -63,23 +61,21 @@ const GardenerCard = ({
         </div>
       </div>
 
-      <div className="p-4 sm:p-6">
-        <div className="truncate text-lg font-bold sm:text-xl">{last_name}</div>
-        <div className="mt-3 space-y-2 sm:mt-4">
-          <div className="flex items-center gap-2 text-xs text-dark_grey sm:text-sm">
-            <Icon color="#699C3A" name="ic_location_outline" size={20} />
-            <span className="truncate-ellipsis">{location || 'Liên hệ'}</span>
-          </div>
-          <div className="flex items-center gap-2 text-xs text-dark_grey sm:text-sm">
-            <Icon color="#699C3A" name="ic_phone_outline" size={20} />
-            <span className="truncate-ellipsis">{phone}</span>
-          </div>
-          <div className="flex items-center gap-2 truncate text-xs sm:text-sm">
-            <Icon color="#699C3A" name="ic_card_category_outline" size={20} />
-            <span className="truncate-ellipsis text-primary">
-              {product_category?.length ? product_category.join(', ') : 'Chưa có sản phẩm'}
-            </span>
-          </div>
+      <div className="mt-3 w-full truncate text-base font-bold sm:text-lg">{last_name}</div>
+      <div className="mt-2 flex w-full flex-col items-center gap-1.5 text-dark_grey">
+        <div className="flex w-full items-center justify-center gap-1.5 text-xs sm:text-sm">
+          <Icon color="#699C3A" name="ic_location_outline" size={16} />
+          <span className="truncate-ellipsis">{location || 'Liên hệ'}</span>
+        </div>
+        <div className="flex w-full items-center justify-center gap-1.5 text-xs sm:text-sm">
+          <Icon color="#699C3A" name="ic_phone_outline" size={16} />
+          <span className="truncate-ellipsis">{phone}</span>
+        </div>
+        <div className="flex w-full items-center justify-center gap-1.5 truncate text-xs sm:text-sm">
+          <Icon color="#699C3A" name="ic_card_category_outline" size={16} />
+          <span className="truncate-ellipsis text-primary">
+            {product_category?.length ? product_category.join(', ') : 'Chưa có sản phẩm'}
+          </span>
         </div>
       </div>
     </div>
