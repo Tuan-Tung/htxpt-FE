@@ -37,18 +37,20 @@ const GardenerCard = ({
       onClick={onClick}
       className="group flex cursor-pointer flex-col overflow-hidden rounded-2xl bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
     >
-      <div className="aspect-w-1 aspect-h-1 relative w-full overflow-hidden bg-gradient-to-br from-primary_light to-white">
-        {!loaded && (
-          <Skeleton className="absolute inset-0 h-full w-full bg-gray-200" />
-        )}
-        <Image
-          src={image || Objects.src}
-          alt="Gardener"
-          fill
-          className={`object-cover transition-all duration-500 group-hover:scale-105 ${loaded ? 'opacity-100' : 'opacity-0'}`}
-          onLoad={() => setLoaded(true)}
-          loading="lazy"
-        />
+      <div className="relative w-full overflow-hidden">
+        <div className="aspect-w-1 aspect-h-1 relative w-full bg-gradient-to-br from-primary_light to-white">
+          {!loaded && (
+            <Skeleton className="absolute inset-0 h-full w-full bg-gray-200" />
+          )}
+          <Image
+            src={image || Objects.src}
+            alt="Gardener"
+            fill
+            className={`object-cover transition-all duration-500 group-hover:scale-105 ${loaded ? 'opacity-100' : 'opacity-0'}`}
+            onLoad={() => setLoaded(true)}
+            loading="lazy"
+          />
+        </div>
         <div className="absolute right-2 top-2 flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-xs font-bold text-primary shadow-soft backdrop-blur-sm sm:text-sm">
           {rating_avg ? (
             <>

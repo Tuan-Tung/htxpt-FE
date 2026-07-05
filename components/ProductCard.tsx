@@ -50,16 +50,18 @@ const ProductCard = ({
 
   return (
     <div onClick={onClick} className="group flex max-w-sm cursor-pointer flex-col overflow-hidden rounded-2xl bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
-      <div className="aspect-w-1 aspect-h-1 relative w-full overflow-hidden bg-gradient-to-br from-primary_light to-white">
-        {!loaded && <Skeleton className="absolute inset-0 h-full w-full bg-gray-200" />}
-        <Image
-          src={src}
-          alt={isFruit ? 'Fruit Image' : 'Tree Image'}
-          fill
-          className={`object-cover transition-all duration-500 group-hover:scale-105 ${loaded ? 'opacity-100' : 'opacity-0'}`}
-          loading="lazy"
-          onLoad={() => setLoaded(true)}
-        />
+      <div className="relative w-full overflow-hidden">
+        <div className="aspect-w-1 aspect-h-1 relative w-full bg-gradient-to-br from-primary_light to-white">
+          {!loaded && <Skeleton className="absolute inset-0 h-full w-full bg-gray-200" />}
+          <Image
+            src={src}
+            alt={isFruit ? 'Fruit Image' : 'Tree Image'}
+            fill
+            className={`object-cover transition-all duration-500 group-hover:scale-105 ${loaded ? 'opacity-100' : 'opacity-0'}`}
+            loading="lazy"
+            onLoad={() => setLoaded(true)}
+          />
+        </div>
         <span className="absolute left-2 top-2 rounded-full bg-primary/90 px-3 py-1 text-xs font-semibold text-white shadow-soft backdrop-blur-sm">
           {isFruit ? 'Phật thủ' : 'Bonsai'}
         </span>
