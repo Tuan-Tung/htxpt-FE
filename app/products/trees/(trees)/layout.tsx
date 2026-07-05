@@ -15,7 +15,7 @@ const ProductLayout = ({ children }: PropsWithChildren): React.ReactElement => {
     router.push(`/products/${code}`);
   };
   return (
-    <div className="min-h-screen min-w-full">
+    <div className="min-w-full">
       <div className="mb-[30px] inline-flex space-x-[5px]">
         <div className="min-w-[120px] flex-1">
           <Button
