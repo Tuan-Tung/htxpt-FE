@@ -154,7 +154,7 @@ const HomePageContent = ({
         </div>
       </div>
 
-      <div className="flex flex-wrap lg:flex-nowrap xl:space-x-8">
+      <div className="flex flex-wrap gap-8 lg:flex-nowrap">
         <div className="flex w-full flex-col space-y-8 lg:w-3/5">
           <div className="flex flex-col space-y-4">
             <div className="relative pl-4 text-[24px] font-extrabold text-primary_green md:text-[32px] before:absolute before:left-0 before:top-[6px] before:h-[70%] before:w-1.5 before:rounded-full before:bg-primary">
