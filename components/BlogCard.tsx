@@ -23,8 +23,8 @@ const BlogCard = ({
       className="group w-full cursor-pointer transition-transform duration-300 hover:-translate-y-0.5"
       // onClick={onClick}
     >
-      <div className="flex h-44 overflow-hidden rounded-2xl bg-white shadow-card transition-shadow duration-300 group-hover:shadow-card-hover">
-        <div className="relative h-full w-1/2 shrink-0 overflow-hidden bg-gray-100">
+      <div className="flex min-h-[7rem] overflow-hidden rounded-2xl bg-white shadow-card transition-shadow duration-300 group-hover:shadow-card-hover">
+        <div className="relative w-2/5 shrink-0 overflow-hidden bg-gray-100">
           {!loaded && <Skeleton className="absolute inset-0 h-full w-full rounded-none bg-gray-200" />}
           <Image
             src={image}
@@ -34,8 +34,8 @@ const BlogCard = ({
             onLoad={() => setLoaded(true)}
           />
         </div>
-        <div className="flex w-1/2 flex-1 flex-col justify-center p-4">
-          <div className="truncate-ellipsis mb-2 font-bold text-primary_green transition-colors group-hover:text-primary">
+        <div className="flex w-3/5 flex-1 flex-col justify-center gap-1 p-4">
+          <div className="font-bold text-primary_green transition-colors group-hover:text-primary">
             {title}
           </div>
           <div className="truncate-ellipsis-2-line text-sm text-gray-500">{short_description}</div>

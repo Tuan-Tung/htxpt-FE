@@ -31,9 +31,9 @@ export { default as Banner2 } from './tree/banner2.jpg';
 export { default as Banner3 } from './tree/banner3.jpg';
 export { default as Banner4 } from './tree/banner4.jpg';
 export { default as Fruit1 } from './fruit1.jpg';
-export { default as Fruit2 } from './fruit1.jpg';
-export { default as Fruit3 } from './fruit1.jpg';
-export { default as Fruit4 } from './fruit1.jpg';
+export { default as Fruit2 } from './fruit2.jpg';
+export { default as Fruit3 } from './fruit3.jpg';
+export { default as Fruit4 } from './fruit4.jpg';
 
 export { default as FruitDrying } from './Phat_thu_2_73ad2bd8c6.webp';
 export { default as FruitDryingAbout } from './fruit-drying.png';
