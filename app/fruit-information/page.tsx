@@ -1,17 +1,18 @@
 'use client';
 
 import { NextPage } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
 import ProductGallery from '@/components/ProductGallery';
-import { Fruit1, Fruit2, Fruit3, Fruit4, FruitAbout } from '@/public/images';
+import { Fruit1, Fruit2, Fruit3, Fruit4, FruitAbout, FruitDrying } from '@/public/images';
 
 const USES = [
-  { icon: '🍵', title: 'Trà phật thủ', text: 'Vỏ thái lát mỏng, phơi khô rồi hãm nước sôi, giúp giải cảm, giảm ho, dễ tiêu.' },
-  { icon: '🍬', title: 'Mứt, kẹo', text: 'Vỏ dày, thơm được sên với đường làm mứt Tết hoặc kẹo the mát rất đặc trưng.' },
-  { icon: '🙏', title: 'Thờ cúng, trưng bày', text: 'Đặt trên mâm ngũ quả, bàn thờ ngày Tết với ý nghĩa cầu phúc lộc, bình an.' },
-  { icon: '💧', title: 'Tinh dầu, gia vị', text: 'Vỏ chiết tinh dầu thơm, dùng tạo hương cho món tráng miệng, salad, cocktail.' },
+  { title: 'Trà phật thủ', text: 'Vỏ thái lát mỏng, phơi khô rồi hãm nước sôi, giúp giải cảm, giảm ho, dễ tiêu.' },
+  { title: 'Mứt, kẹo', text: 'Vỏ dày, thơm được sên với đường làm mứt Tết hoặc kẹo the mát rất đặc trưng.' },
+  { title: 'Thờ cúng, trưng bày', text: 'Đặt trên mâm ngũ quả, bàn thờ ngày Tết với ý nghĩa cầu phúc lộc, bình an.' },
+  { title: 'Tinh dầu, gia vị', text: 'Vỏ chiết tinh dầu thơm, dùng tạo hương cho món tráng miệng, salad, cocktail.' },
 ];
 
 const SELECT_TIPS = [
@@ -71,19 +72,20 @@ const FruitInformationPage: NextPage = (): React.ReactElement => {
 
         <div className="mt-14">
           <h2 className="mb-6 text-2xl font-extrabold text-primary_green">Công dụng của quả phật thủ</h2>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {USES.map((use) => (
-              <div
-                key={use.title}
-                className="group flex flex-col items-center rounded-2xl bg-white p-6 text-center shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
-              >
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary_light text-3xl transition-colors group-hover:bg-primary">
-                  {use.icon}
-                </div>
-                <p className="mb-1 font-bold text-primary_green">{use.title}</p>
-                <p className="text-sm leading-relaxed text-dark_grey">{use.text}</p>
-              </div>
-            ))}
+          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+            <div className="relative h-64 overflow-hidden rounded-2xl shadow-card sm:h-80 lg:h-96">
+              <Image src={FruitDrying.src} alt="Công dụng của quả phật thủ" fill className="object-cover" />
+            </div>
+            <ul className="space-y-4">
+              {USES.map((use) => (
+                <li key={use.title} className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                  <p className="leading-relaxed text-dark_grey">
+                    <span className="font-bold text-primary_green">{use.title}:</span> {use.text}
+                  </p>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
@@ -106,7 +108,7 @@ const FruitInformationPage: NextPage = (): React.ReactElement => {
             <ul className="space-y-3">
               {SELECT_TIPS.map((tip, i) => (
                 <li key={i} className="flex items-start gap-3 text-dark_grey">
-                  <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                   <span className="leading-relaxed">{tip}</span>
                 </li>
               ))}
@@ -117,7 +119,7 @@ const FruitInformationPage: NextPage = (): React.ReactElement => {
             <ul className="space-y-3">
               {STORAGE_TIPS.map((tip, i) => (
                 <li key={i} className="flex items-start gap-3 text-dark_grey">
-                  <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                   <span className="leading-relaxed">{tip}</span>
                 </li>
               ))}

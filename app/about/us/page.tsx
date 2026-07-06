@@ -34,23 +34,23 @@ const AboutUsPageContent: NextPage = (): React.ReactElement => {
             <div className="font-body text-lg">{MISSION_CONTENT_TEXT}</div>
           </div>
         </div>
-        <div className="mx-auto flex max-w-[350px] justify-center md:mx-0">
-          <div className="flex flex-col space-y-2">
-            <div className="flex items-end justify-center">
-              <div className="w-30 h-42 relative z-10 mr-[20px] rounded-lg">
-                <Image width={122} height={169} src={CEOAvatar1.src} alt="avatar" />
-              </div>
-              <div className="bg-primary ml-[-120px] flex h-[132px] w-full flex-col items-end rounded-lg p-3 text-white shadow-md">
-                <div className="font-bold">
-                   {CEO_NAME}
-                </div>
-                <div className="font-body text-lg">{ROLE_NAME}</div>
-              </div>
+        <div className="mx-auto flex max-w-[350px] flex-col items-center md:mx-0 md:items-start">
+          <div className="flex flex-col items-stretch shadow-md">
+            <Image
+              width={210}
+              height={210}
+              src={CEOAvatar1.src}
+              alt="avatar"
+              className="h-[210px] w-[210px] rounded-t-lg object-cover object-top"
+            />
+            <div className="bg-primary flex w-[210px] shrink-0 flex-col items-center gap-0.5 rounded-b-lg px-3 py-2 text-center text-white">
+              <div className="whitespace-nowrap font-bold">{CEO_NAME}</div>
+              <div className="font-body text-sm">{ROLE_NAME}</div>
             </div>
-            <div className="text-center text-[14px] font-light md:text-left md:text-[18px]">
-              <span className="text-primary font-semibold">“ Đoàn kết</span> là sức mạnh. Hướng tới xây dựng
-              <span className="text-primary font-semibold"> sản phẩm làng nghề”</span>
-            </div>
+          </div>
+          <div className="mt-4 text-center text-[14px] font-light md:text-left md:text-[18px]">
+            <span className="text-primary font-semibold">“ Đoàn kết</span> là sức mạnh. Hướng tới xây dựng
+            <span className="text-primary font-semibold"> sản phẩm làng nghề”</span>
           </div>
         </div>
       </div>
