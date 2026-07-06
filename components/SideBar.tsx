@@ -2,6 +2,7 @@
 'use client';
 
 import { animated, config, useTransition } from '@react-spring/web';
+import { X } from 'lucide-react';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import React, { useCallback, useEffect, useLayoutEffect, useState } from 'react';
@@ -122,10 +123,10 @@ const SideBar = ({ items }: DashboardNavProps): React.ReactElement => {
             <animated.div
               style={styles}
               className={cn(
-                `fixed inset-y-0 left-0 z-50 flex h-screen w-full flex-col border-r border-border_soft bg-white xl:w-[260px]`
+                `fixed inset-y-0 left-0 z-[60] flex h-screen w-full flex-col border-r border-border_soft bg-white xl:w-[260px]`
               )}
             >
-              <div className="flex items-center justify-center border-b border-border_soft py-6">
+              <div className="relative flex items-center justify-center border-b border-border_soft py-6">
                 <Image
                   src={Logo.src}
                   alt="logo"
@@ -134,6 +135,14 @@ const SideBar = ({ items }: DashboardNavProps): React.ReactElement => {
                   className="cursor-pointer transition-transform hover:scale-105"
                   onClick={handleLogoClicked}
                 />
+                <button
+                  type="button"
+                  aria-label="Đóng menu"
+                  onClick={() => dispatch(commonActions.setIsSideBarDisplay(false))}
+                  className="absolute right-4 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full text-dark_grey transition-colors hover:bg-primary_light hover:text-primary xl:hidden"
+                >
+                  <X size={20} />
+                </button>
               </div>
               <div className="relative flex flex-1 flex-col justify-start overflow-y-auto px-4 py-6 text-[14px] font-semibold text-dark_grey">
                 {items.map((item: SideBarItems) => {

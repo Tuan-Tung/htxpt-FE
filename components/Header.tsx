@@ -31,10 +31,12 @@ const Header: React.FC = (): React.ReactElement => {
       <div className="flex flex-1 justify-between xl:justify-end">
         <div onClick={handleOnMenuClick} className="flex cursor-pointer items-center xl:hidden">
           <Icon name="ic_menu_outline" color="#fff" size={14} />
-          <h2 className="ml-2 text-lg font-bold text-white lg:hidden">{WELCOME_TEXT}</h2>
         </div>
         {/* <UserAccountNav name="khanh" /> */}
       </div>
+      <h2 className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-lg font-bold text-white lg:hidden">
+        {WELCOME_TEXT}
+      </h2>
     </div>
   );
 };
