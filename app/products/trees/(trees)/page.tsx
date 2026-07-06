@@ -30,7 +30,7 @@ const ListTreesPage: NextPage = (): React.ReactElement => {
        height={[2, 5]}
        fruitQuantity={[40, 75]}
       />
-      <div className="mt-8 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+      <div className="mt-8 grid grid-cols-2 gap-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
         {DATA_BONSAI.map((tree: Bonsai, index: number) => (
           <ProductCard
           key={tree.tree_name || 0 + index}

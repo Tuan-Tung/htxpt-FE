@@ -21,7 +21,7 @@ const Header: React.FC = (): React.ReactElement => {
   };
   return (
     <div className="fixed inset-x-0 top-0 z-50 flex h-[72px] w-auto flex-row items-center justify-between bg-gradient-to-r from-primary to-primary_dark px-4 shadow-[0_2px_16px_rgba(31,41,20,0.15)] xl:left-[260px] xl:px-[56px]">
-      <div className="hidden flex-1 flex-col items-start justify-start text-white lg:flex">
+      <div className="hidden flex-1 flex-col items-start justify-start text-white xl:flex">
         <h2 className="text-2xl font-bold tracking-tight">{WELCOME_TEXT}</h2>
         <p className="text-sm text-white/80">{SLOGAN_TEXT}</p>
       </div>
@@ -34,7 +34,7 @@ const Header: React.FC = (): React.ReactElement => {
         </div>
         {/* <UserAccountNav name="khanh" /> */}
       </div>
-      <h2 className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-lg font-bold text-white lg:hidden">
+      <h2 className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-lg font-bold text-white xl:hidden">
         {WELCOME_TEXT}
       </h2>
     </div>
