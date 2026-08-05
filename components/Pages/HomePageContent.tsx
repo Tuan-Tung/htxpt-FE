@@ -8,8 +8,12 @@ import { BlogCardProp } from '@/components/BlogCard';
 import { Blog, Bonsai, Fruit, Gardener } from '@/types/mock';
 import Image from 'next/image';
 import ScrollSnapBase from '@/components/ScrollSnapBase';
-import { Banner1, Banner2, Banner3, Banner4, FruitAbout, FruitDryingAbout } from '@/public/images';
-import { BlogCardSkeleton, GardenerCardSkeleton, ProductCardSkeleton } from '@/components/CardSkeletons';
+import { Banner1, Banner2, Banner3, Banner4, FruitAbout } from '@/public/images';
+import {
+  BlogCardSkeleton,
+  GardenerCardSkeleton,
+  ProductCardSkeleton,
+} from '@/components/CardSkeletons';
 
 const BlogCard = lazy(() => import('@/components/BlogCard'));
 const GardenerCard = lazy(() => import('@/components/GardenerCard'));
@@ -39,7 +43,6 @@ type HomeContentProps = {
   blogPosts: BlogCardProp[];
   treeList: Bonsai[];
 };
-
 
 const HomePageContent = ({
   gardenersList,
@@ -94,14 +97,11 @@ const HomePageContent = ({
               Sản phẩm tiêu biểu
             </span>
             <h3 className="truncate-ellipsis mt-3 text-[24px] font-extrabold text-primary_green md:text-[36px]">
-              Phật thủ sấy khô
+              Phật thủ bonsai
             </h3>
             <p className="py-4 pr-12 leading-relaxed text-dark_grey lg:text-lg">
-              Quả phật thủ sấy, hay còn gọi là Phật thủ khô, là một sản phẩm chế biến từ quả phật
-              thủ tươi. Phật thủ, một loại trái cây thuộc họ cam quýt, có hình dáng độc đáo giống
-              như những ngón tay Phật, được sử dụng phổ biến trong ẩm thực và y học cổ truyền. Phật
-              thủ tươi chứa nhiều tinh dầu và có hương thơm đặc trưng, thường được sử dụng để làm
-              gia vị, trang trí hoặc trong các món tráng miệng.
+              Tinh hoa làng nghề Đắc Sở – kết hợp nghệ thuật bonsai truyền thống và kỹ thuật chăm
+              sóc hiện đại, mang giá trị thẩm mỹ, phong thủy và kinh tế cao.
             </p>
             <button
               className="rounded-full bg-primary px-6 py-3 font-semibold text-white shadow-soft transition-all hover:-translate-y-0.5 hover:bg-primary_dark hover:shadow-card-hover"
@@ -115,7 +115,7 @@ const HomePageContent = ({
           <Image
             width={500}
             height={500}
-            src={FruitDryingAbout.src}
+            src={'/images/img_bonsai_desktop.webp'}
             alt="Home About"
             className="h-full object-cover drop-shadow-2xl"
           />
