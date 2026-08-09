@@ -42,7 +42,6 @@ const BlogDetailPage = () => {
     <div>
       <div className="lg:w-full bg-white">
         <div className="lg:w-full rounded-t-[10px] flex justify-between">
-          {/* <Image src={CEOAvatar.src} alt="Gardener Avatar" layout="fill" objectFit="cover" className='w-[452px] rounded-tr-[10px]'/> */}
           <div className=" sm:p-6 xl:p-11">
             <div className="lg:h-[657px] lg:w-3/4 lg:border-2 lg:border-lime-600 p-4 lg:p-14">
               <div className="text-[24px] md:text-[50px] lg:text-[70px] font-semibold text-black">

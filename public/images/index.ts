@@ -1,6 +1,5 @@
 export { default as NotFoundImg } from './404.png';
 export { default as About } from './about.png';
-export { default as CEOAvatar } from './CEOavatar.png';
 export { default as CEOAvatar1 } from './CEOavatar.jpg';
 export { default as Commit } from './commit.png';
 export { default as DemoFruit } from './demo-fruit.png';

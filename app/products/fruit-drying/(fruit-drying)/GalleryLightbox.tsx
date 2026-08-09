@@ -5,10 +5,10 @@ import Image from 'next/image';
 import { useCallback, useEffect, useState } from 'react';
 
 const images = [
-  { src: '/images/img_bonsai_desktop.webp', alt: 'Toàn cảnh cây Phật thủ bonsai', className: 'bg-[#dce9b5] object-cover' },
-  { src: '/images/background_detail_desktop.webp', alt: 'Quả Phật thủ trên cây', className: 'object-cover object-right' },
-  { src: '/images/img_bonsai_desktop.webp', alt: 'Cây Phật thủ trưng bày', className: 'object-cover' },
-  { src: '/images/img_tree_desktop.webp', alt: 'Gốc cây Phật thủ bonsai', className: 'object-cover' },
+  { src: '/images/img_tree_bonsai.jpg', alt: 'Toàn cảnh cây Phật thủ bonsai', className: 'bg-[#dce9b5] object-cover' },
+  { src: '/images/background_detail_desktop.jpg', alt: 'Quả Phật thủ trên cây', className: 'object-cover object-right' },
+  { src: '/images/img_tree1.jpg', alt: 'Cây Phật thủ trưng bày', className: 'object-cover' },
+  { src: '/images/img_tree_desktop.jpg', alt: 'Gốc cây Phật thủ bonsai', className: 'object-cover' },
   { src: '/images/camket1.jpg', alt: 'Chứng nhận sản phẩm Phật thủ', className: 'object-cover' },
 ];
 
